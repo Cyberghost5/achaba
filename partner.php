@@ -86,7 +86,7 @@
     <section class="partner-hero-section py-5 mt-5">
         <div class="container">
             <div class="text-center">
-                <h1 class="display-4 fw-bold mb-4">Partner With Achaba</h1>
+                <h1 class="display-4 mb-4">Partner With Achaba</h1>
                 <p class="lead text-muted mx-auto" style="max-width: 700px;">
                     Join us in transforming mobility in Bauchi. Whether you're a rider, investor,<br>
                     or business partner, we want to hear from you.
@@ -99,7 +99,7 @@
     <section class="why-partner-section py-5">
         <div class="container">
             <div class="text-center mb-5">
-                <h2 class="fw-bold mb-3">Why Partner with Us?</h2>
+                <h2 class="mb-3">Why Partner with Us?</h2>
             </div>
             <div class="row g-4">
                 <div class="col-lg-4 col-md-6">
