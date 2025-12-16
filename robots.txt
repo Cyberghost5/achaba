@@ -1,0 +1,21 @@
+# Achaba Website Robots.txt
+# https://achaba.ng/robots.txt
+
+User-agent: *
+Allow: /
+
+# Disallow admin and private directories (if any in future)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /cgi-bin/
+
+# Allow CSS, JS, and image files
+Allow: /assets/
+Allow: /style.css
+Allow: /script.js
+
+# Sitemap location
+Sitemap: https://achaba.ng/sitemap.xml
+
+# Crawl-delay (optional, adjust as needed)
+Crawl-delay: 0
