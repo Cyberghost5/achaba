@@ -5,7 +5,7 @@
 define('DB_HOST', 'localhost');
 define('DB_NAME', 'achabang_db');
 define('DB_USER', 'achabang_db');
-define('DB_PASS', 'achabang_db');
+define('DB_PASS', '');
 
 // Create database connection
 function getDBConnection() {
