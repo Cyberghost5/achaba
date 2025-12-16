@@ -76,7 +76,7 @@ session_start();
     <section class="survey-hero-section py-5 mt-4">
         <div class="container">
             <div class="text-center mb-4">
-                <h1 class="display-4 fw-bold mb-3">Bauchi Mobility Survey</h1>
+                <h1 class="display-4 mb-3">Bauchi Mobility Survey</h1>
                 <p class="lead text-muted mx-auto" style="max-width: 700px;">
                     Your voice matters! Help us understand transportation challenges in Bauchi<br>
                     and shape the future of mobility in our community.
