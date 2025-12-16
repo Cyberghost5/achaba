@@ -36,6 +36,52 @@ session_start();
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* Override Bootstrap primary colors with Achaba green */
+        .survey-form-section .btn-primary {
+            background-color: #00A551;
+            border-color: #00A551;
+        }
+        
+        .survey-form-section .btn-primary:hover,
+        .survey-form-section .btn-primary:focus,
+        .survey-form-section .btn-primary:active {
+            background-color: #008F46;
+            border-color: #008F46;
+        }
+        
+        .survey-form-section .btn-outline-primary {
+            color: #00A551;
+            border-color: #00A551;
+        }
+        
+        .survey-form-section .btn-outline-primary:hover,
+        .survey-form-section .btn-check:checked + .btn-outline-primary {
+            background-color: #00A551;
+            border-color: #00A551;
+            color: white;
+        }
+        
+        .survey-form-section .badge.bg-primary {
+            background-color: #00A551 !important;
+        }
+        
+        .survey-form-section .form-control:focus,
+        .survey-form-section .form-check-input:focus {
+            border-color: #00A551;
+            box-shadow: 0 0 0 0.25rem rgba(0, 165, 81, 0.25);
+        }
+        
+        .survey-form-section .form-check-input:checked {
+            background-color: #00A551;
+            border-color: #00A551;
+        }
+        
+        .survey-form-section .spinner-border {
+            color: #00A551;
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
