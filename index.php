@@ -877,13 +877,13 @@
                 <div class="col-md-6 text-md-end text-center">
                     <h6 class="text-light mb-3">Follow Us</h6>
                     <div class="social-links d-inline-flex gap-3">
-                        <a href="#" class="text-white d-flex align-items-center justify-content-center" style="width: 40px; height: 40px; background: rgba(255,255,255,0.1); border-radius: 50%;">
+                        <a href="#" class="text-white d-flex align-items-center justify-content-center text-decoration-none" style="width: 40px; height: 40px; background: rgba(255,255,255,0.1); border-radius: 50%;">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="#" class="text-white d-flex align-items-center justify-content-center" style="width: 40px; height: 40px; background: rgba(255,255,255,0.1); border-radius: 50%;">
+                        <a href="#" class="text-white d-flex align-items-center justify-content-center text-decoration-none" style="width: 40px; height: 40px; background: rgba(255,255,255,0.1); border-radius: 50%;">
                             <i class="fab fa-twitter"></i>
                         </a>
-                        <a href="#" class="text-white d-flex align-items-center justify-content-center" style="width: 40px; height: 40px; background: rgba(255,255,255,0.1); border-radius: 50%;">
+                        <a href="#" class="text-white d-flex align-items-center justify-content-center text-decoration-none" style="width: 40px; height: 40px; background: rgba(255,255,255,0.1); border-radius: 50%;">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
                     </div>
