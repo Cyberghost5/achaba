@@ -60,7 +60,7 @@ session_start();
         .survey-form-section .btn-check:checked + .btn-outline-primary {
             background-color: #00A551;
             border-color: #00A551;
-            color: white;
+            color: white !important;
         }
         
         .survey-form-section .badge.bg-primary {
@@ -155,7 +155,7 @@ session_start();
                                         <label class="btn btn-outline-primary w-100 py-4" for="typeUser">
                                             <i class="fas fa-user fa-2x d-block mb-3"></i>
                                             <h5 class="mb-2">User</h5>
-                                            <small class="text-muted">I need transportation or delivery services</small>
+                                            <small>I need transportation or delivery services</small>
                                         </label>
                                     </div>
                                     <div class="col-md-6">
@@ -163,7 +163,7 @@ session_start();
                                         <label class="btn btn-outline-primary w-100 py-4" for="typeRider">
                                             <i class="fas fa-motorcycle fa-2x d-block mb-3"></i>
                                             <h5 class="mb-2">Rider</h5>
-                                            <small class="text-muted">I am a motorcycle rider or want to become one</small>
+                                            <small>I am a motorcycle rider or want to become one</small>
                                         </label>
                                     </div>
                                 </div>
