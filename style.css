@@ -124,6 +124,14 @@ a:focus {
     color: var(--primary-green) !important;
 }
 
+/* Remove focus outline from navbar elements */
+.navbar .nav-link:focus,
+.navbar-toggler:focus,
+.navbar-brand:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
 /* Partner Page Styles */
 .partner-hero-section {
     background: linear-gradient(to bottom, rgba(0, 165, 81, 0.02), transparent);
