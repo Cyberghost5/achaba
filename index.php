@@ -113,10 +113,13 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-center">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
+                        <a class="nav-link" href="#hero">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#survey">Survey</a>
+                        <a class="nav-link" href="survey">Survey</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#waitlist">Waitlist</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#team">Team</a>
@@ -125,7 +128,7 @@
                         <a class="nav-link" href="#contact">Contact</a>
                     </li>
                     <li class="nav-item ms-lg-3">
-                        <a class="btn btn-primary px-4" href="#contact">Partner with us</a>
+                        <a class="btn btn-primary px-4" href="partner">Partner with us</a>
                     </li>
                 </ul>
             </div>
@@ -133,7 +136,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero-section py-5">
+    <section class="hero-section py-5" id="hero">
         <div class="container">
             <div class="row align-items-center min-vh-75">
                 <div class="col-lg-6 order-2 order-lg-1">
@@ -142,8 +145,8 @@
                         Built for Bauchi streets where the road does not always reach you. Book a verified motorcycle rider to pick you up from your doorstep or handle trusted pickups when movement becomes stress.
                     </p>
                     <div class="d-flex gap-3 flex-wrap">
-                        <a href="#contact" class="btn btn-primary btn-lg px-4">Partner with us</a>
-                        <a href="#survey" class="btn btn-outline-primary btn-lg px-4">Take the survey</a>
+                        <a href="partner" class="btn btn-primary btn-lg px-4">Partner with us</a>
+                        <a href="survey" class="btn btn-outline-primary btn-lg px-4">Take the survey</a>
                     </div>
                 </div>
                 <div class="col-lg-6 order-1 order-lg-2 mb-4 mb-lg-0">
@@ -665,7 +668,7 @@
                     Whether you need better transportation, want to partner as a rider, or run a business that<br>
                     could benefit from reliable pickups, <span class="text-primary fw-semibold">your experience matters.</span>
                 </p>
-                <a href="#survey" class="btn btn-primary btn-lg px-5 mb-3">Take the Bauchi Mobility Survey</a>
+                <a href="survey" class="btn btn-primary btn-lg px-5 mb-3">Take the Bauchi Mobility Survey</a>
                 <p class="text-muted small mb-0">
                     Takes 3-5 minutes • Anonymous • Mobile-friendly
                 </p>
@@ -780,6 +783,56 @@
         </div>
     </section>
 
+    <!-- Partner CTA Section -->
+    <section class="partner-cta-section py-5 bg-primary text-white">
+        <div class="container">
+            <div class="text-center py-5">
+                <div class="icon-badge-white mb-4">
+                    <i class="fas fa-handshake fa-4x"></i>
+                </div>
+                <h2 class="fw-bold mb-4">Partner with Us</h2>
+                <p class="mb-3 mx-auto" style="max-width: 800px; font-size: 1.1rem;">
+                    We are opening early partnerships in Bauchi with riders, vendors, and community operators.
+                </p>
+                <p class="mb-4 mx-auto" style="max-width: 800px; font-size: 1.1rem;">
+                    Whether you're a motorcycle rider looking for steady work, a vendor who needs reliable 
+                    delivery, or a community leader who wants to bring better mobility to your area—let's talk.
+                </p>
+                <a href="#contact" class="btn btn-light btn-lg px-5 mb-4">Partner with us</a>
+                <p class="mt-4 mb-0" style="font-size: 0.95rem;">
+                    Reach out at <a href="mailto:hello@achaba.ng" class="text-white text-decoration-underline">hello@achaba.ng</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Waitlist Section -->
+    <section class="waitlist-section py-5" id="waitlist">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="waitlist-card p-5">
+                        <div class="text-center">
+                            <h2 class="fw-bold mb-4">Join the Waitlist</h2>
+                            <p class="text-muted mb-4 mx-auto" style="max-width: 700px;">
+                                Be the first to know when ACHABA launches. Get early access, exclusive updates, and special launch offers delivered straight to your inbox.
+                            </p>
+                            <form id="waitlistForm" class="row g-3 justify-content-center align-items-center">
+                                <div class="col-md-6">
+                                    <input type="email" class="form-control form-control-lg" id="waitlistEmail" placeholder="Enter your email address" required>
+                                </div>
+                                <div class="col-md-auto">
+                                    <button type="submit" class="btn btn-primary btn-lg px-5" id="waitlistBtn">Join Waitlist</button>
+                                </div>
+                            </form>
+                            <div id="waitlistMessage" class="mt-3 alert" role="alert" style="display: none;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Team Section -->
     <section class="team-section py-5" id="team">
         <div class="container">
@@ -828,29 +881,6 @@
                         <!-- <small class="text-primary">Design</small> -->
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Partner CTA Section -->
-    <section class="partner-cta-section py-5 bg-primary text-white">
-        <div class="container">
-            <div class="text-center py-5">
-                <div class="icon-badge-white mb-4">
-                    <i class="fas fa-handshake fa-4x"></i>
-                </div>
-                <h2 class="fw-bold mb-4">Partner with Us</h2>
-                <p class="mb-3 mx-auto" style="max-width: 800px; font-size: 1.1rem;">
-                    We are opening early partnerships in Bauchi with riders, vendors, and community operators.
-                </p>
-                <p class="mb-4 mx-auto" style="max-width: 800px; font-size: 1.1rem;">
-                    Whether you're a motorcycle rider looking for steady work, a vendor who needs reliable 
-                    delivery, or a community leader who wants to bring better mobility to your area—let's talk.
-                </p>
-                <a href="#contact" class="btn btn-light btn-lg px-5 mb-4">Partner with us</a>
-                <p class="mt-4 mb-0" style="font-size: 0.95rem;">
-                    Reach out at <a href="mailto:hello@achaba.ng" class="text-white text-decoration-underline">hello@achaba.ng</a>
-                </p>
             </div>
         </div>
     </section>
@@ -919,5 +949,54 @@
     
     <!-- Custom JS -->
     <script src="script.js"></script>
+    
+    <!-- Waitlist Form Handler -->
+    <script>
+        document.getElementById('waitlistForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('waitlistEmail').value;
+            const submitBtn = document.getElementById('waitlistBtn');
+            const responseMessage = document.getElementById('waitlistMessage');
+            
+            // Disable button and show loading state
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Joining...';
+            responseMessage.style.display = 'none';
+            
+            // Create FormData object
+            const formData = new FormData();
+            formData.append('email', email);
+            
+            try {
+                const response = await fetch('submit_waitlist.php', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                const data = await response.json();
+                
+                // Show response message
+                responseMessage.style.display = 'block';
+                responseMessage.textContent = data.message;
+                
+                if (data.success) {
+                    responseMessage.className = 'mt-3 alert alert-success';
+                    document.getElementById('waitlistForm').reset();
+                } else {
+                    responseMessage.className = 'mt-3 alert alert-danger';
+                }
+                
+            } catch (error) {
+                responseMessage.style.display = 'block';
+                responseMessage.className = 'mt-3 alert alert-danger';
+                responseMessage.textContent = 'Connection error. Please check your internet and try again.';
+            } finally {
+                // Re-enable button
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = 'Join Waitlist';
+            }
+        });
+    </script>
 </body>
 </html>

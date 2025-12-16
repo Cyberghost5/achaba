@@ -103,7 +103,7 @@ function handleFormSubmit(event) {
     console.log('Form submitted:', Object.fromEntries(formData));
     
     // Show success message
-    alert('Thank you for your interest! We will contact you soon.');
+    // alert('Thank you for your interest! We will contact you soon.');
     event.target.reset();
 }
 

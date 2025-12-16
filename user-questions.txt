@@ -1,0 +1,96 @@
+
+	1.	Full name
+	2.	Phone number (example: +234…)
+	3.	Email address
+	4.	Can we contact you for follow-up or pilot testing?
+• Yes
+• No
+
+5. Where do you live? (Open text)
+6. Which best describes you?
+• Student
+• Worker / Office staff
+• Vendor / Business owner
+• Artisan / Freelancer
+• Other
+7. How often do you move from your area to another location daily?
+• Daily
+• A few times a week
+• Occasionally
+• Rarely
+
+8. How do you usually get transport from your area?
+• Trek to main road
+• Motorcycle (Achaba / Okada)
+• Car
+• Tricycle
+• Combination
+9. What is the biggest challenge with movement in your area? (Open text, type answer)
+10. Have you ever been late to school, work, or an important appointment due to transport?
+• Yes
+• No
+
+11. How often do you use motorcycles for transport?
+• Very often
+• Often
+• Sometimes
+• Rarely
+12. How do you usually find a rider?
+• On the road
+• By calling someone
+• Through referrals
+• I struggle to find one
+13. What concerns you most when using motorcycles?
+• Safety
+• Pricing
+• Trust
+• Availability
+• None
+
+14. Have you ever needed someone to pick up items for you?
+• Yes
+• No
+15. What type of items do you usually need picked up?
+• Food items
+• Market goods
+• Cakes or fragile items
+• Documents
+• Other
+16. What makes pickups difficult today?
+• Trust
+• Damage risk
+• Poor directions
+• Cost
+• I prefer to go myself
+
+17. How useful would doorstep motorcycle pickup be for you?
+• Very useful
+• Useful
+• Not sure
+• Not useful
+18. Would you use a service that lets you book a rider for errands or pickups?
+• Yes
+• Maybe
+• No
+19. What would make you trust Achaba? (Select all that apply)
+• Verified riders
+• Clear pricing
+• No cash handling
+• Support access
+• Recommendations
+
+20. What phone do you use most?
+• Android smartphone
+• iPhone
+• Feature phone
+21. How would you prefer to book a ride?
+• Phone call
+• App
+• WhatsApp
+• SMS / USSD
+
+22. If Achaba launched today, would you try it?
+• Yes
+• Maybe
+• No
+23. What is one thing Achaba must get right to work in Bauchi? (Open text)
