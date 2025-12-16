@@ -30,7 +30,15 @@
 
     <!-- Survey Section -->
     <url>
-        <loc>https://achaba.ng/#survey</loc>
+        <loc>https://achaba.ng/survey</loc>
+        <lastmod>2025-12-16</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Survey Section -->
+    <url>
+        <loc>https://achaba.ng/partner</loc>
         <lastmod>2025-12-16</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>

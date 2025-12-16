@@ -12,20 +12,22 @@
     <meta name="keywords" content="achaba partnership, rider partnership, investor opportunity, business integration, Bauchi mobility, Nigerian transport partnership">
     <meta name="author" content="Achaba">
     <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://achaba.ng/partner.php">
+    <link rel="canonical" href="https://achaba.ng/partner">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://achaba.ng/partner.php">
+    <meta property="og:url" content="https://achaba.ng/partner">
     <meta property="og:title" content="Partner with Achaba - Join Nigeria's Leading Motorcycle Mobility Platform">
     <meta property="og:description" content="Partner with Achaba to transform mobility in Bauchi and beyond. Opportunities for riders, investors, businesses, and strategic partners.">
     <meta property="og:image" content="https://achaba.ng/assets/images/og-image.png">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://achaba.ng/partner.php">
+    <meta property="twitter:url" content="https://achaba.ng/partner">
     <meta property="twitter:title" content="Partner with Achaba">
     <meta property="twitter:description" content="Partner with Achaba to transform mobility in Bauchi and beyond.">
     
@@ -46,6 +48,54 @@
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Structured Data / JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Achaba",
+      "image": "https://achaba.ng/assets/images/logo.png",
+      "@id": "https://achaba.ng",
+      "url": "https://achaba.ng",
+      "telephone": "",
+      "email": "hello@achaba.ng",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "",
+        "addressLocality": "Bauchi",
+        "addressRegion": "Bauchi State",
+        "postalCode": "",
+        "addressCountry": "NG"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 10.3158,
+        "longitude": 9.8442
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "opens": "00:00",
+        "closes": "23:59"
+      },
+      "sameAs": [
+        "https://twitter.com/achaba",
+        "https://instagram.com/achaba",
+        "https://linkedin.com/company/achaba"
+      ],
+      "priceRange": "₦₦",
+      "description": "Book verified motorcycle riders in Bauchi for doorstep pickups and trusted deliveries. Navigate inner streets with ease."
+    }
+    </script>
 </head>
 <body>
     <!-- Navigation -->

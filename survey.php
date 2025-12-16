@@ -15,9 +15,27 @@ session_start();
     <meta name="keywords" content="Bauchi survey, mobility survey, transportation feedback, Achaba survey, rider survey, user survey">
     <meta name="author" content="Achaba">
     <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://achaba.ng/survey.php">
+    <link rel="canonical" href="https://achaba.ng/survey">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://achaba.ng/">
+    <meta property="og:title" content="Achaba - Motorcycle Ride & Delivery Service in Bauchi, Nigeria">
+    <meta property="og:description" content="Book verified motorcycle riders in Bauchi for doorstep pickups and trusted deliveries. Navigate inner streets with ease.">
+    <meta property="og:image" content="https://achaba.ng/assets/images/og-image.png">
+    <meta property="og:site_name" content="Achaba">
+    <meta property="og:locale" content="en_NG">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://achaba.ng/">
+    <meta property="twitter:title" content="Achaba - Motorcycle Ride & Delivery Service in Bauchi, Nigeria">
+    <meta property="twitter:description" content="Book verified motorcycle riders in Bauchi for doorstep pickups and trusted deliveries. Navigate inner streets with ease.">
+    <meta property="twitter:image" content="https://achaba.ng/assets/images/twitter-image.png">
     
     <!-- Favicon -->
     <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png">
@@ -36,6 +54,54 @@ session_start();
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Structured Data / JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Achaba",
+      "image": "https://achaba.ng/assets/images/logo.png",
+      "@id": "https://achaba.ng",
+      "url": "https://achaba.ng",
+      "telephone": "",
+      "email": "hello@achaba.ng",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "",
+        "addressLocality": "Bauchi",
+        "addressRegion": "Bauchi State",
+        "postalCode": "",
+        "addressCountry": "NG"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 10.3158,
+        "longitude": 9.8442
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "opens": "00:00",
+        "closes": "23:59"
+      },
+      "sameAs": [
+        "https://twitter.com/achaba",
+        "https://instagram.com/achaba",
+        "https://linkedin.com/company/achaba"
+      ],
+      "priceRange": "₦₦",
+      "description": "Book verified motorcycle riders in Bauchi for doorstep pickups and trusted deliveries. Navigate inner streets with ease."
+    }
+    </script>
     
     <style>
         /* Override Bootstrap primary colors with Achaba green */
