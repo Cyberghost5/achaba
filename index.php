@@ -860,7 +860,7 @@
                 <div class="col-lg-2 col-md-4 col-6">
                     <div class="team-card text-center">
                         <img src="assets/images/team/3.png" alt="Team Member" class="rounded-circle mb-3 img-fluid">
-                        <h6 class="fw-bold mb-1">Miracle Ike Uduma</h6>
+                        <h6 class="fw-bold mb-1">Miracle Uduma Ike</h6>
                         <small class="text-muted d-block mb-1">Brand Identity Designer</small>
                         <!-- <small class="text-primary">Branding</small> -->
                     </div>

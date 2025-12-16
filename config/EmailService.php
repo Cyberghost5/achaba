@@ -156,7 +156,7 @@ class EmailService {
                             <tr>
                                 <td style="padding: 30px 40px; background-color: #FAFAFA; border-radius: 0 0 12px 12px; text-align: center;">
                                     <p style="margin: 0 0 10px; color: #7A7A7A; font-size: 14px;">
-                                        <strong>Achaba</strong> - Smarter Commutes, Better Connections
+                                        <strong>Achaba</strong> - Anything to pick, Anywhere to go.
                                     </p>
                                     <p style="margin: 0; color: #7A7A7A; font-size: 12px;">
                                         Have questions? Contact us at <a href="mailto:support@achaba.ng" style="color: #00A551; text-decoration: none;">support@achaba.ng</a>
@@ -264,7 +264,7 @@ Have questions? Contact us at support@achaba.ng";
                             <tr>
                                 <td style="padding: 30px 40px; background-color: #FAFAFA; border-radius: 0 0 12px 12px; text-align: center;">
                                     <p style="margin: 0 0 10px; color: #7A7A7A; font-size: 14px;">
-                                        <strong>Achaba</strong> - Smarter Commutes, Better Connections
+                                        <strong>Achaba</strong> - Anything to pick, Anywhere to go.
                                     </p>
                                     <p style="margin: 0; color: #7A7A7A; font-size: 12px;">
                                         Have questions? Contact us at <a href="mailto:support@achaba.ng" style="color: #00A551; text-decoration: none;">support@achaba.ng</a>
@@ -396,7 +396,7 @@ Have questions? Contact us at support@achaba.ng";
                             <tr>
                                 <td style="padding: 30px 40px; background-color: #FAFAFA; border-radius: 0 0 12px 12px; text-align: center;">
                                     <p style="margin: 0 0 10px; color: #7A7A7A; font-size: 14px;">
-                                        <strong>Achaba</strong> - Smarter Commutes, Better Connections
+                                        <strong>Achaba</strong> - Anything to pick, Anywhere to go.
                                     </p>
                                     <p style="margin: 0; color: #7A7A7A; font-size: 12px;">
                                         Have questions? Contact us at <a href="mailto:support@achaba.ng" style="color: #00A551; text-decoration: none;">support@achaba.ng</a>

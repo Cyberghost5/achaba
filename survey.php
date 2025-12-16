@@ -167,12 +167,6 @@ session_start();
                                         </label>
                                     </div>
                                 </div>
-                                
-                                <div class="text-center mt-4">
-                                    <button type="button" class="btn btn-primary btn-lg px-5" onclick="nextStep(2)">
-                                        Continue <i class="fas fa-arrow-right ms-2"></i>
-                                    </button>
-                                </div>
                             </div>
 
                             <!-- Step 2: Personal Information -->
@@ -811,6 +805,20 @@ session_start();
     
     <!-- Survey Form Handler -->
     <script>
+        // Auto-advance from Step 1 when survey type is selected
+        document.addEventListener('DOMContentLoaded', function() {
+            const surveyTypeRadios = document.querySelectorAll('input[name="surveyType"]');
+            
+            surveyTypeRadios.forEach(radio => {
+                radio.addEventListener('change', function() {
+                    // Small delay for smooth transition
+                    setTimeout(() => {
+                        nextStep(2);
+                    }, 300);
+                });
+            });
+        });
+        
         // Step navigation
         function nextStep(stepNumber) {
             // Validate current step
