@@ -3,7 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Achaba - Anything to pick. Anywhere to go.</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- Primary Meta Tags -->
+    <title>Achaba - Motorcycle Ride & Delivery Service in Bauchi, Nigeria</title>
+    <meta name="title" content="Achaba - Motorcycle Ride & Delivery Service in Bauchi, Nigeria">
+    <meta name="description" content="Book verified motorcycle riders in Bauchi for doorstep pickups and trusted deliveries. Navigate inner streets with ease. Built for Nigerian communities where the road doesn't always reach you.">
+    <meta name="keywords" content="achaba, motorcycle rides, bike taxi, delivery service, Bauchi transport, Nigerian logistics, inner street transport, doorstep pickup, verified riders">
+    <meta name="author" content="Achaba">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://achaba.ng/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://achaba.ng/">
+    <meta property="og:title" content="Achaba - Motorcycle Ride & Delivery Service in Bauchi, Nigeria">
+    <meta property="og:description" content="Book verified motorcycle riders in Bauchi for doorstep pickups and trusted deliveries. Navigate inner streets with ease.">
+    <meta property="og:image" content="https://achaba.ng/assets/images/og-image.png">
+    <meta property="og:site_name" content="Achaba">
+    <meta property="og:locale" content="en_NG">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://achaba.ng/">
+    <meta property="twitter:title" content="Achaba - Motorcycle Ride & Delivery Service in Bauchi, Nigeria">
+    <meta property="twitter:description" content="Book verified motorcycle riders in Bauchi for doorstep pickups and trusted deliveries. Navigate inner streets with ease.">
+    <meta property="twitter:image" content="https://achaba.ng/assets/images/twitter-image.png">
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
     
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -16,8 +51,54 @@
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
-
-    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png">
+    
+    <!-- Structured Data / JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Achaba",
+      "image": "https://achaba.ng/assets/images/logo.png",
+      "@id": "https://achaba.ng",
+      "url": "https://achaba.ng",
+      "telephone": "",
+      "email": "hello@achaba.ng",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "",
+        "addressLocality": "Bauchi",
+        "addressRegion": "Bauchi State",
+        "postalCode": "",
+        "addressCountry": "NG"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 10.3158,
+        "longitude": 9.8442
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "opens": "00:00",
+        "closes": "23:59"
+      },
+      "sameAs": [
+        "https://twitter.com/achaba",
+        "https://instagram.com/achaba",
+        "https://linkedin.com/company/achaba"
+      ],
+      "priceRange": "₦₦",
+      "description": "Book verified motorcycle riders in Bauchi for doorstep pickups and trusted deliveries. Navigate inner streets with ease."
+    }
+    </script>
 </head>
 <body>
     <!-- Navigation -->
@@ -55,7 +136,7 @@
     <section class="hero-section py-5">
         <div class="container">
             <div class="row align-items-center min-vh-75">
-                <div class="col-lg-6">
+                <div class="col-lg-6 order-2 order-lg-1">
                     <h1 class="display-3 fw-bold mb-4">Anything to pick.<br>Anywhere to go.</h1>
                     <p class="text-muted mb-4" style="font-size: 1.1rem; line-height: 1.7;">
                         Built for Bauchi streets where the road does not always reach you. Book a verified motorcycle rider to pick you up from your doorstep or handle trusted pickups when movement becomes stress.
@@ -65,7 +146,7 @@
                         <a href="#survey" class="btn btn-outline-primary btn-lg px-4">Take the survey</a>
                     </div>
                 </div>
-                <div class="col-lg-6 mt-5 mt-lg-0">
+                <div class="col-lg-6 order-1 order-lg-2 mb-4 mb-lg-0">
                     <div class="hero-illustration position-relative">
                         <div class="map-marker marker-1">
                             <i class="fas fa-map-marker-alt"></i>
@@ -92,15 +173,65 @@
                     In cities like <span class="text-primary fw-semibold">Bauchi</span>, the <span class="text-primary fw-semibold">inner streets</span> are where life happens. But they're also where <span class="text-primary fw-semibold">movement breaks down</span>.
                 </p>
             </div>
-            <div class="row justify-content-center">
+            
+            <!-- Default single card -->
+            <div class="row justify-content-center problem-default">
                 <div class="col-lg-8">
-                    <div class="problem-card p-5 text-center">
+                    <div class="problem-card-single p-5 text-center">
                         <div class="icon-wrapper mx-auto mb-4">
                             <i class="fas fa-map-marker-alt fa-3x text-primary"></i>
                         </div>
                         <h4 class="mb-3">The Inner Street Challenge</h4>
                         <p class="text-muted mb-0">
                             Your house is not on the main road. Neither is your destination. This single reality creates a cascade of problems that affect daily life.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Hover: 4 cards grid -->
+            <div class="row g-4 problem-grid">
+                <div class="col-lg-6">
+                    <div class="problem-card p-4">
+                        <div class="problem-icon mb-3">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h5 class="fw-bold mb-3">Inner streets</h5>
+                        <p class="text-muted mb-0">
+                            Your house is not on the main road. Neither is your destination.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="problem-card p-4">
+                        <div class="problem-icon mb-3">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h5 class="fw-bold mb-3">Time loss</h5>
+                        <p class="text-muted mb-0">
+                            Trekking to the main road, waiting for a ride, explaining directions again.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="problem-card p-4">
+                        <div class="problem-icon mb-3">
+                            <i class="fas fa-tint"></i>
+                        </div>
+                        <h5 class="fw-bold mb-3">Stained clothes</h5>
+                        <p class="text-muted mb-0">
+                            Dust, sweat, and stress before you even reach your meeting or exam.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="problem-card p-4">
+                        <div class="problem-icon mb-3">
+                            <i class="fas fa-exclamation-circle"></i>
+                        </div>
+                        <h5 class="fw-bold mb-3">Failed deliveries</h5>
+                        <p class="text-muted mb-0">
+                            Your cake order melts. Your urgent document arrives late. Trust breaks.
                         </p>
                     </div>
                 </div>

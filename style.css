@@ -258,16 +258,66 @@ body {
     padding: 80px 0;
 }
 
-.problem-card {
+/* Default: Show single card */
+.problem-default {
+    opacity: 1;
+    transition: opacity 0.4s ease;
+}
+
+.problem-grid {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    transition: opacity 0.4s ease;
+}
+
+/* On hover: Hide single card, show grid */
+.problem-section:hover .problem-default {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+.problem-section:hover .problem-grid {
+    opacity: 1;
+    height: auto;
+    overflow: visible;
+}
+
+/* Single card styling */
+.problem-card-single {
     background-color: #E8F5E9;
     border: 2px solid var(--primary-green);
     border-radius: 20px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Grid cards styling */
+.problem-card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-left: 4px solid var(--primary-green);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
 .problem-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 165, 81, 0.15) !important;
+    box-shadow: 0 10px 30px rgba(0, 165, 81, 0.15);
+    border-left-width: 6px;
+}
+
+.problem-icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #E8F5E9;
+    border-radius: 50%;
+    color: var(--primary-green);
+    font-size: 1.5rem;
 }
 
 .icon-wrapper {
