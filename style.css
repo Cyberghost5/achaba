@@ -556,7 +556,7 @@ body {
 
 @media (max-width: 768px) {
     .book-ride-number{
-        left: 50%;
+        left: 45%;
     }
 }
 
@@ -613,7 +613,7 @@ body {
 
 @media (max-width: 768px) {
     .errands-number {
-        left: 50%;
+        left: 45%;
     }
 }
 
