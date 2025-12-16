@@ -372,6 +372,14 @@ a:focus {
 /* Navigation */
 .navbar {
     transition: all 0.3s ease;
+    z-index: 1030;
+}
+
+.navbar.sticky-top {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1030;
 }
 
 .navbar-brand {
