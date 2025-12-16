@@ -784,7 +784,7 @@ session_start();
                     <i class="fas fa-mobile-alt text-primary" style="font-size: 2rem;"></i>
                 </div>
                 <p class="text-light mb-2" style="font-size: 1rem;">
-                    Launching soon on Play Store and Apple Store, join the waitlist <a href="#waitlist" class="text-primary text-decoration-underline">here</a>
+                    Launching soon on Play Store and Apple Store, join the waitlist <a href="./#waitlist" class="text-primary text-decoration-underline">here</a>
                 </p>
                 <p class="text-muted mb-0" style="font-size: 0.9rem;">
                     Built for Bauchi • Powered by Achaba
