@@ -3,7 +3,7 @@
 // This file contains SMTP settings for sending emails via PHPMailer
 
 // SMTP Server Settings
-define('SMTP_HOST', 'mail.achaba.ng'); // Change to your SMTP host
+define('SMTP_HOST', 'mail.achaba.ng'); // Change to your SMTP host 
 define('SMTP_PORT', 465); // Common ports: 587 (TLS), 465 (SSL), 25 (non-secure)
 define('SMTP_SECURE', 'ssl'); // 'tls' or 'ssl'
 
