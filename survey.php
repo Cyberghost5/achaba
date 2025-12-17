@@ -812,21 +812,25 @@ session_start();
     <footer class="footer bg-dark text-white py-5" id="contact">
         <div class="container">
             <!-- Logo and Tagline -->
-            <div class="text-center mb-5">
-                <img src="assets/images/logo.png" alt="achaba" width="250px" class="img-fluid mb-3">
-                <p class="text-light mb-0" style="font-size: 1.1rem;">Anything to pick. Anywhere to go.</p>
-            </div>
+            
 
             <!-- Contact and Social Links -->
             <div class="row justify-content-between mb-5 pb-4">
-                <div class="col-md-6 text-md-start text-center mb-4 mb-md-0">
+                <div class="col-md-4 text-md-start text-center mb-4 mb-md-0">
                     <h6 class="text-light mb-3">Get in Touch</h6>
                     <a href="mailto:hello@achaba.ng" class="text-light text-decoration-none d-inline-flex align-items-center">
                         <i class="far fa-envelope me-2"></i>
                         hello@achaba.ng
                     </a>
                 </div>
-                <div class="col-md-6 text-md-end text-center">
+                <div class="col-md-4 text-center mb-md-0">
+                    <div class="text-center mb-5">
+                        <!-- <h2 class="fw-bold mb-3 text-primary" style="font-size: 3rem; letter-spacing: -2px;">achaba</h2> -->
+                        <img src="assets/images/logo.png" alt="achaba" width="250px" class="img-fluid mb-3">
+                        <p class="text-light mb-0" style="font-size: 1.1rem;">Anything to pick. Anywhere to go.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 text-md-end text-center">
                     <h6 class="text-light mb-3">Follow Us</h6>
                     <div class="social-links d-inline-flex gap-3">
                         <a href="#" class="text-white d-flex align-items-center justify-content-center text-decoration-none" style="width: 40px; height: 40px; background: rgba(255,255,255,0.1); border-radius: 50%;">
@@ -850,7 +854,7 @@ session_start();
                     <i class="fas fa-mobile-alt text-primary" style="font-size: 2rem;"></i>
                 </div>
                 <p class="text-light mb-2" style="font-size: 1rem;">
-                    Launching soon on Play Store and Apple Store, join the waitlist <a href="./#waitlist" class="text-primary text-decoration-underline">here</a>
+                    Launching soon on Play Store and Apple Store, join the waitlist <a href="#waitlist" class="text-primary text-decoration-underline">here</a>
                 </p>
                 <p class="text-muted mb-0" style="font-size: 0.9rem;">
                     Built for Bauchi • Powered by Achaba
