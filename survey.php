@@ -170,12 +170,12 @@ session_start();
                     <li class="nav-item">
                         <a class="nav-link" href="./#waitlist">Waitlist</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link" href="./#team">Team</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="./#contact">Contact</a>
-                    </li>
+                    </li> -->
                     <li class="nav-item ms-lg-3">
                         <a class="btn btn-primary px-4" href="partner">Partner with us</a>
                     </li>

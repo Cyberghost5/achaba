@@ -121,12 +121,12 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#waitlist">Waitlist</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link" href="#team">Team</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#contact">Contact</a>
-                    </li>
+                    </li> -->
                     <li class="nav-item ms-lg-3">
                         <a class="btn btn-primary px-4" href="partner">Partner with us</a>
                     </li>
@@ -171,7 +171,7 @@
     <section class="problem-section py-5">
         <div class="container">
             <div class="text-center mb-5">
-                <h2 class="mb-3">The Problem in Bauchi (and many Nigerian states)</h2>
+                <h2 class="mb-3">The Problem in Bauchi and many Nigerian states</h2>
                 <p class="text-dark">
                     In cities like <span class="text-primary fw-semibold">Bauchi</span>, the <span class="text-primary fw-semibold">inner streets</span> are where life happens. But they're also where <span class="text-primary fw-semibold">movement breaks down</span>.
                 </p>
