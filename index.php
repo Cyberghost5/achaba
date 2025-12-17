@@ -498,7 +498,7 @@
     </section>
 
     <!-- Errands & Pickups Section -->
-    <section class="errands-section py-5">
+    <!-- <section class="errands-section py-5">
         <div class="container">
             <div class="text-center mb-5">
                 <span class="badge bg-secondary px-4 py-2 mb-3">Coming Next</span>
@@ -563,14 +563,14 @@
                 </p>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- Why This Works Section -->
-    <section class="why-works-section py-5">
+    <!-- <section class="why-works-section py-5">
         <div class="container">
             <div class="text-center mb-5">
-                <h2 class="mb-3">Why This Works</h2>
-                <p class="text-muted">Achaba is built on tested assumptions, clear value, and early validation.</p>
+                <h2 class="mb-3">Why This Solution will Work</h2>
+                <p class="text-muted">Achaba will not just be built on assumptions but facts, clear value, and early validation.</p>
             </div>
             <div class="row g-4">
                 <div class="col-lg-4">
@@ -578,7 +578,7 @@
                         <div class="why-works-icon-wrapper mb-3">
                             <i class="fas fa-bullseye fa-2x text-white"></i>
                         </div>
-                        <h5 class="fw-bold mb-4">Assumptions</h5>
+                        <h5 class="fw-bold mb-4">Facts</h5>
                         <ul class="why-works-list list-unstyled">
                             <li class="mb-3">
                                 <i class="fas fa-circle text-primary me-2" style="font-size: 0.4rem;"></i>
@@ -653,31 +653,7 @@
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Build Achaba Section -->
-    <section class="build-section py-5">
-        <div class="container">
-            <div class="text-center py-5">
-                <div class="build-icon-circle mx-auto mb-4">
-                    <i class="far fa-comment-dots fa-3x text-white"></i>
-                </div>
-                <h2 class="mb-4">Build Achaba with Us</h2>
-                <p class="text-dark mb-3 mx-auto" style="max-width: 800px; font-size: 1.05rem;">
-                    We're not building this in isolation. Achaba is shaped by real voices from Bauchi—<br>
-                    students, traders, vendors, riders, and office workers. Your input helps us get this right.
-                </p>
-                <p class="text-dark mb-4 mx-auto" style="max-width: 800px; font-size: 1.05rem;">
-                    Whether you need better transportation, want to partner as a rider, or run a business that<br>
-                    could benefit from reliable pickups, <span class="text-primary fw-semibold">your experience matters.</span>
-                </p>
-                <a href="survey" class="btn btn-primary btn-lg px-5 mb-3">Take the Bauchi Mobility Survey</a>
-                <p class="text-muted small mb-0">
-                    Takes 3-5 minutes • Anonymous • Mobile-friendly
-                </p>
-            </div>
-        </div>
-    </section>
+    </section> -->
 
     <!-- Why Achaba Wins Section -->
     <section class="why-wins-section py-5 bg-light">
@@ -781,6 +757,30 @@
             <div class="text-center">
                 <p class="text-muted fst-italic" style="font-size: 1.05rem;">
                     Achaba works because it respects what already exists and improves it, rather than trying to replace it.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Build Achaba Section -->
+    <section class="build-section py-5">
+        <div class="container">
+            <div class="text-center py-5">
+                <div class="build-icon-circle mx-auto mb-4">
+                    <i class="far fa-comment-dots fa-3x text-white"></i>
+                </div>
+                <h2 class="mb-4">Build Achaba with Us</h2>
+                <p class="text-dark mb-3 mx-auto" style="max-width: 800px; font-size: 1.05rem;">
+                    We're not building this in isolation. Achaba is shaped by real voices from Bauchi <br>
+                    students, traders, vendors, riders, and office workers. Your input helps us get this right.
+                </p>
+                <p class="text-dark mb-4 mx-auto" style="max-width: 800px; font-size: 1.05rem;">
+                    Whether you need better transportation, want to partner as a rider, or run a business that<br>
+                    could benefit from reliable pickups, <span class="text-primary fw-semibold">your experience matters.</span>
+                </p>
+                <a href="survey" class="btn btn-primary btn-lg px-5 mb-3">Take the Bauchi Mobility Survey</a>
+                <p class="text-muted small mb-0">
+                    Takes 3-5 minutes • Anonymous • Mobile-friendly
                 </p>
             </div>
         </div>

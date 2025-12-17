@@ -250,7 +250,7 @@
                     <div class="opportunity-card card border-0 shadow-sm h-100 p-4">
                         <div class="d-flex align-items-start">
                             <div class="opportunity-icon-circle me-3">
-                                <i class="fas fa-dollar-sign"></i>
+                                <i class="fas fa-naira-sign"></i>
                             </div>
                             <div>
                                 <h5 class="fw-bold mb-3">Investor Partnership</h5>
