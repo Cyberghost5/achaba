@@ -549,7 +549,8 @@ a:focus {
 
 /* Default: Show single card */
 .problem-default {
-    opacity: 1;
+    /* opacity: 1; */
+    display: none;
     transition: opacity 0.4s ease;
 }
 
@@ -561,11 +562,11 @@ a:focus {
 }
 
 /* On hover: Hide single card, show grid */
-.problem-section:hover .problem-default {
+/* .problem-section:hover .problem-default {
     opacity: 0;
     height: 0;
     overflow: hidden;
-}
+} */
 
 .problem-section:hover .problem-grid {
     opacity: 1;
