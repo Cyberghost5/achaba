@@ -178,7 +178,7 @@
             </div>
             
             <!-- Default single card -->
-            <div class="row justify-content-center problem-default">
+            <div class="row justify-content-center problem-default display-none">
                 <div class="col-lg-8">
                     <div class="problem-card-single p-5 text-center">
                         <div class="icon-wrapper mx-auto mb-4">
