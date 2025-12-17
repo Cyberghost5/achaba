@@ -287,7 +287,7 @@ session_start();
                                         
                                         <!-- SECTION 1: BACKGROUND (WARM-UP) -->
                                         <div class="mb-5">
-                                            <h5 class="text-primary mb-4 pb-2 border-bottom">Section 1: Background (Warm-up)</h5>
+                                            <h5 class="text-primary mb-4 pb-2 border-bottom">Section 1: Background</h5>
                                             
                                             <div class="mb-4">
                                                 <label for="q1" class="form-label fw-semibold">1. How long have you been riding motorcycles for work?</label>
@@ -397,7 +397,7 @@ session_start();
                                         
                                         <!-- SECTION 6: PLATFORM FIT (VERY IMPORTANT) -->
                                         <div class="mb-5">
-                                            <h5 class="text-primary mb-4 pb-2 border-bottom">Section 6: Platform Fit <span class="badge bg-warning text-dark ms-2">Very Important</span></h5>
+                                            <h5 class="text-primary mb-4 pb-2 border-bottom">Section 6: Platform Fit</h5>
                                             
                                             <div class="mb-4">
                                                 <label for="q18" class="form-label fw-semibold">18. If passengers could book you to come pick them from inside streets, how would you feel about that?</label>
