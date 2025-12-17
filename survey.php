@@ -284,125 +284,162 @@ session_start();
                                 <div id="surveyQuestions">
                                     <!-- Rider Questions -->
                                     <div class="rider-questions" style="display: none;">
-                                        <div class="mb-4">
-                                            <label for="q1" class="form-label fw-semibold">1. How long have you been riding motorcycles for work?</label>
-                                            <textarea class="form-control" id="q1" name="q1" rows="2" placeholder="Your answer..."></textarea>
+                                        
+                                        <!-- SECTION 1: BACKGROUND (WARM-UP) -->
+                                        <div class="mb-5">
+                                            <h5 class="text-primary mb-4 pb-2 border-bottom">Section 1: Background (Warm-up)</h5>
+                                            
+                                            <div class="mb-4">
+                                                <label for="q1" class="form-label fw-semibold">1. How long have you been riding motorcycles for work?</label>
+                                                <textarea class="form-control" id="q1" name="q1" rows="2" placeholder="Your answer..."></textarea>
+                                            </div>
+                                            
+                                            <div class="mb-4">
+                                                <label for="q2" class="form-label fw-semibold">2. Is this your main source of income? What else do you do?</label>
+                                                <textarea class="form-control" id="q2" name="q2" rows="2" placeholder="Your answer..."></textarea>
+                                            </div>
+                                            
+                                            <div class="mb-4">
+                                                <label for="q3" class="form-label fw-semibold">3. Which areas in Bauchi do you mostly operate in?</label>
+                                                <textarea class="form-control" id="q3" name="q3" rows="2" placeholder="Your answer..."></textarea>
+                                            </div>
                                         </div>
                                         
-                                        <div class="mb-4">
-                                            <label for="q2" class="form-label fw-semibold">2. Is this your main source of income? What else do you do?</label>
-                                            <textarea class="form-control" id="q2" name="q2" rows="2" placeholder="Your answer..."></textarea>
+                                        <!-- SECTION 2: DAILY WORK REALITY -->
+                                        <div class="mb-5">
+                                            <h5 class="text-primary mb-4 pb-2 border-bottom">Section 2: Daily Work Reality</h5>
+                                            
+                                            <div class="mb-4">
+                                                <label for="q4" class="form-label fw-semibold">4. Walk me through a typical workday, from when you start to when you stop.</label>
+                                                <textarea class="form-control" id="q4" name="q4" rows="3" placeholder="Your answer..."></textarea>
+                                            </div>
+                                            
+                                            <div class="mb-4">
+                                                <label for="q5" class="form-label fw-semibold">5. What time of day is usually best for you? Why?</label>
+                                                <textarea class="form-control" id="q5" name="q5" rows="2" placeholder="Your answer..."></textarea>
+                                            </div>
+                                            
+                                            <div class="mb-4">
+                                                <label for="q6" class="form-label fw-semibold">6. What usually makes a day go badly?</label>
+                                                <textarea class="form-control" id="q6" name="q6" rows="2" placeholder="Your answer..."></textarea>
+                                            </div>
+                                            
+                                            <div class="mb-4">
+                                                <label for="q7" class="form-label fw-semibold">7. On a good day, what makes you feel satisfied with your work?</label>
+                                                <textarea class="form-control" id="q7" name="q7" rows="2" placeholder="Your answer..."></textarea>
+                                            </div>
                                         </div>
                                         
-                                        <div class="mb-4">
-                                            <label for="q3" class="form-label fw-semibold">3. Which areas in Bauchi do you mostly operate in?</label>
-                                            <textarea class="form-control" id="q3" name="q3" rows="2" placeholder="Your answer..."></textarea>
+                                        <!-- SECTION 3: MONEY & STABILITY -->
+                                        <div class="mb-5">
+                                            <h5 class="text-primary mb-4 pb-2 border-bottom">Section 3: Money & Stability</h5>
+                                            
+                                            <div class="mb-4">
+                                                <label for="q8" class="form-label fw-semibold">8. What are your biggest daily or weekly expenses?</label>
+                                                <textarea class="form-control" id="q8" name="q8" rows="2" placeholder="Your answer..."></textarea>
+                                            </div>
+                                            
+                                            <div class="mb-4">
+                                                <label for="q9" class="form-label fw-semibold">9. Do your earnings change a lot from week to week?</label>
+                                                <textarea class="form-control" id="q9" name="q9" rows="2" placeholder="Your answer..."></textarea>
+                                            </div>
+                                            
+                                            <div class="mb-4">
+                                                <label for="q10" class="form-label fw-semibold">10. Are you usually able to save anything?</label>
+                                                <textarea class="form-control" id="q10" name="q10" rows="2" placeholder="Your answer..."></textarea>
+                                            </div>
                                         </div>
                                         
-                                        <div class="mb-4">
-                                            <label for="q4" class="form-label fw-semibold">4. Walk me through a typical workday, from when you start to when you stop.</label>
-                                            <textarea class="form-control" id="q4" name="q4" rows="3" placeholder="Your answer..."></textarea>
+                                        <!-- SECTION 4: SAFETY & DIGNITY -->
+                                        <div class="mb-5">
+                                            <h5 class="text-primary mb-4 pb-2 border-bottom">Section 4: Safety & Dignity</h5>
+                                            
+                                            <div class="mb-4">
+                                                <label for="q11" class="form-label fw-semibold">11. Have you ever felt unsafe or uncomfortable while working? What happened?</label>
+                                                <textarea class="form-control" id="q11" name="q11" rows="3" placeholder="Your answer..."></textarea>
+                                            </div>
+                                            
+                                            <div class="mb-4">
+                                                <label for="q12" class="form-label fw-semibold">12. Which types of passengers or trips are most difficult for you?</label>
+                                                <textarea class="form-control" id="q12" name="q12" rows="2" placeholder="Your answer..."></textarea>
+                                            </div>
+                                            
+                                            <div class="mb-4">
+                                                <label for="q13" class="form-label fw-semibold">13. What do you personally do to stay safe?</label>
+                                                <textarea class="form-control" id="q13" name="q13" rows="2" placeholder="Your answer..."></textarea>
+                                            </div>
+                                            
+                                            <div class="mb-4">
+                                                <label for="q14" class="form-label fw-semibold">14. Do you feel this work is respected in your community? Why or why not?</label>
+                                                <textarea class="form-control" id="q14" name="q14" rows="3" placeholder="Your answer..."></textarea>
+                                            </div>
                                         </div>
                                         
-                                        <div class="mb-4">
-                                            <label for="q5" class="form-label fw-semibold">5. What time of day is usually best for you? Why?</label>
-                                            <textarea class="form-control" id="q5" name="q5" rows="2" placeholder="Your answer..."></textarea>
+                                        <!-- SECTION 5: TECH & ACCESS -->
+                                        <div class="mb-5">
+                                            <h5 class="text-primary mb-4 pb-2 border-bottom">Section 5: Tech & Access</h5>
+                                            
+                                            <div class="mb-4">
+                                                <label for="q15" class="form-label fw-semibold">15. How do passengers usually find or contact you?</label>
+                                                <textarea class="form-control" id="q15" name="q15" rows="2" placeholder="Your answer..."></textarea>
+                                            </div>
+                                            
+                                            <div class="mb-4">
+                                                <label for="q16" class="form-label fw-semibold">16. How important is your phone to your work?</label>
+                                                <textarea class="form-control" id="q16" name="q16" rows="2" placeholder="Your answer..."></textarea>
+                                            </div>
+                                            
+                                            <div class="mb-4">
+                                                <label for="q17" class="form-label fw-semibold">17. Are there things your phone cannot do that limit your work?</label>
+                                                <textarea class="form-control" id="q17" name="q17" rows="2" placeholder="Your answer..."></textarea>
+                                            </div>
                                         </div>
                                         
-                                        <div class="mb-4">
-                                            <label for="q6" class="form-label fw-semibold">6. What usually makes a day go badly?</label>
-                                            <textarea class="form-control" id="q6" name="q6" rows="2" placeholder="Your answer..."></textarea>
+                                        <!-- SECTION 6: PLATFORM FIT (VERY IMPORTANT) -->
+                                        <div class="mb-5">
+                                            <h5 class="text-primary mb-4 pb-2 border-bottom">Section 6: Platform Fit <span class="badge bg-warning text-dark ms-2">Very Important</span></h5>
+                                            
+                                            <div class="mb-4">
+                                                <label for="q18" class="form-label fw-semibold">18. If passengers could book you to come pick them from inside streets, how would you feel about that?</label>
+                                                <textarea class="form-control" id="q18" name="q18" rows="3" placeholder="Your answer..."></textarea>
+                                            </div>
+                                            
+                                            <div class="mb-4">
+                                                <label for="q19" class="form-label fw-semibold">19. How would you feel about pickup-only errands where the customer has already paid the vendor?</label>
+                                                <textarea class="form-control" id="q19" name="q19" rows="3" placeholder="Your answer..."></textarea>
+                                            </div>
+                                            
+                                            <div class="mb-4">
+                                                <label for="q20" class="form-label fw-semibold">20. What would make you trust or distrust such a system?</label>
+                                                <textarea class="form-control" id="q20" name="q20" rows="3" placeholder="Your answer..."></textarea>
+                                            </div>
                                         </div>
                                         
-                                        <div class="mb-4">
-                                            <label for="q7" class="form-label fw-semibold">7. On a good day, what makes you feel satisfied with your work?</label>
-                                            <textarea class="form-control" id="q7" name="q7" rows="2" placeholder="Your answer..."></textarea>
+                                        <!-- SECTION 7: FUTURE & SUPPORT -->
+                                        <div class="mb-5">
+                                            <h5 class="text-primary mb-4 pb-2 border-bottom">Section 7: Future & Support</h5>
+                                            
+                                            <div class="mb-4">
+                                                <label for="q21" class="form-label fw-semibold">21. Are you part of any rider group or association? How does it help?</label>
+                                                <textarea class="form-control" id="q21" name="q21" rows="2" placeholder="Your answer..."></textarea>
+                                            </div>
+                                            
+                                            <div class="mb-4">
+                                                <label for="q22" class="form-label fw-semibold">22. What would make this work more secure or dignified for you?</label>
+                                                <textarea class="form-control" id="q22" name="q22" rows="3" placeholder="Your answer..."></textarea>
+                                            </div>
+                                            
+                                            <div class="mb-4">
+                                                <label for="q23" class="form-label fw-semibold">23. If a company wanted to genuinely support riders in Bauchi, where should they start?</label>
+                                                <textarea class="form-control" id="q23" name="q23" rows="3" placeholder="Your answer..."></textarea>
+                                            </div>
+                                            
+                                            <div class="mb-4">
+                                                <label for="q24" class="form-label fw-semibold">24. Is there anything important about your work we haven't talked about?</label>
+                                                <textarea class="form-control" id="q24" name="q24" rows="3" placeholder="Your answer..."></textarea>
+                                            </div>
                                         </div>
                                         
-                                        <div class="mb-4">
-                                            <label for="q8" class="form-label fw-semibold">8. What are your biggest daily or weekly expenses?</label>
-                                            <textarea class="form-control" id="q8" name="q8" rows="2" placeholder="Your answer..."></textarea>
-                                        </div>
-                                        
-                                        <div class="mb-4">
-                                            <label for="q9" class="form-label fw-semibold">9. Do your earnings change a lot from week to week?</label>
-                                            <textarea class="form-control" id="q9" name="q9" rows="2" placeholder="Your answer..."></textarea>
-                                        </div>
-                                        
-                                        <div class="mb-4">
-                                            <label for="q10" class="form-label fw-semibold">10. Are you usually able to save anything?</label>
-                                            <textarea class="form-control" id="q10" name="q10" rows="2" placeholder="Your answer..."></textarea>
-                                        </div>
-                                        
-                                        <div class="mb-4">
-                                            <label for="q11" class="form-label fw-semibold">11. Have you ever felt unsafe or uncomfortable while working? What happened?</label>
-                                            <textarea class="form-control" id="q11" name="q11" rows="3" placeholder="Your answer..."></textarea>
-                                        </div>
-                                        
-                                        <div class="mb-4">
-                                            <label for="q12" class="form-label fw-semibold">12. Which types of passengers or trips are most difficult for you?</label>
-                                            <textarea class="form-control" id="q12" name="q12" rows="2" placeholder="Your answer..."></textarea>
-                                        </div>
-                                        
-                                        <div class="mb-4">
-                                            <label for="q13" class="form-label fw-semibold">13. What do you personally do to stay safe?</label>
-                                            <textarea class="form-control" id="q13" name="q13" rows="2" placeholder="Your answer..."></textarea>
-                                        </div>
-                                        
-                                        <div class="mb-4">
-                                            <label for="q14" class="form-label fw-semibold">14. Do you feel this work is respected in your community? Why or why not?</label>
-                                            <textarea class="form-control" id="q14" name="q14" rows="3" placeholder="Your answer..."></textarea>
-                                        </div>
-                                        
-                                        <div class="mb-4">
-                                            <label for="q15" class="form-label fw-semibold">15. How do passengers usually find or contact you?</label>
-                                            <textarea class="form-control" id="q15" name="q15" rows="2" placeholder="Your answer..."></textarea>
-                                        </div>
-                                        
-                                        <div class="mb-4">
-                                            <label for="q16" class="form-label fw-semibold">16. How important is your phone to your work?</label>
-                                            <textarea class="form-control" id="q16" name="q16" rows="2" placeholder="Your answer..."></textarea>
-                                        </div>
-                                        
-                                        <div class="mb-4">
-                                            <label for="q17" class="form-label fw-semibold">17. Are there things your phone cannot do that limit your work?</label>
-                                            <textarea class="form-control" id="q17" name="q17" rows="2" placeholder="Your answer..."></textarea>
-                                        </div>
-                                        
-                                        <div class="mb-4">
-                                            <label for="q18" class="form-label fw-semibold">18. If passengers could book you to come pick them from inside streets, how would you feel about that?</label>
-                                            <textarea class="form-control" id="q18" name="q18" rows="3" placeholder="Your answer..."></textarea>
-                                        </div>
-                                        
-                                        <div class="mb-4">
-                                            <label for="q19" class="form-label fw-semibold">19. How would you feel about pickup-only errands where the customer has already paid the vendor?</label>
-                                            <textarea class="form-control" id="q19" name="q19" rows="3" placeholder="Your answer..."></textarea>
-                                        </div>
-                                        
-                                        <div class="mb-4">
-                                            <label for="q20" class="form-label fw-semibold">20. What would make you trust or distrust such a system?</label>
-                                            <textarea class="form-control" id="q20" name="q20" rows="3" placeholder="Your answer..."></textarea>
-                                        </div>
-                                        
-                                        <div class="mb-4">
-                                            <label for="q21" class="form-label fw-semibold">21. Are you part of any rider group or association? How does it help?</label>
-                                            <textarea class="form-control" id="q21" name="q21" rows="2" placeholder="Your answer..."></textarea>
-                                        </div>
-                                        
-                                        <div class="mb-4">
-                                            <label for="q22" class="form-label fw-semibold">22. What would make this work more secure or dignified for you?</label>
-                                            <textarea class="form-control" id="q22" name="q22" rows="3" placeholder="Your answer..."></textarea>
-                                        </div>
-                                        
-                                        <div class="mb-4">
-                                            <label for="q23" class="form-label fw-semibold">23. If a company wanted to genuinely support riders in Bauchi, where should they start?</label>
-                                            <textarea class="form-control" id="q23" name="q23" rows="3" placeholder="Your answer..."></textarea>
-                                        </div>
-                                        
-                                        <div class="mb-4">
-                                            <label for="q24" class="form-label fw-semibold">24. Is there anything important about your work we haven't talked about?</label>
-                                            <textarea class="form-control" id="q24" name="q24" rows="3" placeholder="Your answer..."></textarea>
-                                        </div>
                                     </div>
                                     
                                     <!-- User Questions -->
