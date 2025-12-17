@@ -142,7 +142,7 @@
                 <div class="col-lg-6 order-2 order-lg-1">
                     <h1 class="display-3 fw-bold mb-4">Anything to pick.<br>Anywhere to go.</h1>
                     <p class="text-muted mb-4" style="font-size: 1.1rem; line-height: 1.7;">
-                        Built for Bauchi streets where the road does not always reach you. Book a verified motorcycle rider to pick you up from your doorstep or handle trusted pickups when movement becomes stress.
+                        A proposed solution built for cities like Bauchi, where the road does not always reach you. Book a verified motorcycle rider to pick you up from your doorstep.
                     </p>
                     <div class="d-flex gap-3 flex-wrap">
                         <a href="partner" class="btn btn-primary btn-lg px-4">Partner with us</a>
@@ -171,10 +171,13 @@
     <section class="problem-section py-5">
         <div class="container">
             <div class="text-center mb-5">
-                <h2 class="mb-3">The Problem in Bauchi and many Nigerian states</h2>
+                <h2 class="mb-3">The Problem we are trying to solve</h2>
                 <p class="text-dark">
-                    In cities like <span class="text-primary fw-semibold">Bauchi</span>, the <span class="text-primary fw-semibold">inner streets</span> are where life happens. But they're also where <span class="text-primary fw-semibold">movement breaks down</span>.
+                    in <span class="text-primary fw-semibold">Bauchi</span> and many Nigerian cities.
                 </p>
+                <!-- <p class="text-dark">
+                    In cities like <span class="text-primary fw-semibold">Bauchi</span>, the <span class="text-primary fw-semibold">inner streets</span> are where life happens. But they're also where <span class="text-primary fw-semibold">movement breaks down</span>.
+                </p> -->
             </div>
             
             <!-- Default single card -->
@@ -246,7 +249,7 @@
     <section class="stories-section py-5 bg-light">
         <div class="container">
             <div class="text-center mb-5">
-                <h2 class="mb-3">Real Stories from Bauchi</h2>
+                <h2 class="mb-3">Real Stories from Bauchi that inspired our approach</h2>
                 <p class="text-muted">These are not hypothetical problems. These are real experiences from real people.</p>
             </div>
             <div class="row g-4">
@@ -265,8 +268,8 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="story-card card border-0 shadow-sm h-100">
                         <div class="card-body text-center p-4">
-                            <img src="assets/images/testimonials/2.png" alt="Fatih" class="rounded-circle mb-3" style="width: 80px; height: 80px; object-fit: cover;">
-                            <h6 class="fw-bold mb-1">Fatih</h6>
+                            <img src="assets/images/testimonials/2.png" alt="Paul" class="rounded-circle mb-3" style="width: 80px; height: 80px; object-fit: cover;">
+                            <h6 class="fw-bold mb-1">Paul</h6>
                             <small class="text-muted d-block mb-3">Student</small>
                             <p class="small text-muted fst-italic mb-0">
                                 "I missed an exam once because I had to trek 20 minutes to the main road, then wait another 30 minutes for a bike."
@@ -277,8 +280,8 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="story-card card border-0 shadow-sm h-100">
                         <div class="card-body text-center p-4">
-                            <img src="assets/images/testimonials/3.png" alt="Abdul-Malik" class="rounded-circle mb-3" style="width: 80px; height: 80px; object-fit: cover;">
-                            <h6 class="fw-bold mb-1">Abdul-Malik</h6>
+                            <img src="assets/images/testimonials/3.png" alt="Abdulmalik" class="rounded-circle mb-3" style="width: 80px; height: 80px; object-fit: cover;">
+                            <h6 class="fw-bold mb-1">Abdulmalik</h6>
                             <small class="text-muted d-block mb-3">Office Worker</small>
                             <p class="small text-muted fst-italic mb-0">
                                 "Every morning I arrive sweaty. By the time I reach the main road, half my energy is gone. I need a better way."
@@ -307,7 +310,7 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-5 mb-4 mb-lg-0">
-                    <h2 class="mb-4">Achaba organizes<br>what already works</h2>
+                    <h2 class="mb-4">With Achaba, we intend to organizes what already works</h2>
                     <p class="text-muted mb-3">
                         We are not reinventing the wheel. Motorcycle transport already powers Bauchi. 
                         Riders already know the streets.
@@ -367,19 +370,19 @@
                         </p>
                     </div>
                     <div class="card border-0 shadow-sm p-5 mb-5">
-                        <span class="badge bg-secondary px-3 py-2 mb-4" style="width: fit-content;">Coming Next</span>
+                        <span class="badge bg-secondary px-3 py-2 mb-4" style="width: fit-content;">What Achaba can be</span>
                         <h5 class="fw-bold mb-3">Trusted Pickups & Errands</h5>
                         <p class="text-muted mb-0">
-                            Soon, you'll be able to send riders to pick up pre-ordered items from verified vendors, 
+                            Send a rider to pick up preordered items from verified vendors, 
                             deliver documents, or handle small errands across the city. No cash to riders. No surprise 
                             costs. Just reliable service for when you can't move but something needs to.
                         </p>
                     </div>
-                    <div class="text-center">
+                    <!-- <div class="text-center">
                         <p class="text-muted fst-italic mb-0" style="font-size: 0.95rem;">
                             We're starting with rides because that's where the pain is most urgent. Everything else builds on trust.
                         </p>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -445,9 +448,9 @@
     <section class="book-ride-section py-5" id="how-it-works">
         <div class="container">
             <div class="text-center mb-5">
-                <span class="badge bg-primary px-4 py-2 mb-3">Core Feature</span>
+                <span class="badge bg-primary px-4 py-2 mb-3">Our Proposed Core Feature</span>
                 <h2 class="mb-3">Book a Ride</h2>
-                <p class="text-muted">This is what Achaba does best. Getting you from where you are to where you need to be, without the stress.</p>
+                <p class="text-muted">This is what Achaba will do best. Getting you from where you are to where you need to be, without the stress.</p>
             </div>
             <div class="row g-4">
                 <div class="col-lg-3 col-md-6 mb-4">
