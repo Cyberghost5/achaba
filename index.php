@@ -386,7 +386,7 @@
     </section>
 
     <!-- How ACHABA Organizes Section -->
-    <section class="organize-section py-5">
+    <!-- <section class="organize-section py-5">
         <div class="container">
             <div class="text-center mb-5">
                 <h2 class="mb-3">ACHABA Organizes What Already Works</h2>
@@ -439,7 +439,7 @@
                 </p>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- Book a Ride Section -->
     <section class="book-ride-section py-5" id="how-it-works">

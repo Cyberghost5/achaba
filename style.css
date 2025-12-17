@@ -555,9 +555,10 @@ a:focus {
 }
 
 .problem-grid {
-    opacity: 0;
-    height: 0;
-    overflow: hidden;
+    /* opacity: 0; */
+    opacity: 1;
+    /* height: 0; */
+    /* overflow: hidden; */
     transition: opacity 0.4s ease;
 }
 
