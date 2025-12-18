@@ -74,6 +74,21 @@ function getDBConnection() {
         
         $conn->exec($sql);
         
+        // PRD requests table
+        $sql = "CREATE TABLE IF NOT EXISTS prd_requests (
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            email VARCHAR(255) NOT NULL UNIQUE,
+            request_date DATETIME NOT NULL,
+            prd_sent TINYINT(1) DEFAULT 0,
+            prd_sent_date DATETIME NULL,
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+            INDEX idx_email (email),
+            INDEX idx_request_date (request_date),
+            INDEX idx_prd_sent (prd_sent)
+        ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci";
+        
+        $conn->exec($sql);
+        
         return $conn;
     } catch(PDOException $e) {
         error_log("Database Connection Error: " . $e->getMessage());

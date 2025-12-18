@@ -845,11 +845,11 @@ a:focus {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
     .book-ride-number{
         left: 45%;
     }
-}
+} */
 
 .book-ride-icon-box {
     width: 56px;
@@ -902,11 +902,11 @@ a:focus {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
     .errands-number {
         left: 45%;
     }
-}
+} */
 
 .errands-icon-box {
     width: 56px;

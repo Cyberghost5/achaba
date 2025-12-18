@@ -1,96 +1,131 @@
+SECTION 1
 
-	1.	Full name
-	2.	Phone number (example: +234…)
-	3.	Email address
-	4.	Can we contact you for follow-up or pilot testing?
-• Yes
-• No
+1. How often do you use motorcycle transport?
+Daily
+A few times a week
+Occasionally
+Rarely
 
-5. Where do you live? (Open text)
-6. Which best describes you?
-• Student
-• Worker / Office staff
-• Vendor / Business owner
-• Artisan / Freelancer
-• Other
-7. How often do you move from your area to another location daily?
-• Daily
-• A few times a week
-• Occasionally
-• Rarely
+2. What is your primary reason for using motorcycle transport?
+Speed / avoiding traffic
+Accessibility
+Cost
+Convenience
+Lack of alternatives
+Other
 
-8. How do you usually get transport from your area?
-• Trek to main road
-• Motorcycle (Achaba / Okada)
-• Car
-• Tricycle
-• Combination
-9. What is the biggest challenge with movement in your area? (Open text, type answer)
-10. Have you ever been late to school, work, or an important appointment due to transport?
-• Yes
-• No
+SECTION 2 :Usage Behaviour
 
-11. How often do you use motorcycles for transport?
-• Very often
-• Often
-• Sometimes
-• Rarely
-12. How do you usually find a rider?
-• On the road
-• By calling someone
-• Through referrals
-• I struggle to find one
-13. What concerns you most when using motorcycles?
-• Safety
-• Pricing
-• Trust
-• Availability
-• None
+3. When do you most often use motorcycle transport?
+Morning
+Afternoon
+Evening
+Late night
 
-14. Have you ever needed someone to pick up items for you?
-• Yes
-• No
-15. What type of items do you usually need picked up?
-• Food items
-• Market goods
-• Cakes or fragile items
-• Documents
-• Other
-16. What makes pickups difficult today?
-• Trust
-• Damage risk
-• Poor directions
-• Cost
-• I prefer to go myself
+4. Where do you usually get motorcycle rides?
+Roadside / junction
+Motorcycle park
+Near home or workplace
+Through a personal contact
 
-17. How useful would doorstep motorcycle pickup be for you?
-• Very useful
-• Useful
-• Not sure
-• Not useful
-18. Would you use a service that lets you book a rider for errands or pickups?
-• Yes
-• Maybe
-• No
-19. What would make you trust Achaba? (Select all that apply)
-• Verified riders
-• Clear pricing
-• No cash handling
-• Support access
-• Recommendations
+5. Do you usually ride with the same rider or different riders?
+Mostly the same
+Different riders
+No preference
 
-20. What phone do you use most?
-• Android smartphone
-• iPhone
-• Feature phone
-21. How would you prefer to book a ride?
-• Phone call
-• App
-• WhatsApp
-• SMS / USSD
+SECTION 3: Booking & Communication Patterns
 
-22. If Achaba launched today, would you try it?
-• Yes
-• Maybe
-• No
-23. What is one thing Achaba must get right to work in Bauchi? (Open text)
+6. How do you usually find or contact a rider?
+Walk to rider location
+Call a rider directly
+Rider contacts me
+Through a third party
+
+7. Have you ever struggled to find a rider when needed?
+Yes, often
+Yes, sometimes
+Rarely
+Never
+
+8. What usually causes this difficulty?
+Time of day
+Location
+Weather
+Rider availability
+Other
+
+SECTION 4:  Pricing & Payment Experience
+
+9. How do you usually agree on the fare?
+Negotiation
+Rider decides
+Known/fixed price
+
+10. Have you experienced pricing disagreements?
+Frequently
+Occasionally
+Rarely
+Never
+
+11. How do you usually pay?
+Cash
+Bank transfer
+Mobile money
+
+SECTION 5:  Safety & Trust Perception (Commuters)
+
+12. How safe do you generally feel using motorcycle transport?
+Very safe
+Somewhat safe
+Neutral
+Somewhat unsafe
+Very unsafe
+
+13. What safety concerns have you experienced or worried about?
+Reckless riding
+Poor roads
+No helmet
+Theft or harassment
+Rider unfamiliarity
+None
+
+14. If something goes wrong during a ride, how confident are you that help would be available?
+Very confident
+Somewhat confident
+Not confident
+
+SECTION 6: Reliability & Experience Quality
+
+15. How reliable are motorcycle rides when you need them?
+Very reliable
+Somewhat reliable
+Unreliable
+
+16. Which of the following have you experienced?
+Delays
+Route changes
+Poor rider behaviour
+Trip cancellation
+None
+
+SECTION 7: Reflection & Expectations
+
+17. What frustrates you most about using motorcycle transport? (Open-ended)
+18. What would significantly improve your experience? (Open-ended)
+19. If an alternative were safer and equally fast, would you consider switching?
+Yes
+Maybe
+No
+
+SECTION 8: Demographics (Optional)
+
+20. Age range:
+Under 18
+18–25
+26–35
+36–45
+46+
+
+21. Type of phone used:
+Feature phone
+Smartphone

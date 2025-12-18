@@ -544,14 +544,39 @@ session_start();
                         <p>
                             This is how ACHABA is <em>proposed</em> to work. It's not a promise of perfection, it's a framework designed to evolve with trust, feedback, and operational learning. If it works, it will be because it listens.
                         </p>
-                        <a href="./#waitlist" class="btn btn-light btn-lg px-5">Join the Waitlist</a>
-                        <a href="./#waitlist" class="btn btn-light btn-lg px-5">Request for PRD</a>
+                        <a href="./#waitlist" class="btn btn-light btn-lg px-5 me-3">Join the Waitlist</a>
+                        <button type="button" class="btn btn-outline-light btn-lg px-5" data-bs-toggle="modal" data-bs-target="#prdRequestModal">Request for PRD</button>
                     </div>
 
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- PRD Request Modal -->
+    <div class="modal fade" id="prdRequestModal" tabindex="-1" aria-labelledby="prdRequestModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title fw-bold" id="prdRequestModalLabel">Request Product Requirements Document</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <p class="text-muted mb-4">Enter your email address and we'll send you the full Product Requirements Document (PRD) for Achaba.</p>
+                    <form id="prdRequestForm">
+                        <div class="mb-3">
+                            <label for="prdEmail" class="form-label fw-semibold">Email Address <span class="text-danger">*</span></label>
+                            <input type="email" class="form-control form-control-lg" id="prdEmail" name="email" placeholder="yourname@example.com" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg w-100" id="prdSubmitBtn">
+                            <i class="fas fa-paper-plane me-2"></i>Request PRD
+                        </button>
+                    </form>
+                    <div id="prdResponseMessage" class="mt-3 alert" role="alert" style="display: none;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="footer bg-dark text-white py-5" id="contact">
@@ -637,6 +662,60 @@ session_start();
                 top: 0,
                 behavior: 'smooth'
             });
+        });
+        
+        // PRD Request Form Handler
+        document.getElementById('prdRequestForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('prdEmail').value;
+            const submitBtn = document.getElementById('prdSubmitBtn');
+            const responseMessage = document.getElementById('prdResponseMessage');
+            
+            // Disable button and show loading state
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Sending...';
+            responseMessage.style.display = 'none';
+            
+            // Create FormData object
+            const formData = new FormData();
+            formData.append('email', email);
+            
+            try {
+                const response = await fetch('submit_prd_request.php', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                const data = await response.json();
+                
+                // Show response message
+                responseMessage.style.display = 'block';
+                responseMessage.textContent = data.message;
+                
+                if (data.success) {
+                    responseMessage.className = 'mt-3 alert alert-success';
+                    document.getElementById('prdRequestForm').reset();
+                    
+                    // Close modal after 2 seconds
+                    setTimeout(() => {
+                        const modal = bootstrap.Modal.getInstance(document.getElementById('prdRequestModal'));
+                        modal.hide();
+                        responseMessage.style.display = 'none';
+                    }, 2000);
+                } else {
+                    responseMessage.className = 'mt-3 alert alert-danger';
+                }
+                
+            } catch (error) {
+                responseMessage.style.display = 'block';
+                responseMessage.className = 'mt-3 alert alert-danger';
+                responseMessage.textContent = 'Connection error. Please check your internet and try again.';
+            } finally {
+                // Re-enable button
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<i class="fas fa-paper-plane me-2"></i>Request PRD';
+            }
         });
     </script>
 </body>
