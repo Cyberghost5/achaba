@@ -597,7 +597,7 @@ session_start();
                         <p>
                             This is how ACHABA is <em>proposed</em> to work. It's not a promise of perfection, it's a framework designed to evolve with trust, feedback, and operational learning. If it works, it will be because it listens.
                         </p>
-                        <a href="./#waitlist" class="btn btn-light btn-lg px-5 me-3">Join the Waitlist</a>
+                        <a href="./#waitlist" class="btn btn-light btn-lg px-5 me-3">Join the Waitlist</a> <br>
                         <button type="button" class="btn btn-outline-light btn-lg px-5" data-bs-toggle="modal" data-bs-target="#prdRequestModal">Request for PRD</button>
                     </div>
 
