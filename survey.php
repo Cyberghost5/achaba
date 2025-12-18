@@ -598,338 +598,323 @@ session_start();
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        
-                                        <div class="mb-4">
-                                            <label class="form-label fw-semibold">7. How often do you move from your area to another location daily? <span class="text-danger">*</span></label>
-                                            <div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="movement_frequency" id="freq_daily" value="Daily" required>
-                                                    <label class="form-check-label" for="freq_daily">Daily</label>
+                                            
+                                            <div class="mb-4">
+                                                <label class="form-label fw-semibold">7. Have you ever struggled to find a rider when needed? <span class="text-danger">*</span></label>
+                                                <div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="struggled_rider" id="struggle_often" value="Yes, often" required>
+                                                        <label class="form-check-label" for="struggle_often">Yes, often</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="struggled_rider" id="struggle_sometimes" value="Yes, sometimes">
+                                                        <label class="form-check-label" for="struggle_sometimes">Yes, sometimes</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="struggled_rider" id="struggle_rarely" value="Rarely">
+                                                        <label class="form-check-label" for="struggle_rarely">Rarely</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="struggled_rider" id="struggle_never" value="Never">
+                                                        <label class="form-check-label" for="struggle_never">Never</label>
+                                                    </div>
                                                 </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="movement_frequency" id="freq_few_times" value="A few times a week">
-                                                    <label class="form-check-label" for="freq_few_times">A few times a week</label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="movement_frequency" id="freq_occasionally" value="Occasionally">
-                                                    <label class="form-check-label" for="freq_occasionally">Occasionally</label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="movement_frequency" id="freq_rarely" value="Rarely">
-                                                    <label class="form-check-label" for="freq_rarely">Rarely</label>
+                                            </div>
+                                            
+                                            <div class="mb-4">
+                                                <label class="form-label fw-semibold">8. What usually causes this difficulty? <span class="text-danger">*</span></label>
+                                                <div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="difficulty_cause" id="cause_time" value="Time of day" required>
+                                                        <label class="form-check-label" for="cause_time">Time of day</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="difficulty_cause" id="cause_location" value="Location">
+                                                        <label class="form-check-label" for="cause_location">Location</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="difficulty_cause" id="cause_weather" value="Weather">
+                                                        <label class="form-check-label" for="cause_weather">Weather</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="difficulty_cause" id="cause_availability" value="Rider availability">
+                                                        <label class="form-check-label" for="cause_availability">Rider availability</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="difficulty_cause" id="cause_other" value="Other">
+                                                        <label class="form-check-label" for="cause_other">Other</label>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                         
-                                        <div class="mb-4">
-                                            <label class="form-label fw-semibold">8. How do you usually get transport from your area? <span class="text-danger">*</span></label>
-                                            <div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="transport_method" id="trans_trek" value="Trek to main road" required>
-                                                    <label class="form-check-label" for="trans_trek">Trek to main road</label>
+                                        <!-- SECTION 4: PRICING & PAYMENT EXPERIENCE -->
+                                        <div class="mb-5">
+                                            <h5 class="text-primary mb-4 pb-2 border-bottom">Section 4: Pricing & Payment Experience</h5>
+                                            
+                                            <div class="mb-4">
+                                                <label class="form-label fw-semibold">9. Do you usually agree on fare before the trip? <span class="text-danger">*</span></label>
+                                                <div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="fare_agreement" id="fare_always" value="Always" required>
+                                                        <label class="form-check-label" for="fare_always">Always</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="fare_agreement" id="fare_sometimes" value="Sometimes">
+                                                        <label class="form-check-label" for="fare_sometimes">Sometimes</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="fare_agreement" id="fare_rarely" value="Rarely">
+                                                        <label class="form-check-label" for="fare_rarely">Rarely</label>
+                                                    </div>
                                                 </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="transport_method" id="trans_motorcycle" value="Motorcycle (Achaba / Okada)">
-                                                    <label class="form-check-label" for="trans_motorcycle">Motorcycle (Achaba / Okada)</label>
+                                            </div>
+                                            
+                                            <div class="mb-4">
+                                                <label class="form-label fw-semibold">10. Have you experienced disagreements over pricing? <span class="text-danger">*</span></label>
+                                                <div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="pricing_disagreements" id="disagree_yes_often" value="Yes, often" required>
+                                                        <label class="form-check-label" for="disagree_yes_often">Yes, often</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="pricing_disagreements" id="disagree_yes_sometimes" value="Yes, sometimes">
+                                                        <label class="form-check-label" for="disagree_yes_sometimes">Yes, sometimes</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="pricing_disagreements" id="disagree_rarely" value="Rarely">
+                                                        <label class="form-check-label" for="disagree_rarely">Rarely</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="pricing_disagreements" id="disagree_never" value="Never">
+                                                        <label class="form-check-label" for="disagree_never">Never</label>
+                                                    </div>
                                                 </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="transport_method" id="trans_car" value="Car">
-                                                    <label class="form-check-label" for="trans_car">Car</label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="transport_method" id="trans_tricycle" value="Tricycle">
-                                                    <label class="form-check-label" for="trans_tricycle">Tricycle</label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="transport_method" id="trans_combination" value="Combination">
-                                                    <label class="form-check-label" for="trans_combination">Combination</label>
+                                            </div>
+                                            
+                                            <div class="mb-4">
+                                                <label class="form-label fw-semibold">11. What payment method do you usually use? <span class="text-danger">*</span></label>
+                                                <div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="payment_method" id="payment_cash" value="Cash only" required>
+                                                        <label class="form-check-label" for="payment_cash">Cash only</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="payment_method" id="payment_transfer" value="Mobile transfer">
+                                                        <label class="form-check-label" for="payment_transfer">Mobile transfer</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="payment_method" id="payment_both" value="Both">
+                                                        <label class="form-check-label" for="payment_both">Both</label>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                         
-                                        <div class="mb-4">
-                                            <label for="movement_challenge" class="form-label fw-semibold">9. What is the biggest challenge with movement in your area? <span class="text-danger">*</span></label>
-                                            <textarea class="form-control" id="movement_challenge" name="movement_challenge" rows="3" placeholder="Tell us about your biggest challenge..." required></textarea>
-                                        </div>
-                                        
-                                        <div class="mb-4">
-                                            <label class="form-label fw-semibold">10. Have you ever been late to school, work, or an important appointment due to transport? <span class="text-danger">*</span></label>
-                                            <div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="ever_late" id="late_yes" value="Yes" required>
-                                                    <label class="form-check-label" for="late_yes">Yes</label>
+                                        <!-- SECTION 5: SAFETY & TRUST PERCEPTION -->
+                                        <div class="mb-5">
+                                            <h5 class="text-primary mb-4 pb-2 border-bottom">Section 5: Safety & Trust Perception</h5>
+                                            
+                                            <div class="mb-4">
+                                                <label class="form-label fw-semibold">12. How do you generally feel about your safety using motorcycles? <span class="text-danger">*</span></label>
+                                                <div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="safety_feeling" id="safety_very_safe" value="Very safe" required>
+                                                        <label class="form-check-label" for="safety_very_safe">Very safe</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="safety_feeling" id="safety_somewhat_safe" value="Somewhat safe">
+                                                        <label class="form-check-label" for="safety_somewhat_safe">Somewhat safe</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="safety_feeling" id="safety_neutral" value="Neutral">
+                                                        <label class="form-check-label" for="safety_neutral">Neutral</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="safety_feeling" id="safety_somewhat_unsafe" value="Somewhat unsafe">
+                                                        <label class="form-check-label" for="safety_somewhat_unsafe">Somewhat unsafe</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="safety_feeling" id="safety_very_unsafe" value="Very unsafe">
+                                                        <label class="form-check-label" for="safety_very_unsafe">Very unsafe</label>
+                                                    </div>
                                                 </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="ever_late" id="late_no" value="No">
-                                                    <label class="form-check-label" for="late_no">No</label>
+                                            </div>
+                                            
+                                            <div class="mb-4">
+                                                <label class="form-label fw-semibold">13. What safety concerns do you have? <span class="text-danger">*</span></label>
+                                                <div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="safety_concerns" id="concern_reckless" value="Reckless driving" required>
+                                                        <label class="form-check-label" for="concern_reckless">Reckless driving</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="safety_concerns" id="concern_accidents" value="Accidents">
+                                                        <label class="form-check-label" for="concern_accidents">Accidents</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="safety_concerns" id="concern_theft" value="Theft / robbery">
+                                                        <label class="form-check-label" for="concern_theft">Theft / robbery</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="safety_concerns" id="concern_stranger" value="Riding with strangers">
+                                                        <label class="form-check-label" for="concern_stranger">Riding with strangers</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="safety_concerns" id="concern_harassment" value="Harassment">
+                                                        <label class="form-check-label" for="concern_harassment">Harassment</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="safety_concerns" id="concern_none_safety" value="None">
+                                                        <label class="form-check-label" for="concern_none_safety">None</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="mb-4">
+                                                <label class="form-label fw-semibold">14. If something goes wrong, how confident are you in getting help? <span class="text-danger">*</span></label>
+                                                <div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="help_confidence" id="help_confident" value="Confident" required>
+                                                        <label class="form-check-label" for="help_confident">Confident</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="help_confidence" id="help_unsure" value="Unsure">
+                                                        <label class="form-check-label" for="help_unsure">Unsure</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="help_confidence" id="help_not_confident" value="Not confident">
+                                                        <label class="form-check-label" for="help_not_confident">Not confident</label>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                         
-                                        <div class="mb-4">
-                                            <label class="form-label fw-semibold">11. How often do you use motorcycles for transport? <span class="text-danger">*</span></label>
-                                            <div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="motorcycle_frequency" id="moto_very_often" value="Very often" required>
-                                                    <label class="form-check-label" for="moto_very_often">Very often</label>
+                                        <!-- SECTION 6: RELIABILITY & EXPERIENCE QUALITY -->
+                                        <div class="mb-5">
+                                            <h5 class="text-primary mb-4 pb-2 border-bottom">Section 6: Reliability & Experience Quality</h5>
+                                            
+                                            <div class="mb-4">
+                                                <label class="form-label fw-semibold">15. How would you rate the reliability of motorcycle transport? <span class="text-danger">*</span></label>
+                                                <div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="reliability" id="reliability_very" value="Very reliable" required>
+                                                        <label class="form-check-label" for="reliability_very">Very reliable</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="reliability" id="reliability_somewhat" value="Somewhat reliable">
+                                                        <label class="form-check-label" for="reliability_somewhat">Somewhat reliable</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="reliability" id="reliability_unreliable" value="Unreliable">
+                                                        <label class="form-check-label" for="reliability_unreliable">Unreliable</label>
+                                                    </div>
                                                 </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="motorcycle_frequency" id="moto_often" value="Often">
-                                                    <label class="form-check-label" for="moto_often">Often</label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="motorcycle_frequency" id="moto_sometimes" value="Sometimes">
-                                                    <label class="form-check-label" for="moto_sometimes">Sometimes</label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="motorcycle_frequency" id="moto_rarely" value="Rarely">
-                                                    <label class="form-check-label" for="moto_rarely">Rarely</label>
+                                            </div>
+                                            
+                                            <div class="mb-4">
+                                                <label class="form-label fw-semibold">16. Have you had any memorable experiences (good or bad)? <span class="text-danger">*</span></label>
+                                                <div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="experiences" id="exp_mostly_good" value="Mostly good" required>
+                                                        <label class="form-check-label" for="exp_mostly_good">Mostly good</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="experiences" id="exp_mostly_bad" value="Mostly bad">
+                                                        <label class="form-check-label" for="exp_mostly_bad">Mostly bad</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="experiences" id="exp_mixed" value="Mixed">
+                                                        <label class="form-check-label" for="exp_mixed">Mixed</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="experiences" id="exp_neutral" value="Neutral">
+                                                        <label class="form-check-label" for="exp_neutral">Neutral</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="experiences" id="exp_none" value="None">
+                                                        <label class="form-check-label" for="exp_none">None</label>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                         
-                                        <div class="mb-4">
-                                            <label class="form-label fw-semibold">12. How do you usually find a rider? <span class="text-danger">*</span></label>
-                                            <div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="find_rider" id="find_road" value="On the road" required>
-                                                    <label class="form-check-label" for="find_road">On the road</label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="find_rider" id="find_call" value="By calling someone">
-                                                    <label class="form-check-label" for="find_call">By calling someone</label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="find_rider" id="find_referral" value="Through referrals">
-                                                    <label class="form-check-label" for="find_referral">Through referrals</label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="find_rider" id="find_struggle" value="I struggle to find one">
-                                                    <label class="form-check-label" for="find_struggle">I struggle to find one</label>
+                                        <!-- SECTION 7: REFLECTION & EXPECTATIONS -->
+                                        <div class="mb-5">
+                                            <h5 class="text-primary mb-4 pb-2 border-bottom">Section 7: Reflection & Expectations</h5>
+                                            
+                                            <div class="mb-4">
+                                                <label for="frustration" class="form-label fw-semibold">17. What frustrates you most about the current experience? <span class="text-danger">*</span></label>
+                                                <textarea class="form-control" id="frustration" name="frustration" rows="3" placeholder="Tell us what frustrates you..." required></textarea>
+                                            </div>
+                                            
+                                            <div class="mb-4">
+                                                <label for="improvement" class="form-label fw-semibold">18. What would improve your experience with motorcycles? <span class="text-danger">*</span></label>
+                                                <textarea class="form-control" id="improvement" name="improvement" rows="3" placeholder="Tell us what would make it better..." required></textarea>
+                                            </div>
+                                            
+                                            <div class="mb-4">
+                                                <label class="form-label fw-semibold">19. Would you switch to a safer, more reliable option if available? <span class="text-danger">*</span></label>
+                                                <div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="would_switch" id="switch_yes" value="Yes" required>
+                                                        <label class="form-check-label" for="switch_yes">Yes</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="would_switch" id="switch_maybe" value="Maybe">
+                                                        <label class="form-check-label" for="switch_maybe">Maybe</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="would_switch" id="switch_no" value="No">
+                                                        <label class="form-check-label" for="switch_no">No</label>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                         
-                                        <div class="mb-4">
-                                            <label class="form-label fw-semibold">13. What concerns you most when using motorcycles? <span class="text-danger">*</span></label>
-                                            <div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="motorcycle_concern" id="concern_safety" value="Safety" required>
-                                                    <label class="form-check-label" for="concern_safety">Safety</label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="motorcycle_concern" id="concern_pricing" value="Pricing">
-                                                    <label class="form-check-label" for="concern_pricing">Pricing</label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="motorcycle_concern" id="concern_trust" value="Trust">
-                                                    <label class="form-check-label" for="concern_trust">Trust</label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="motorcycle_concern" id="concern_availability" value="Availability">
-                                                    <label class="form-check-label" for="concern_availability">Availability</label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="motorcycle_concern" id="concern_none" value="None">
-                                                    <label class="form-check-label" for="concern_none">None</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="mb-4">
-                                            <label class="form-label fw-semibold">14. Have you ever needed someone to pick up items for you? <span class="text-danger">*</span></label>
-                                            <div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="needed_pickup" id="pickup_yes" value="Yes" required>
-                                                    <label class="form-check-label" for="pickup_yes">Yes</label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="needed_pickup" id="pickup_no" value="No">
-                                                    <label class="form-check-label" for="pickup_no">No</label>
+                                        <!-- SECTION 8: DEMOGRAPHICS (OPTIONAL) -->
+                                        <div class="mb-5">
+                                            <h5 class="text-primary mb-4 pb-2 border-bottom">Section 8: Demographics (Optional)</h5>
+                                            
+                                            <div class="mb-4">
+                                                <label class="form-label fw-semibold">20. What is your age range?</label>
+                                                <div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="age_range" id="age_under18" value="Under 18">
+                                                        <label class="form-check-label" for="age_under18">Under 18</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="age_range" id="age_18_24" value="18-24">
+                                                        <label class="form-check-label" for="age_18_24">18-24</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="age_range" id="age_25_34" value="25-34">
+                                                        <label class="form-check-label" for="age_25_34">25-34</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="age_range" id="age_35_44" value="35-44">
+                                                        <label class="form-check-label" for="age_35_44">35-44</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="age_range" id="age_45_plus" value="45+">
+                                                        <label class="form-check-label" for="age_45_plus">45+</label>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        
-                                        <div class="mb-4">
-                                            <label class="form-label fw-semibold">15. What type of items do you usually need picked up? <span class="text-danger">*</span></label>
-                                            <div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="pickup_items" id="items_food" value="Food items" required>
-                                                    <label class="form-check-label" for="items_food">Food items</label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="pickup_items" id="items_market" value="Market goods">
-                                                    <label class="form-check-label" for="items_market">Market goods</label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="pickup_items" id="items_cakes" value="Cakes or fragile items">
-                                                    <label class="form-check-label" for="items_cakes">Cakes or fragile items</label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="pickup_items" id="items_documents" value="Documents">
-                                                    <label class="form-check-label" for="items_documents">Documents</label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="pickup_items" id="items_other" value="Other">
-                                                    <label class="form-check-label" for="items_other">Other</label>
+                                            
+                                            <div class="mb-4">
+                                                <label class="form-label fw-semibold">21. What type of phone do you use?</label>
+                                                <div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="phone_type" id="phone_smartphone" value="Smartphone">
+                                                        <label class="form-check-label" for="phone_smartphone">Smartphone</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="phone_type" id="phone_basic" value="Basic phone">
+                                                        <label class="form-check-label" for="phone_basic">Basic phone</label>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        
-                                        <div class="mb-4">
-                                            <label class="form-label fw-semibold">16. What makes pickups difficult today? <span class="text-danger">*</span></label>
-                                            <div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="pickup_difficulty" id="diff_trust" value="Trust" required>
-                                                    <label class="form-check-label" for="diff_trust">Trust</label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="pickup_difficulty" id="diff_damage" value="Damage risk">
-                                                    <label class="form-check-label" for="diff_damage">Damage risk</label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="pickup_difficulty" id="diff_directions" value="Poor directions">
-                                                    <label class="form-check-label" for="diff_directions">Poor directions</label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="pickup_difficulty" id="diff_cost" value="Cost">
-                                                    <label class="form-check-label" for="diff_cost">Cost</label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="pickup_difficulty" id="diff_prefer_myself" value="I prefer to go myself">
-                                                    <label class="form-check-label" for="diff_prefer_myself">I prefer to go myself</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="mb-4">
-                                            <label class="form-label fw-semibold">17. How useful would doorstep motorcycle pickup be for you? <span class="text-danger">*</span></label>
-                                            <div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="pickup_usefulness" id="useful_very" value="Very useful" required>
-                                                    <label class="form-check-label" for="useful_very">Very useful</label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="pickup_usefulness" id="useful_yes" value="Useful">
-                                                    <label class="form-check-label" for="useful_yes">Useful</label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="pickup_usefulness" id="useful_not_sure" value="Not sure">
-                                                    <label class="form-check-label" for="useful_not_sure">Not sure</label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="pickup_usefulness" id="useful_not" value="Not useful">
-                                                    <label class="form-check-label" for="useful_not">Not useful</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="mb-4">
-                                            <label class="form-label fw-semibold">18. Would you use a service that lets you book a rider for errands or pickups? <span class="text-danger">*</span></label>
-                                            <div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="use_booking_service" id="use_yes" value="Yes" required>
-                                                    <label class="form-check-label" for="use_yes">Yes</label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="use_booking_service" id="use_maybe" value="Maybe">
-                                                    <label class="form-check-label" for="use_maybe">Maybe</label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="use_booking_service" id="use_no" value="No">
-                                                    <label class="form-check-label" for="use_no">No</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="mb-4">
-                                            <label class="form-label fw-semibold">19. What would make you trust Achaba? (Select all that apply) <span class="text-danger">*</span></label>
-                                            <div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" name="trust_factors[]" id="trust_verified" value="Verified riders">
-                                                    <label class="form-check-label" for="trust_verified">Verified riders</label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" name="trust_factors[]" id="trust_pricing" value="Clear pricing">
-                                                    <label class="form-check-label" for="trust_pricing">Clear pricing</label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" name="trust_factors[]" id="trust_nocash" value="No cash handling">
-                                                    <label class="form-check-label" for="trust_nocash">No cash handling</label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" name="trust_factors[]" id="trust_support" value="Support access">
-                                                    <label class="form-check-label" for="trust_support">Support access</label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" name="trust_factors[]" id="trust_recommendations" value="Recommendations">
-                                                    <label class="form-check-label" for="trust_recommendations">Recommendations</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="mb-4">
-                                            <label class="form-label fw-semibold">20. What phone do you use most? <span class="text-danger">*</span></label>
-                                            <div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="phone_type" id="phone_android" value="Android smartphone" required>
-                                                    <label class="form-check-label" for="phone_android">Android smartphone</label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="phone_type" id="phone_iphone" value="iPhone">
-                                                    <label class="form-check-label" for="phone_iphone">iPhone</label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="phone_type" id="phone_feature" value="Feature phone">
-                                                    <label class="form-check-label" for="phone_feature">Feature phone</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="mb-4">
-                                            <label class="form-label fw-semibold">21. How would you prefer to book a ride? <span class="text-danger">*</span></label>
-                                            <div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="booking_preference" id="book_call" value="Phone call" required>
-                                                    <label class="form-check-label" for="book_call">Phone call</label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="booking_preference" id="book_app" value="App">
-                                                    <label class="form-check-label" for="book_app">App</label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="booking_preference" id="book_whatsapp" value="WhatsApp">
-                                                    <label class="form-check-label" for="book_whatsapp">WhatsApp</label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="booking_preference" id="book_sms" value="SMS / USSD">
-                                                    <label class="form-check-label" for="book_sms">SMS / USSD</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="mb-4">
-                                            <label class="form-label fw-semibold">22. If Achaba launched today, would you try it? <span class="text-danger">*</span></label>
-                                            <div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="would_try" id="try_yes" value="Yes" required>
-                                                    <label class="form-check-label" for="try_yes">Yes</label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="would_try" id="try_maybe" value="Maybe">
-                                                    <label class="form-check-label" for="try_maybe">Maybe</label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="would_try" id="try_no" value="No">
-                                                    <label class="form-check-label" for="try_no">No</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="mb-4">
-                                            <label for="must_get_right" class="form-label fw-semibold">23. What is one thing Achaba must get right to work in Bauchi? <span class="text-danger">*</span></label>
-                                            <textarea class="form-control" id="must_get_right" name="must_get_right" rows="3" placeholder="Tell us what's most important..." required></textarea>
                                         </div>
                                     </div>
                                 </div>

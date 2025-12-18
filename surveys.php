@@ -515,38 +515,49 @@ $responses = $stmt->fetchAll();
                     `;
                 }
             } else {
-                // User questions
+                // User questions - Updated structure
                 const userQuestions = {
-                    'contact_followup': 'Can we contact you for follow-up or pilot testing?',
-                    'user_location': 'Where do you live?',
-                    'user_type': 'Which best describes you?',
-                    'movement_frequency': 'How often do you move from your area to another location daily?',
-                    'transport_method': 'How do you usually get transport from your area?',
-                    'movement_challenge': 'What is the biggest challenge with movement in your area?',
-                    'ever_late': 'Have you ever been late to school, work, or an important appointment due to transport?',
-                    'motorcycle_frequency': 'How often do you use motorcycles for transport?',
-                    'find_rider': 'How do you usually find a rider?',
-                    'motorcycle_concern': 'What concerns you most when using motorcycles?',
-                    'needed_pickup': 'Have you ever needed someone to pick up items for you?',
-                    'pickup_items': 'What type of items do you usually need picked up?',
-                    'pickup_difficulty': 'What makes pickups difficult today?',
-                    'pickup_usefulness': 'How useful would doorstep motorcycle pickup be for you?',
-                    'use_booking_service': 'Would you use a service that lets you book a rider for errands or pickups?',
-                    'trust_factors': 'What would make you trust Achaba?',
-                    'phone_type': 'What phone do you use most?',
-                    'booking_preference': 'How would you prefer to book a ride?',
-                    'would_try': 'If Achaba launched today, would you try it?',
-                    'must_get_right': 'What is one thing Achaba must get right to work in Bauchi?'
+                    // Section 1: Usage Pattern
+                    'usage_frequency': 'How often do you use motorcycle transport?',
+                    'primary_reason': 'What is your primary reason for using motorcycle transport?',
+                    
+                    // Section 2: Usage Behaviour
+                    'usage_time': 'When do you most often use motorcycle transport?',
+                    'ride_location': 'Where do you usually get motorcycle rides?',
+                    'rider_consistency': 'Do you usually ride with the same rider or different riders?',
+                    
+                    // Section 3: Booking & Communication Patterns
+                    'find_rider': 'How do you usually find or contact a rider?',
+                    'struggled_rider': 'Have you ever struggled to find a rider when needed?',
+                    'difficulty_cause': 'What usually causes this difficulty?',
+                    
+                    // Section 4: Pricing & Payment Experience
+                    'fare_agreement': 'Do you usually agree on fare before the trip?',
+                    'pricing_disagreements': 'Have you experienced disagreements over pricing?',
+                    'payment_method': 'What payment method do you usually use?',
+                    
+                    // Section 5: Safety & Trust Perception
+                    'safety_feeling': 'How do you generally feel about your safety using motorcycles?',
+                    'safety_concerns': 'What safety concerns do you have?',
+                    'help_confidence': 'If something goes wrong, how confident are you in getting help?',
+                    
+                    // Section 6: Reliability & Experience Quality
+                    'reliability': 'How would you rate the reliability of motorcycle transport?',
+                    'experiences': 'Have you had any memorable experiences (good or bad)?',
+                    
+                    // Section 7: Reflection & Expectations
+                    'frustration': 'What frustrates you most about the current experience?',
+                    'improvement': 'What would improve your experience with motorcycles?',
+                    'would_switch': 'Would you switch to a safer, more reliable option if available?',
+                    
+                    // Section 8: Demographics (Optional)
+                    'age_range': 'What is your age range?',
+                    'phone_type': 'What type of phone do you use?'
                 };
                 
-                let questionNum = 4; // Start from 4 since 1-3 are personal info
+                let questionNum = 1;
                 for (const [key, question] of Object.entries(userQuestions)) {
                     let answer = responses[key] || 'No answer provided';
-                    
-                    // Format trust_factors array
-                    if (key === 'trust_factors' && Array.isArray(answer)) {
-                        answer = answer.length > 0 ? answer.join(', ') : 'None selected';
-                    }
                     
                     html += `
                         <div class="response-item">
