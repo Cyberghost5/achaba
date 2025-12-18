@@ -8,6 +8,7 @@ Allow: /
 Disallow: /admin/
 Disallow: /private/
 Disallow: /cgi-bin/
+Disallow: /prd-requests.php
 
 # Allow CSS, JS, and image files
 Allow: /assets/

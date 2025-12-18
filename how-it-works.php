@@ -192,6 +192,59 @@ session_start();
             line-height: 1.8;
             margin-bottom: 30px;
         }
+        
+        /* Button Custom Styles */
+        .btn-primary {
+            background-color: #00A551 !important;
+            border-color: #00A551 !important;
+        }
+        
+        .btn-primary:hover,
+        .btn-primary:focus,
+        .btn-primary:active,
+        .btn-primary.active {
+            background-color: #008F46 !important;
+            border-color: #008F46 !important;
+            box-shadow: 0 0 0 0.25rem rgba(0, 165, 81, 0.25) !important;
+        }
+        
+        .btn-outline-primary {
+            color: #00A551 !important;
+            border-color: #00A551 !important;
+        }
+        
+        .btn-outline-primary:hover,
+        .btn-outline-primary:focus,
+        .btn-outline-primary:active,
+        .btn-outline-primary.active {
+            background-color: #00A551 !important;
+            border-color: #00A551 !important;
+            color: white !important;
+            box-shadow: 0 0 0 0.25rem rgba(0, 165, 81, 0.25) !important;
+        }
+        
+        .btn-outline-light:hover,
+        .btn-outline-light:focus,
+        .btn-outline-light:active,
+        .btn-outline-light.active {
+            background-color: rgba(255, 255, 255, 0.15) !important;
+            border-color: white !important;
+            box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.25) !important;
+        }
+        
+        .btn-success {
+            background-color: #00A551 !important;
+            border-color: #00A551 !important;
+        }
+        
+        .btn-success:hover,
+        .btn-success:focus,
+        .btn-success:active,
+        .btn-success.active {
+            background-color: #008F46 !important;
+            border-color: #008F46 !important;
+            box-shadow: 0 0 0 0.25rem rgba(0, 165, 81, 0.25) !important;
+        }
     </style>
 </head>
 <body>

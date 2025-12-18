@@ -447,49 +447,155 @@ session_start();
                                     
                                     <!-- User Questions -->
                                     <div class="user-questions" style="display: none;">
-                                        <!-- Note: Questions 1-3 (name, phone, email) already collected in Step 2 -->
+                                        <!-- Note: Name, phone, email already collected in Step 2 -->
                                         
-                                        <div class="mb-4">
-                                            <label class="form-label fw-semibold">4. Can we contact you for follow-up or pilot testing? <span class="text-danger">*</span></label>
-                                            <div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="contact_followup" id="contact_yes" value="Yes" required>
-                                                    <label class="form-check-label" for="contact_yes">Yes</label>
+                                        <!-- SECTION 1 -->
+                                        <div class="mb-5">
+                                            <h5 class="text-primary mb-4 pb-2 border-bottom">Section 1: Usage Pattern</h5>
+                                            
+                                            <div class="mb-4">
+                                                <label class="form-label fw-semibold">1. How often do you use motorcycle transport? <span class="text-danger">*</span></label>
+                                                <div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="usage_frequency" id="usage_daily" value="Daily" required>
+                                                        <label class="form-check-label" for="usage_daily">Daily</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="usage_frequency" id="usage_few_times" value="A few times a week">
+                                                        <label class="form-check-label" for="usage_few_times">A few times a week</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="usage_frequency" id="usage_occasionally" value="Occasionally">
+                                                        <label class="form-check-label" for="usage_occasionally">Occasionally</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="usage_frequency" id="usage_rarely" value="Rarely">
+                                                        <label class="form-check-label" for="usage_rarely">Rarely</label>
+                                                    </div>
                                                 </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="contact_followup" id="contact_no" value="No">
-                                                    <label class="form-check-label" for="contact_no">No</label>
+                                            </div>
+                                            
+                                            <div class="mb-4">
+                                                <label class="form-label fw-semibold">2. What is your primary reason for using motorcycle transport? <span class="text-danger">*</span></label>
+                                                <div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="primary_reason" id="reason_speed" value="Speed / avoiding traffic" required>
+                                                        <label class="form-check-label" for="reason_speed">Speed / avoiding traffic</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="primary_reason" id="reason_accessibility" value="Accessibility">
+                                                        <label class="form-check-label" for="reason_accessibility">Accessibility</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="primary_reason" id="reason_cost" value="Cost">
+                                                        <label class="form-check-label" for="reason_cost">Cost</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="primary_reason" id="reason_convenience" value="Convenience">
+                                                        <label class="form-check-label" for="reason_convenience">Convenience</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="primary_reason" id="reason_alternatives" value="Lack of alternatives">
+                                                        <label class="form-check-label" for="reason_alternatives">Lack of alternatives</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="primary_reason" id="reason_other" value="Other">
+                                                        <label class="form-check-label" for="reason_other">Other</label>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                         
-                                        <div class="mb-4">
-                                            <label for="user_location" class="form-label fw-semibold">5. Where do you live? <span class="text-danger">*</span></label>
-                                            <input type="text" class="form-control" id="user_location" name="user_location" placeholder="Your area or neighborhood..." required>
+                                        <!-- SECTION 2: USAGE BEHAVIOUR -->
+                                        <div class="mb-5">
+                                            <h5 class="text-primary mb-4 pb-2 border-bottom">Section 2: Usage Behaviour</h5>
+                                            
+                                            <div class="mb-4">
+                                                <label class="form-label fw-semibold">3. When do you most often use motorcycle transport? <span class="text-danger">*</span></label>
+                                                <div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="usage_time" id="time_morning" value="Morning" required>
+                                                        <label class="form-check-label" for="time_morning">Morning</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="usage_time" id="time_afternoon" value="Afternoon">
+                                                        <label class="form-check-label" for="time_afternoon">Afternoon</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="usage_time" id="time_evening" value="Evening">
+                                                        <label class="form-check-label" for="time_evening">Evening</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="usage_time" id="time_late" value="Late night">
+                                                        <label class="form-check-label" for="time_late">Late night</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="mb-4">
+                                                <label class="form-label fw-semibold">4. Where do you usually get motorcycle rides? <span class="text-danger">*</span></label>
+                                                <div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="ride_location" id="loc_roadside" value="Roadside / junction" required>
+                                                        <label class="form-check-label" for="loc_roadside">Roadside / junction</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="ride_location" id="loc_park" value="Motorcycle park">
+                                                        <label class="form-check-label" for="loc_park">Motorcycle park</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="ride_location" id="loc_near" value="Near home or workplace">
+                                                        <label class="form-check-label" for="loc_near">Near home or workplace</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="ride_location" id="loc_contact" value="Through a personal contact">
+                                                        <label class="form-check-label" for="loc_contact">Through a personal contact</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="mb-4">
+                                                <label class="form-label fw-semibold">5. Do you usually ride with the same rider or different riders? <span class="text-danger">*</span></label>
+                                                <div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="rider_consistency" id="rider_same" value="Mostly the same" required>
+                                                        <label class="form-check-label" for="rider_same">Mostly the same</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="rider_consistency" id="rider_different" value="Different riders">
+                                                        <label class="form-check-label" for="rider_different">Different riders</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="rider_consistency" id="rider_no_pref" value="No preference">
+                                                        <label class="form-check-label" for="rider_no_pref">No preference</label>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                         
-                                        <div class="mb-4">
-                                            <label class="form-label fw-semibold">6. Which best describes you? <span class="text-danger">*</span></label>
-                                            <div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="user_type" id="type_student" value="Student" required>
-                                                    <label class="form-check-label" for="type_student">Student</label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="user_type" id="type_worker" value="Worker / Office staff">
-                                                    <label class="form-check-label" for="type_worker">Worker / Office staff</label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="user_type" id="type_vendor" value="Vendor / Business owner">
-                                                    <label class="form-check-label" for="type_vendor">Vendor / Business owner</label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="user_type" id="type_artisan" value="Artisan / Freelancer">
-                                                    <label class="form-check-label" for="type_artisan">Artisan / Freelancer</label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="user_type" id="type_other" value="Other">
-                                                    <label class="form-check-label" for="type_other">Other</label>
+                                        <!-- SECTION 3: BOOKING & COMMUNICATION PATTERNS -->
+                                        <div class="mb-5">
+                                            <h5 class="text-primary mb-4 pb-2 border-bottom">Section 3: Booking & Communication Patterns</h5>
+                                            
+                                            <div class="mb-4">
+                                                <label class="form-label fw-semibold">6. How do you usually find or contact a rider? <span class="text-danger">*</span></label>
+                                                <div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="find_rider" id="find_walk" value="Walk to rider location" required>
+                                                        <label class="form-check-label" for="find_walk">Walk to rider location</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="find_rider" id="find_call" value="Call a rider directly">
+                                                        <label class="form-check-label" for="find_call">Call a rider directly</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="find_rider" id="find_contacts" value="Rider contacts me">
+                                                        <label class="form-check-label" for="find_contacts">Rider contacts me</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="find_rider" id="find_third_party" value="Through a third party">
+                                                        <label class="form-check-label" for="find_third_party">Through a third party</label>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>

@@ -169,6 +169,50 @@ $responses = $stmt->fetchAll();
         .response-answer {
             color: #212529;
         }
+        
+        /* Button Custom Styles */
+        .btn-primary {
+            background-color: #00A551 !important;
+            border-color: #00A551 !important;
+        }
+        
+        .btn-primary:hover,
+        .btn-primary:focus,
+        .btn-primary:active,
+        .btn-primary.active {
+            background-color: #008F46 !important;
+            border-color: #008F46 !important;
+            box-shadow: 0 0 0 0.25rem rgba(0, 165, 81, 0.25) !important;
+        }
+        
+        .btn-outline-primary {
+            color: #00A551 !important;
+            border-color: #00A551 !important;
+        }
+        
+        .btn-outline-primary:hover,
+        .btn-outline-primary:focus,
+        .btn-outline-primary:active,
+        .btn-outline-primary.active {
+            background-color: #00A551 !important;
+            border-color: #00A551 !important;
+            color: white !important;
+            box-shadow: 0 0 0 0.25rem rgba(0, 165, 81, 0.25) !important;
+        }
+        
+        .btn-success {
+            background-color: #00A551 !important;
+            border-color: #00A551 !important;
+        }
+        
+        .btn-success:hover,
+        .btn-success:focus,
+        .btn-success:active,
+        .btn-success.active {
+            background-color: #008F46 !important;
+            border-color: #008F46 !important;
+            box-shadow: 0 0 0 0.25rem rgba(0, 165, 81, 0.25) !important;
+        }
     </style>
 </head>
 <body>

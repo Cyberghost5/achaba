@@ -42,8 +42,8 @@ body {
 
 /* Bootstrap Overrides */
 .btn-primary {
-    background-color: var(--primary-green);
-    border-color: var(--primary-green);
+    background-color: var(--primary-green) !important;
+    border-color: var(--primary-green) !important;
     color: #ffffff !important;
     font-weight: 500;
     transition: all 0.3s ease;
@@ -53,24 +53,61 @@ body {
 .btn-primary:focus,
 .btn-primary:active,
 .btn-primary.active,
-.btn-primary:not(:disabled):not(.disabled):active {
+.btn-primary:not(:disabled):not(.disabled):active,
+.btn-check:checked + .btn-primary,
+.show > .btn-primary.dropdown-toggle {
     background-color: var(--dark-green) !important;
     border-color: var(--dark-green) !important;
     color: #ffffff !important;
+    box-shadow: 0 0 0 0.25rem rgba(0, 165, 81, 0.25) !important;
+}
+
+.btn-success {
+    background-color: var(--primary-green) !important;
+    border-color: var(--primary-green) !important;
+    color: #ffffff !important;
+}
+
+.btn-success:hover,
+.btn-success:focus,
+.btn-success:active,
+.btn-success.active,
+.btn-success:not(:disabled):not(.disabled):active {
+    background-color: var(--dark-green) !important;
+    border-color: var(--dark-green) !important;
+    box-shadow: 0 0 0 0.25rem rgba(0, 165, 81, 0.25) !important;
 }
 
 .btn-outline-primary {
     color: var(--primary-green) !important;
     border-color: var(--primary-green) !important;
+    background-color: transparent !important;
 }
 
 .btn-outline-primary:hover,
 .btn-outline-primary:focus,
 .btn-outline-primary:active,
+.btn-outline-primary.active,
 .btn-check:checked + .btn-outline-primary {
     background-color: var(--primary-green) !important;
     border-color: var(--primary-green) !important;
     color: white !important;
+    box-shadow: 0 0 0 0.25rem rgba(0, 165, 81, 0.25) !important;
+}
+
+.btn-outline-success {
+    color: var(--primary-green) !important;
+    border-color: var(--primary-green) !important;
+}
+
+.btn-outline-success:hover,
+.btn-outline-success:focus,
+.btn-outline-success:active,
+.btn-outline-success.active {
+    background-color: var(--primary-green) !important;
+    border-color: var(--primary-green) !important;
+    color: white !important;
+    box-shadow: 0 0 0 0.25rem rgba(0, 165, 81, 0.25) !important;
 }
 
 /* Global Focus States */

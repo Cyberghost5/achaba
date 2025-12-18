@@ -143,12 +143,28 @@ $active_subscribers = count(array_filter($waitlist, fn($w) => $w['status'] === '
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         .btn-primary {
-            background-color: var(--primary-green);
-            border-color: var(--primary-green);
+            background-color: var(--primary-green) !important;
+            border-color: var(--primary-green) !important;
         }
-        .btn-primary:hover {
-            background-color: #008F46;
-            border-color: #008F46;
+        .btn-primary:hover,
+        .btn-primary:focus,
+        .btn-primary:active,
+        .btn-primary.active {
+            background-color: #008F46 !important;
+            border-color: #008F46 !important;
+            box-shadow: 0 0 0 0.25rem rgba(0, 165, 81, 0.25) !important;
+        }
+        .btn-success {
+            background-color: #00A551 !important;
+            border-color: #00A551 !important;
+        }
+        .btn-success:hover,
+        .btn-success:focus,
+        .btn-success:active,
+        .btn-success.active {
+            background-color: #008F46 !important;
+            border-color: #008F46 !important;
+            box-shadow: 0 0 0 0.25rem rgba(0, 165, 81, 0.25) !important;
         }
         .badge-active {
             background-color: #28a745;
