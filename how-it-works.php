@@ -697,17 +697,18 @@ session_start();
                     responseMessage.className = 'mt-3 alert alert-success';
                     document.getElementById('prdRequestForm').reset();
                     
-                    // Close modal after 2 seconds
+                    // Close modal after 10 seconds
                     setTimeout(() => {
                         const modal = bootstrap.Modal.getInstance(document.getElementById('prdRequestModal'));
                         modal.hide();
                         responseMessage.style.display = 'none';
-                    }, 2000);
+                    }, 10000);
                 } else {
                     responseMessage.className = 'mt-3 alert alert-danger';
                 }
                 
             } catch (error) {
+                console.error('Error:', error);
                 responseMessage.style.display = 'block';
                 responseMessage.className = 'mt-3 alert alert-danger';
                 responseMessage.textContent = 'Connection error. Please check your internet and try again.';

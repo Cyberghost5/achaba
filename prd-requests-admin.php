@@ -235,9 +235,11 @@ $result = $conn->query("SELECT * FROM prd_requests ORDER BY request_date DESC");
                                     </td>
                                     <td>
                                         <?php if (!$row['prd_sent']): ?>
-                                            <button class="btn btn-sm btn-primary" onclick="markAsSent(<?php echo $row['id']; ?>)">
-                                                <i class="fas fa-check me-1"></i>Mark as Sent
+                                            <button class="btn btn-sm btn-success" onclick="sendPRD(<?php echo $row['id']; ?>, '<?php echo htmlspecialchars($row['email'], ENT_QUOTES); ?>')">
+                                                <i class="fas fa-paper-plane me-1"></i>Send PRD
                                             </button>
+                                        <?php else: ?>
+                                            <span class="text-muted"><i class="fas fa-check-circle me-1"></i>Sent</span>
                                         <?php endif; ?>
                                     </td>
                                 </tr>
@@ -260,6 +262,44 @@ $result = $conn->query("SELECT * FROM prd_requests ORDER BY request_date DESC");
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     
     <script>
+        async function sendPRD(id, email) {
+            if (!confirm(`Send PRD to ${email}?\n\nThis will email the PRD.pdf file and mark the request as sent.`)) {
+                return;
+            }
+            
+            // Show loading state
+            const button = event.target.closest('button');
+            const originalHTML = button.innerHTML;
+            button.disabled = true;
+            button.innerHTML = '<i class="fas fa-spinner fa-spin me-1"></i>Sending...';
+            
+            try {
+                const response = await fetch('send-prd-email.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    body: `id=${id}`
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    alert('✅ ' + data.message);
+                    location.reload();
+                } else {
+                    alert('❌ Error: ' + data.message);
+                    button.disabled = false;
+                    button.innerHTML = originalHTML;
+                }
+            } catch (error) {
+                alert('❌ Connection error. Please try again.');
+                button.disabled = false;
+                button.innerHTML = originalHTML;
+            }
+        }
+        
+        // Keep the old function for backward compatibility
         async function markAsSent(id) {
             if (!confirm('Mark this request as sent?')) {
                 return;
@@ -290,5 +330,5 @@ $result = $conn->query("SELECT * FROM prd_requests ORDER BY request_date DESC");
 </body>
 </html>
 <?php
-$conn->close();
+// $conn->close();
 ?>

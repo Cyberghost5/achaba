@@ -438,4 +438,84 @@ The Achaba Team
 
 Have questions? Contact us at support@achaba.ng";
     }
+    
+    /**
+     * Send a generic email with custom subject and HTML body
+     * 
+     * @param string $recipientEmail The recipient's email address
+     * @param string $subject The email subject
+     * @param string $htmlBody The HTML body of the email
+     * @param string $plainTextBody Optional plain text version
+     * @return bool True if sent successfully, false otherwise
+     */
+    public function sendEmail($recipientEmail, $subject, $htmlBody, $plainTextBody = '') {
+        try {
+            $this->mailer->clearAddresses();
+            $this->mailer->addAddress($recipientEmail);
+            
+            $this->mailer->isHTML(true);
+            $this->mailer->Subject = $subject;
+            $this->mailer->Body = $htmlBody;
+            
+            // If plain text is provided, use it; otherwise strip HTML tags
+            if ($plainTextBody) {
+                $this->mailer->AltBody = $plainTextBody;
+            } else {
+                $this->mailer->AltBody = strip_tags($htmlBody);
+            }
+            
+            $this->mailer->send();
+            return true;
+            
+        } catch (Exception $e) {
+            error_log("Failed to send email: " . $e->getMessage());
+            return false;
+        }
+    }
+    
+    /**
+     * Send an email with file attachment
+     * 
+     * @param string $recipientEmail The recipient's email address
+     * @param string $subject The email subject
+     * @param string $htmlBody The HTML body of the email
+     * @param string $attachmentPath The full path to the file to attach
+     * @param string $attachmentName Optional custom name for the attachment
+     * @param string $plainTextBody Optional plain text version
+     * @return bool True if sent successfully, false otherwise
+     */
+    public function sendEmailWithAttachment($recipientEmail, $subject, $htmlBody, $attachmentPath, $attachmentName = '', $plainTextBody = '') {
+        try {
+            $this->mailer->clearAddresses();
+            $this->mailer->clearAttachments();
+            $this->mailer->addAddress($recipientEmail);
+            
+            // Add attachment
+            if (file_exists($attachmentPath)) {
+                $name = $attachmentName ?: basename($attachmentPath);
+                $this->mailer->addAttachment($attachmentPath, $name);
+            } else {
+                error_log("Attachment file not found: " . $attachmentPath);
+                return false;
+            }
+            
+            $this->mailer->isHTML(true);
+            $this->mailer->Subject = $subject;
+            $this->mailer->Body = $htmlBody;
+            
+            // If plain text is provided, use it; otherwise strip HTML tags
+            if ($plainTextBody) {
+                $this->mailer->AltBody = $plainTextBody;
+            } else {
+                $this->mailer->AltBody = strip_tags($htmlBody);
+            }
+            
+            $this->mailer->send();
+            return true;
+            
+        } catch (Exception $e) {
+            error_log("Failed to send email with attachment: " . $e->getMessage());
+            return false;
+        }
+    }
 }
