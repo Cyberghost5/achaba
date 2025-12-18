@@ -155,7 +155,7 @@ $result = $conn->query("SELECT * FROM prd_requests ORDER BY request_date DESC");
     <?php
     if (isset($_GET['logout'])) {
         session_destroy();
-        header('Location: prd-requests-admin.php');
+        header('Location: prd-requests');
         exit;
     }
     ?>
