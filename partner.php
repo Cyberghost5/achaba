@@ -298,11 +298,8 @@
     <!-- Footer -->
     <footer class="footer bg-dark text-white py-5" id="contact">
         <div class="container">
-            <!-- Logo and Tagline -->
-            
-
             <!-- Contact and Social Links -->
-            <div class="row justify-content-between mb-5 pb-4">
+            <div class="row justify-content-between mb-5 pb-4 align-items-start">
                 <div class="col-md-4 text-md-start text-center mb-4 mb-md-0">
                     <h6 class="text-light mb-3">Get in Touch</h6>
                     <a href="mailto:hello@achaba.ng" class="text-light text-decoration-none d-inline-flex align-items-center">
@@ -310,8 +307,8 @@
                         hello@achaba.ng
                     </a>
                 </div>
-                <div class="col-md-4 text-center mb-md-0">
-                    <div class="text-center mb-5">
+                <div class="col-md-4 text-center mb-4 mb-md-0">
+                    <div class="text-center">
                         <!-- <h2 class="fw-bold mb-3 text-primary" style="font-size: 3rem; letter-spacing: -2px;">achaba</h2> -->
                         <img src="assets/images/logo.png" alt="achaba" width="250px" class="img-fluid mb-3">
                         <p class="text-light mb-0" style="font-size: 1.1rem;">Anything to pick. Anywhere to go.</p>
