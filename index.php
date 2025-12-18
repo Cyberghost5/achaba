@@ -116,6 +116,9 @@
                         <a class="nav-link" href="#hero">Home</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="how-it-works">How it Works</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="survey">Survey</a>
                     </li>
                     <li class="nav-item">

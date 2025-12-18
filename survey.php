@@ -165,6 +165,9 @@ session_start();
                         <a class="nav-link" href="./">Home</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="how-it-works">How it Works</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link active" href="survey">Survey</a>
                     </li>
                     <li class="nav-item">
