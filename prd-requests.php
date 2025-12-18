@@ -30,6 +30,7 @@ if (!isset($_SESSION['prd_admin_logged_in'])) {
                         <div class="card shadow">
                             <div class="card-body p-4">
                                 <h4 class="text-center mb-4">Admin Login</h4>
+                                <p>Please enter the admin password to access PRD requests. Go back to <a href="index.php">home</a>.</p>
                                 <?php if (isset($error)): ?>
                                     <div class="alert alert-danger"><?php echo $error; ?></div>
                                 <?php endif; ?>
