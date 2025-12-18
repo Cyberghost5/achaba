@@ -1004,5 +1004,28 @@
             }
         });
     </script>
+    <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+        apiKey: "AIzaSyD8UmRpZs1oLiGjSNJUcjk4P4Ca7nGRo8U",
+        authDomain: "achaba.firebaseapp.com",
+        projectId: "achaba",
+        storageBucket: "achaba.firebasestorage.app",
+        messagingSenderId: "894135610956",
+        appId: "1:894135610956:web:8c9af29a5c3d4f344f4ee9",
+        measurementId: "G-0G7MWTNJE5"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    </script>
 </body>
 </html>
