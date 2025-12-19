@@ -1971,30 +1971,47 @@ session_start();
                     body: formData
                 });
                 
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                
                 const data = await response.json();
                 
                 // Show response message
                 responseMessage.style.display = 'block';
-                responseMessage.textContent = data.message;
+                responseMessage.textContent = data.message || 'Survey submitted successfully!';
                 
                 if (data.success) {
                     responseMessage.className = 'mt-4 alert alert-success';
-                    document.getElementById('surveyForm').reset();
-                    // Go back to step 1
-                    document.querySelector('.survey-step.active').classList.remove('active');
-                    document.getElementById('step1').classList.add('active');
+                    
+                    // Scroll to message
+                    responseMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    
+                    // Reset form and go back to step 1 after a delay
+                    setTimeout(() => {
+                        document.getElementById('surveyForm').reset();
+                        document.querySelector('.survey-step.active').classList.remove('active');
+                        document.getElementById('step1').classList.add('active');
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }, 2000);
                 } else {
                     responseMessage.className = 'mt-4 alert alert-danger';
+                    responseMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 }
                 
             } catch (error) {
+                console.error('Submission error:', error);
                 responseMessage.style.display = 'block';
                 responseMessage.className = 'mt-4 alert alert-danger';
-                responseMessage.textContent = 'Connection error. Please try again.';
+                responseMessage.textContent = 'Error: ' + error.message + '. Please check your connection and try again.';
+                responseMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
             } finally {
                 // Re-enable button
                 submitBtn.disabled = false;
-                submitBtn.innerHTML = 'Submit Survey <i class="fas fa-check ms-2"></i>';
+                const langEn = document.querySelector('.lang-en').style.display !== 'none';
+                submitBtn.innerHTML = langEn 
+                    ? 'Submit Survey <i class="fas fa-check ms-2"></i>' 
+                    : 'Aika Tambayoyi <i class="fas fa-check ms-2"></i>';
             }
         });
     </script>
