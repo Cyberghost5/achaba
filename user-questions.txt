@@ -129,3 +129,69 @@ Under 18
 21. Type of phone used:
 Feature phone
 Smartphone
+
+8. What are your biggest daily or weekly expenses?
+
+(Select all that apply, then estimate total cost)
+
+Expense Types (Multiple choice)
+
+Fuel
+Union dues / levies
+Police or road-related payments
+Bike maintenance / repairs
+Phone & data
+Food / personal expenses
+Other (please specify)
+
+Estimated Total Cost (₦ range)
+
+Less than ₦1,000 per day
+₦1,000 – ₦3,000 per day
+₦3,001 – ₦5,000 per day
+Above ₦5,000 per day
+
+
+9. Do your earnings change a lot from week to week?
+
+(Income stability measure)
+
+Scale
+
+Yes, very much (big changes every week)
+Yes, somewhat (some weeks are clearly better than others)
+A little (mostly stable with small changes)
+Not really (almost the same every week)
+
+Optional Follow-up (₦ range)
+
+When earnings change, about how big is the difference between a good week and a bad week?
+
+Less than ₦5,000
+₦5,000 – ₦10,000
+₦10,001 – ₦20,000
+Above ₦20,000
+
+10. Are you usually able to save anything?
+
+(Savings capacity, not behaviour judgement)
+
+Primary Question
+Yes, regularly
+Yes, sometimes
+Rarely
+Never
+
+If yes, how much do you usually save? (₦ range)
+
+Less than ₦2,000 per week
+₦2,000 – ₦5,000 per week
+₦5,001 – ₦10,000 per week
+More than ₦10,000 per week
+
+If no, what is the main reason?
+
+Earnings are too unpredictable
+Expenses are too high
+Emergencies always come up
+No safe place or system to save

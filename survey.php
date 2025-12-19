@@ -338,18 +338,170 @@ session_start();
                                             <h5 class="text-primary mb-4 pb-2 border-bottom">Section 3: Money & Stability</h5>
                                             
                                             <div class="mb-4">
-                                                <label for="q8" class="form-label fw-semibold">8. What are your biggest daily or weekly expenses?</label>
-                                                <textarea class="form-control" id="q8" name="q8" rows="2" placeholder="Your answer..."></textarea>
+                                                <label class="form-label fw-semibold">8. What are your biggest daily or weekly expenses?</label>
+                                                <p class="text-muted small">(Select all that apply, then estimate total cost)</p>
+                                                
+                                                <div class="mb-3">
+                                                    <p class="fw-semibold mb-2">Expense Types (Select all that apply)</p>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" name="q8_expenses[]" value="Fuel" id="q8_fuel">
+                                                        <label class="form-check-label" for="q8_fuel">Fuel</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" name="q8_expenses[]" value="Union dues / levies" id="q8_union">
+                                                        <label class="form-check-label" for="q8_union">Union dues / levies</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" name="q8_expenses[]" value="Police or road-related payments" id="q8_police">
+                                                        <label class="form-check-label" for="q8_police">Police or road-related payments</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" name="q8_expenses[]" value="Bike maintenance / repairs" id="q8_maintenance">
+                                                        <label class="form-check-label" for="q8_maintenance">Bike maintenance / repairs</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" name="q8_expenses[]" value="Phone & data" id="q8_phone">
+                                                        <label class="form-check-label" for="q8_phone">Phone & data</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" name="q8_expenses[]" value="Food / personal expenses" id="q8_food">
+                                                        <label class="form-check-label" for="q8_food">Food / personal expenses</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" name="q8_expenses[]" value="Other" id="q8_other">
+                                                        <label class="form-check-label" for="q8_other">Other (please specify)</label>
+                                                    </div>
+                                                    <input type="text" class="form-control mt-2" name="q8_other_specify" id="q8_other_specify" placeholder="Please specify other expenses">
+                                                </div>
+                                                
+                                                <div class="mb-3">
+                                                    <p class="fw-semibold mb-2">Estimated Total Cost (₦ range)</p>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="q8_cost" value="Less than ₦1,000 per day" id="q8_cost1">
+                                                        <label class="form-check-label" for="q8_cost1">Less than ₦1,000 per day</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="q8_cost" value="₦1,000 – ₦3,000 per day" id="q8_cost2">
+                                                        <label class="form-check-label" for="q8_cost2">₦1,000 – ₦3,000 per day</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="q8_cost" value="₦3,001 – ₦5,000 per day" id="q8_cost3">
+                                                        <label class="form-check-label" for="q8_cost3">₦3,001 – ₦5,000 per day</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="q8_cost" value="Above ₦5,000 per day" id="q8_cost4">
+                                                        <label class="form-check-label" for="q8_cost4">Above ₦5,000 per day</label>
+                                                    </div>
+                                                </div>
                                             </div>
                                             
                                             <div class="mb-4">
-                                                <label for="q9" class="form-label fw-semibold">9. Do your earnings change a lot from week to week?</label>
-                                                <textarea class="form-control" id="q9" name="q9" rows="2" placeholder="Your answer..."></textarea>
+                                                <label class="form-label fw-semibold">9. Do your earnings change a lot from week to week?</label>
+                                                <p class="text-muted small">(Income stability measure)</p>
+                                                
+                                                <div class="mb-3">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="q9" value="Yes, very much (big changes every week)" id="q9_1">
+                                                        <label class="form-check-label" for="q9_1">Yes, very much (big changes every week)</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="q9" value="Yes, somewhat (some weeks are clearly better than others)" id="q9_2">
+                                                        <label class="form-check-label" for="q9_2">Yes, somewhat (some weeks are clearly better than others)</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="q9" value="A little (mostly stable with small changes)" id="q9_3">
+                                                        <label class="form-check-label" for="q9_3">A little (mostly stable with small changes)</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="q9" value="Not really (almost the same every week)" id="q9_4">
+                                                        <label class="form-check-label" for="q9_4">Not really (almost the same every week)</label>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="mb-3">
+                                                    <p class="fw-semibold mb-2">Optional Follow-up: When earnings change, about how big is the difference between a good week and a bad week?</p>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="q9_followup" value="Less than ₦5,000" id="q9_f1">
+                                                        <label class="form-check-label" for="q9_f1">Less than ₦5,000</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="q9_followup" value="₦5,000 – ₦10,000" id="q9_f2">
+                                                        <label class="form-check-label" for="q9_f2">₦5,000 – ₦10,000</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="q9_followup" value="₦10,001 – ₦20,000" id="q9_f3">
+                                                        <label class="form-check-label" for="q9_f3">₦10,001 – ₦20,000</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="q9_followup" value="Above ₦20,000" id="q9_f4">
+                                                        <label class="form-check-label" for="q9_f4">Above ₦20,000</label>
+                                                    </div>
+                                                </div>
                                             </div>
                                             
                                             <div class="mb-4">
-                                                <label for="q10" class="form-label fw-semibold">10. Are you usually able to save anything?</label>
-                                                <textarea class="form-control" id="q10" name="q10" rows="2" placeholder="Your answer..."></textarea>
+                                                <label class="form-label fw-semibold">10. Are you usually able to save anything?</label>
+                                                <p class="text-muted small">(Savings capacity, not behaviour judgement)</p>
+                                                
+                                                <div class="mb-3">
+                                                    <p class="fw-semibold mb-2">Primary Question</p>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="q10" value="Yes, regularly" id="q10_1">
+                                                        <label class="form-check-label" for="q10_1">Yes, regularly</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="q10" value="Yes, sometimes" id="q10_2">
+                                                        <label class="form-check-label" for="q10_2">Yes, sometimes</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="q10" value="Rarely" id="q10_3">
+                                                        <label class="form-check-label" for="q10_3">Rarely</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="q10" value="Never" id="q10_4">
+                                                        <label class="form-check-label" for="q10_4">Never</label>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="mb-3">
+                                                    <p class="fw-semibold mb-2">If yes, how much do you usually save? (₦ range)</p>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="q10_amount" value="Less than ₦2,000 per week" id="q10_a1">
+                                                        <label class="form-check-label" for="q10_a1">Less than ₦2,000 per week</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="q10_amount" value="₦2,000 – ₦5,000 per week" id="q10_a2">
+                                                        <label class="form-check-label" for="q10_a2">₦2,000 – ₦5,000 per week</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="q10_amount" value="₦5,001 – ₦10,000 per week" id="q10_a3">
+                                                        <label class="form-check-label" for="q10_a3">₦5,001 – ₦10,000 per week</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="q10_amount" value="More than ₦10,000 per week" id="q10_a4">
+                                                        <label class="form-check-label" for="q10_a4">More than ₦10,000 per week</label>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="mb-3">
+                                                    <p class="fw-semibold mb-2">If no, what is the main reason?</p>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="q10_reason" value="Earnings are too unpredictable" id="q10_r1">
+                                                        <label class="form-check-label" for="q10_r1">Earnings are too unpredictable</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="q10_reason" value="Expenses are too high" id="q10_r2">
+                                                        <label class="form-check-label" for="q10_r2">Expenses are too high</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="q10_reason" value="Emergencies always come up" id="q10_r3">
+                                                        <label class="form-check-label" for="q10_r3">Emergencies always come up</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="q10_reason" value="No safe place or system to save" id="q10_r4">
+                                                        <label class="form-check-label" for="q10_r4">No safe place or system to save</label>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         

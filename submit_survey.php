@@ -68,7 +68,32 @@ $surveyResponses = [];
 
 // For rider surveys, collect all 24 questions
 if ($surveyType === 'rider') {
-    for ($i = 1; $i <= 24; $i++) {
+    // Questions 1-7 (simple text)
+    for ($i = 1; $i <= 7; $i++) {
+        $questionKey = "q{$i}";
+        $surveyResponses[$questionKey] = trim($_POST[$questionKey] ?? '');
+    }
+    
+    // Question 8: What are your biggest daily or weekly expenses? (multi-part)
+    $q8_expenses = [];
+    if (isset($_POST['q8_expenses']) && is_array($_POST['q8_expenses'])) {
+        $q8_expenses = $_POST['q8_expenses'];
+    }
+    $surveyResponses['q8_expenses'] = $q8_expenses;
+    $surveyResponses['q8_other_specify'] = trim($_POST['q8_other_specify'] ?? '');
+    $surveyResponses['q8_cost'] = $_POST['q8_cost'] ?? '';
+    
+    // Question 9: Do your earnings change a lot from week to week? (multi-part)
+    $surveyResponses['q9'] = $_POST['q9'] ?? '';
+    $surveyResponses['q9_followup'] = $_POST['q9_followup'] ?? '';
+    
+    // Question 10: Are you usually able to save anything? (multi-part)
+    $surveyResponses['q10'] = $_POST['q10'] ?? '';
+    $surveyResponses['q10_amount'] = $_POST['q10_amount'] ?? '';
+    $surveyResponses['q10_reason'] = $_POST['q10_reason'] ?? '';
+    
+    // Questions 11-24 (simple text)
+    for ($i = 11; $i <= 24; $i++) {
         $questionKey = "q{$i}";
         $surveyResponses[$questionKey] = trim($_POST[$questionKey] ?? '');
     }

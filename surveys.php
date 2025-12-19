@@ -477,18 +477,64 @@ $responses = $stmt->fetchAll();
             const responses = JSON.parse(data.responses);
             
             if (data.survey_type === 'rider') {
-                // Rider questions
-                const riderQuestions = [
+                // Questions 1-7
+                const simpleQuestions = [
                     "How long have you been riding motorcycles for work?",
                     "Is this your main source of income? What else do you do?",
                     "Which areas in Bauchi do you mostly operate in?",
                     "Walk me through a typical workday, from when you start to when you stop.",
                     "What time of day is usually best for you? Why?",
                     "What usually makes a day go badly?",
-                    "On a good day, what makes you feel satisfied with your work?",
-                    "What are your biggest daily or weekly expenses?",
-                    "Do your earnings change a lot from week to week?",
-                    "Are you usually able to save anything?",
+                    "On a good day, what makes you feel satisfied with your work?"
+                ];
+                
+                for (let i = 1; i <= 7; i++) {
+                    const answer = responses[`q${i}`] || 'No answer provided';
+                    html += `
+                        <div class="response-item">
+                            <div class="response-question">${i}. ${simpleQuestions[i-1]}</div>
+                            <div class="response-answer">${answer}</div>
+                        </div>
+                    `;
+                }
+                
+                // Question 8: Multi-part expenses
+                html += `
+                    <div class="response-item">
+                        <div class="response-question">8. What are your biggest daily or weekly expenses?</div>
+                        <div class="response-answer">
+                            <strong>Expense Types:</strong> ${responses.q8_expenses && responses.q8_expenses.length > 0 ? responses.q8_expenses.join(', ') : 'None selected'}<br>
+                            ${responses.q8_other_specify ? `<strong>Other:</strong> ${responses.q8_other_specify}<br>` : ''}
+                            <strong>Estimated Total Cost:</strong> ${responses.q8_cost || 'Not provided'}
+                        </div>
+                    </div>
+                `;
+                
+                // Question 9: Multi-part earnings stability
+                html += `
+                    <div class="response-item">
+                        <div class="response-question">9. Do your earnings change a lot from week to week?</div>
+                        <div class="response-answer">
+                            <strong>Answer:</strong> ${responses.q9 || 'Not provided'}<br>
+                            ${responses.q9_followup ? `<strong>Difference between good/bad week:</strong> ${responses.q9_followup}` : ''}
+                        </div>
+                    </div>
+                `;
+                
+                // Question 10: Multi-part savings
+                html += `
+                    <div class="response-item">
+                        <div class="response-question">10. Are you usually able to save anything?</div>
+                        <div class="response-answer">
+                            <strong>Answer:</strong> ${responses.q10 || 'Not provided'}<br>
+                            ${responses.q10_amount ? `<strong>Amount saved:</strong> ${responses.q10_amount}<br>` : ''}
+                            ${responses.q10_reason ? `<strong>Reason for not saving:</strong> ${responses.q10_reason}` : ''}
+                        </div>
+                    </div>
+                `;
+                
+                // Questions 11-24
+                const remainingQuestions = [
                     "Have you ever felt unsafe or uncomfortable while working? What happened?",
                     "Which types of passengers or trips are most difficult for you?",
                     "What do you personally do to stay safe?",
@@ -505,11 +551,11 @@ $responses = $stmt->fetchAll();
                     "Is there anything important about your work we haven't talked about?"
                 ];
                 
-                for (let i = 1; i <= 24; i++) {
+                for (let i = 11; i <= 24; i++) {
                     const answer = responses[`q${i}`] || 'No answer provided';
                     html += `
                         <div class="response-item">
-                            <div class="response-question">${i}. ${riderQuestions[i-1]}</div>
+                            <div class="response-question">${i}. ${remainingQuestions[i-11]}</div>
                             <div class="response-answer">${answer}</div>
                         </div>
                     `;
