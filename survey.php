@@ -205,17 +205,41 @@ session_start();
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8">
+                    <!-- Language Selector -->
+                    <div class="text-center mb-3">
+                        <div class="btn-group" role="group" aria-label="Language Selector">
+                            <input type="radio" class="btn-check" name="language" id="langEnglish" value="english" checked>
+                            <label class="btn btn-outline-primary" for="langEnglish">
+                                <i class="fas fa-globe me-1"></i>English
+                            </label>
+                            <input type="radio" class="btn-check" name="language" id="langHausa" value="hausa">
+                            <label class="btn btn-outline-primary" for="langHausa">
+                                <i class="fas fa-globe me-1"></i>Hausa
+                            </label>
+                        </div>
+                    </div>
+                    
                     <div class="card border-0 shadow-sm p-4">
                         <form id="surveyForm">
+                            <input type="hidden" name="surveyLanguage" id="surveyLanguage" value="english">
                             
                             <!-- Step 1: Survey Type Selection -->
                             <div class="survey-step active" id="step1">
                                 <div class="text-center mb-4">
                                     <div class="step-indicator mb-3">
-                                        <span class="badge bg-primary px-3 py-2">Step 1 of 3</span>
+                                        <span class="badge bg-primary px-3 py-2">
+                                            <span class="lang-en">Step 1 of 3</span>
+                                            <span class="lang-ha" style="display:none;">Mataki 1 na 3</span>
+                                        </span>
                                     </div>
-                                    <h3 class="fw-bold mb-3">I want to take this survey as:</h3>
-                                    <p class="text-muted">Select the option that best describes you</p>
+                                    <h3 class="fw-bold mb-3">
+                                        <span class="lang-en">I want to take this survey as:</span>
+                                        <span class="lang-ha" style="display:none;">Ina son amsa wannan tambayoyin a matsayin:</span>
+                                    </h3>
+                                    <p class="text-muted">
+                                        <span class="lang-en">Select the option that best describes you</span>
+                                        <span class="lang-ha" style="display:none;">Zaɓi zaɓin da ya dace da ku</span>
+                                    </p>
                                 </div>
                                 
                                 <div class="row g-3">
@@ -223,16 +247,28 @@ session_start();
                                         <input type="radio" class="btn-check" name="surveyType" id="typeUser" value="user" required>
                                         <label class="btn btn-outline-primary w-100 py-4" for="typeUser">
                                             <i class="fas fa-user fa-2x d-block mb-3"></i>
-                                            <h5 class="mb-2">User</h5>
-                                            <small>I need transportation or delivery services</small>
+                                            <h5 class="mb-2">
+                                                <span class="lang-en">User</span>
+                                                <span class="lang-ha" style="display:none;">Mai Amfani</span>
+                                            </h5>
+                                            <small>
+                                                <span class="lang-en">I need transportation or delivery services</span>
+                                                <span class="lang-ha" style="display:none;">Ina bukatar hanyar sufuri ko isar da kaya</span>
+                                            </small>
                                         </label>
                                     </div>
                                     <div class="col-md-6">
                                         <input type="radio" class="btn-check" name="surveyType" id="typeRider" value="rider" required>
                                         <label class="btn btn-outline-primary w-100 py-4" for="typeRider">
                                             <i class="fas fa-motorcycle fa-2x d-block mb-3"></i>
-                                            <h5 class="mb-2">Rider</h5>
-                                            <small>I am a motorcycle rider or want to become one</small>
+                                            <h5 class="mb-2">
+                                                <span class="lang-en">Rider</span>
+                                                <span class="lang-ha" style="display:none;">Dan Achaba</span>
+                                            </h5>
+                                            <small>
+                                                <span class="lang-en">I am a motorcycle rider or want to become one</span>
+                                                <span class="lang-ha" style="display:none;">Ni dan achaba ne ko ina son zama dan achaba</span>
+                                            </small>
                                         </label>
                                     </div>
                                 </div>
@@ -242,33 +278,58 @@ session_start();
                             <div class="survey-step" id="step2">
                                 <div class="text-center mb-4">
                                     <div class="step-indicator mb-3">
-                                        <span class="badge bg-primary px-3 py-2">Step 2 of 3</span>
+                                        <span class="badge bg-primary px-3 py-2">
+                                            <span class="lang-en">Step 2 of 3</span>
+                                            <span class="lang-ha" style="display:none;">Mataki 2 na 3</span>
+                                        </span>
                                     </div>
-                                    <h3 class="fw-bold mb-3">Your Information</h3>
-                                    <p class="text-muted">Please provide your contact details</p>
+                                    <h3 class="fw-bold mb-3">
+                                        <span class="lang-en">Your Information</span>
+                                        <span class="lang-ha" style="display:none;">Bayanin Ka</span>
+                                    </h3>
+                                    <p class="text-muted">
+                                        <span class="lang-en">Please provide your contact details</span>
+                                        <span class="lang-ha" style="display:none;">Don Allah bayar da bayanin sadarwa</span>
+                                    </p>
                                 </div>
                                 
                                 <div class="mb-4">
-                                    <label for="fullName" class="form-label fw-semibold">Full Name <span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control form-control-lg" id="fullName" name="fullName" placeholder="Enter your full name" required>
+                                    <label for="fullName" class="form-label fw-semibold">
+                                        <span class="lang-en">Full Name</span>
+                                        <span class="lang-ha" style="display:none;">Cikakken Suna</span>
+                                        <span class="text-danger">*</span>
+                                    </label>
+                                    <input type="text" class="form-control form-control-lg" id="fullName" name="fullName" required>
                                 </div>
                                 
                                 <div class="mb-4">
-                                    <label for="email" class="form-label fw-semibold">Email Address <span class="text-danger">*</span></label>
+                                    <label for="email" class="form-label fw-semibold">
+                                        <span class="lang-en">Email Address</span>
+                                        <span class="lang-ha" style="display:none;">Adireshin Email</span>
+                                        <span class="text-danger">*</span>
+                                    </label>
                                     <input type="email" class="form-control form-control-lg" id="email" name="email" placeholder="yourname@example.com" required>
                                 </div>
                                 
                                 <div class="mb-4">
-                                    <label for="phone" class="form-label fw-semibold">Phone Number <span class="text-danger">*</span></label>
+                                    <label for="phone" class="form-label fw-semibold">
+                                        <span class="lang-en">Phone Number</span>
+                                        <span class="lang-ha" style="display:none;">Lambar Waya</span>
+                                        <span class="text-danger">*</span>
+                                    </label>
                                     <input type="tel" class="form-control form-control-lg" id="phone" name="phone" placeholder="080XXXXXXXX" required>
                                 </div>
                                 
                                 <div class="d-flex justify-content-between mt-4">
                                     <button type="button" class="btn btn-outline-secondary btn-lg px-4" onclick="prevStep(1)">
-                                        <i class="fas fa-arrow-left me-2"></i>Back
+                                        <i class="fas fa-arrow-left me-2"></i>
+                                        <span class="lang-en">Back</span>
+                                        <span class="lang-ha" style="display:none;">Komawa</span>
                                     </button>
                                     <button type="button" class="btn btn-primary btn-lg px-5" onclick="nextStep(3)">
-                                        Continue <i class="fas fa-arrow-right ms-2"></i>
+                                        <span class="lang-en">Continue</span>
+                                        <span class="lang-ha" style="display:none;">Ci gaba</span>
+                                        <i class="fas fa-arrow-right ms-2"></i>
                                     </button>
                                 </div>
                             </div>
@@ -277,10 +338,19 @@ session_start();
                             <div class="survey-step" id="step3">
                                 <div class="text-center mb-4">
                                     <div class="step-indicator mb-3">
-                                        <span class="badge bg-primary px-3 py-2">Step 3 of 3</span>
+                                        <span class="badge bg-primary px-3 py-2">
+                                            <span class="lang-en">Step 3 of 3</span>
+                                            <span class="lang-ha" style="display:none;">Mataki 3 na 3</span>
+                                        </span>
                                     </div>
-                                    <h3 class="fw-bold mb-3">Survey Questions</h3>
-                                    <p class="text-muted">Please answer the following questions</p>
+                                    <h3 class="fw-bold mb-3">
+                                        <span class="lang-en">Survey Questions</span>
+                                        <span class="lang-ha" style="display:none;">Tambayoyin Bincike</span>
+                                    </h3>
+                                    <p class="text-muted">
+                                        <span class="lang-en">Please answer the following questions</span>
+                                        <span class="lang-ha" style="display:none;">Don Allah amsa tambayoyin da ke nan</span>
+                                    </p>
                                 </div>
                                 
                                 <!-- Survey questions will be added here -->
@@ -290,216 +360,375 @@ session_start();
                                         
                                         <!-- SECTION 1: BACKGROUND (WARM-UP) -->
                                         <div class="mb-5">
-                                            <h5 class="text-primary mb-4 pb-2 border-bottom">Section 1: Background</h5>
+                                            <h5 class="text-primary mb-4 pb-2 border-bottom">
+                                                <span class="lang-en">Section 1: Background</span>
+                                                <span class="lang-ha" style="display:none;">Sashe na 1: Bayani</span>
+                                            </h5>
                                             
                                             <div class="mb-4">
-                                                <label for="q1" class="form-label fw-semibold">1. How long have you been riding motorcycles for work?</label>
-                                                <textarea class="form-control" id="q1" name="q1" rows="2" placeholder="Your answer..."></textarea>
+                                                <label for="q1" class="form-label fw-semibold">
+                                                    <span class="lang-en">1. How long have you been riding motorcycles for work?</span>
+                                                    <span class="lang-ha" style="display:none;">1. Yaushe ka fara yin aikin babur?</span>
+                                                </label>
+                                                <textarea class="form-control" id="q1" name="q1" rows="2"></textarea>
                                             </div>
                                             
                                             <div class="mb-4">
-                                                <label for="q2" class="form-label fw-semibold">2. Is this your main source of income? What else do you do?</label>
-                                                <textarea class="form-control" id="q2" name="q2" rows="2" placeholder="Your answer..."></textarea>
+                                                <label for="q2" class="form-label fw-semibold">
+                                                    <span class="lang-en">2. Is this your main source of income? What else do you do?</span>
+                                                    <span class="lang-ha" style="display:none;">2. Wannan shine babban hanyar samun kuɗin ka? Wane irin aiki kake yi kuma?</span>
+                                                </label>
+                                                <textarea class="form-control" id="q2" name="q2" rows="2"></textarea>
                                             </div>
                                             
                                             <div class="mb-4">
-                                                <label for="q3" class="form-label fw-semibold">3. Which areas in Bauchi do you mostly operate in?</label>
-                                                <textarea class="form-control" id="q3" name="q3" rows="2" placeholder="Your answer..."></textarea>
+                                                <label for="q3" class="form-label fw-semibold">
+                                                    <span class="lang-en">3. Which areas in Bauchi do you mostly operate in?</span>
+                                                    <span class="lang-ha" style="display:none;">3. A wane yanki ne ka fi yin aiki a Bauchi?</span>
+                                                </label>
+                                                <textarea class="form-control" id="q3" name="q3" rows="2"></textarea>
                                             </div>
                                         </div>
                                         
                                         <!-- SECTION 2: DAILY WORK REALITY -->
                                         <div class="mb-5">
-                                            <h5 class="text-primary mb-4 pb-2 border-bottom">Section 2: Daily Work Reality</h5>
+                                            <h5 class="text-primary mb-4 pb-2 border-bottom">
+                                                <span class="lang-en">Section 2: Daily Work Reality</span>
+                                                <span class="lang-ha" style="display:none;">Sashe na 2: Yanayin Aiki na Yau da Kullun</span>
+                                            </h5>
                                             
                                             <div class="mb-4">
-                                                <label for="q4" class="form-label fw-semibold">4. Walk me through a typical workday, from when you start to when you stop.</label>
-                                                <textarea class="form-control" id="q4" name="q4" rows="3" placeholder="Your answer..."></textarea>
+                                                <label for="q4" class="form-label fw-semibold">
+                                                    <span class="lang-en">4. Walk me through a typical workday, from when you start to when you stop.</span>
+                                                    <span class="lang-ha" style="display:none;">4. Bayyana yadda kake yi aikin ka na yau da kullun, daga farko har ƙarshe.</span>
+                                                </label>
+                                                <textarea class="form-control" id="q4" name="q4" rows="3"></textarea>
                                             </div>
                                             
                                             <div class="mb-4">
-                                                <label for="q5" class="form-label fw-semibold">5. What time of day is usually best for you? Why?</label>
-                                                <textarea class="form-control" id="q5" name="q5" rows="2" placeholder="Your answer..."></textarea>
+                                                <label for="q5" class="form-label fw-semibold">
+                                                    <span class="lang-en">5. What time of day is usually best for you? Why?</span>
+                                                    <span class="lang-ha" style="display:none;">5. Wane lokaci na rana yake fi dacewa da kai? Don me?</span>
+                                                </label>
+                                                <textarea class="form-control" id="q5" name="q5" rows="2"></textarea>
                                             </div>
                                             
                                             <div class="mb-4">
-                                                <label for="q6" class="form-label fw-semibold">6. What usually makes a day go badly?</label>
-                                                <textarea class="form-control" id="q6" name="q6" rows="2" placeholder="Your answer..."></textarea>
+                                                <label for="q6" class="form-label fw-semibold">
+                                                    <span class="lang-en">6. What usually makes a day go badly?</span>
+                                                    <span class="lang-ha" style="display:none;">6. Menene yake sa ranar ta yi mugu?</span>
+                                                </label>
+                                                <textarea class="form-control" id="q6" name="q6" rows="2"></textarea>
                                             </div>
                                             
                                             <div class="mb-4">
-                                                <label for="q7" class="form-label fw-semibold">7. On a good day, what makes you feel satisfied with your work?</label>
-                                                <textarea class="form-control" id="q7" name="q7" rows="2" placeholder="Your answer..."></textarea>
+                                                <label for="q7" class="form-label fw-semibold">
+                                                    <span class="lang-en">7. On a good day, what makes you feel satisfied with your work?</span>
+                                                    <span class="lang-ha" style="display:none;">7. A ranar da ta yi kyau, me yake sa ka ji ɗaƙin aiki?</span>
+                                                </label>
+                                                <textarea class="form-control" id="q7" name="q7" rows="2"></textarea>
                                             </div>
                                         </div>
                                         
                                         <!-- SECTION 3: MONEY & STABILITY -->
                                         <div class="mb-5">
-                                            <h5 class="text-primary mb-4 pb-2 border-bottom">Section 3: Money & Stability</h5>
+                                            <h5 class="text-primary mb-4 pb-2 border-bottom">
+                                                <span class="lang-en">Section 3: Money & Stability</span>
+                                                <span class="lang-ha" style="display:none;">Sashe na 3: Kudi da Kwanciyar Hankali</span>
+                                            </h5>
                                             
                                             <div class="mb-4">
-                                                <label class="form-label fw-semibold">8. What are your biggest daily or weekly expenses?</label>
-                                                <p class="text-muted small">(Select all that apply, then estimate total cost)</p>
+                                                <label class="form-label fw-semibold">
+                                                    <span class="lang-en">8. What are your biggest daily or weekly expenses?</span>
+                                                    <span class="lang-ha" style="display:none;">8. Menene manyan kuɗin da kake kashewa kullum ko mako-mako?</span>
+                                                </label>
+                                                <p class="text-muted small">
+                                                    <span class="lang-en">(Select all that apply, then estimate total cost)</span>
+                                                    <span class="lang-ha" style="display:none;">(Zaɓi duk abin da ya shafe ka, sannan ka ƙiɗɗara jimlar kuɗin)</span>
+                                                </p>
                                                 
                                                 <div class="mb-3">
-                                                    <p class="fw-semibold mb-2">Expense Types (Select all that apply)</p>
+                                                    <p class="fw-semibold mb-2">
+                                                        <span class="lang-en">Expense Types (Select all that apply)</span>
+                                                        <span class="lang-ha" style="display:none;">Nau'o'in Kuɗi (Zaɓi duk abin da ya shafe ka)</span>
+                                                    </p>
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="checkbox" name="q8_expenses[]" value="Fuel" id="q8_fuel">
-                                                        <label class="form-check-label" for="q8_fuel">Fuel</label>
+                                                        <label class="form-check-label" for="q8_fuel">
+                                                            <span class="lang-en">Fuel</span>
+                                                            <span class="lang-ha" style="display:none;">Man fetur</span>
+                                                        </label>
                                                     </div>
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="checkbox" name="q8_expenses[]" value="Union dues / levies" id="q8_union">
-                                                        <label class="form-check-label" for="q8_union">Union dues / levies</label>
+                                                        <label class="form-check-label" for="q8_union">
+                                                            <span class="lang-en">Union dues / levies</span>
+                                                            <span class="lang-ha" style="display:none;">Kuɗin ƙungiya / haraji</span>
+                                                        </label>
                                                     </div>
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="checkbox" name="q8_expenses[]" value="Police or road-related payments" id="q8_police">
-                                                        <label class="form-check-label" for="q8_police">Police or road-related payments</label>
+                                                        <label class="form-check-label" for="q8_police">
+                                                            <span class="lang-en">Police or road-related payments</span>
+                                                            <span class="lang-ha" style="display:none;">Kuɗin 'yan sanda ko hanya</span>
+                                                        </label>
                                                     </div>
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="checkbox" name="q8_expenses[]" value="Bike maintenance / repairs" id="q8_maintenance">
-                                                        <label class="form-check-label" for="q8_maintenance">Bike maintenance / repairs</label>
+                                                        <label class="form-check-label" for="q8_maintenance">
+                                                            <span class="lang-en">Bike maintenance / repairs</span>
+                                                            <span class="lang-ha" style="display:none;">Gyaran babur</span>
+                                                        </label>
                                                     </div>
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="checkbox" name="q8_expenses[]" value="Phone & data" id="q8_phone">
-                                                        <label class="form-check-label" for="q8_phone">Phone & data</label>
+                                                        <label class="form-check-label" for="q8_phone">
+                                                            <span class="lang-en">Phone & data</span>
+                                                            <span class="lang-ha" style="display:none;">Waya da data</span>
+                                                        </label>
                                                     </div>
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="checkbox" name="q8_expenses[]" value="Food / personal expenses" id="q8_food">
-                                                        <label class="form-check-label" for="q8_food">Food / personal expenses</label>
+                                                        <label class="form-check-label" for="q8_food">
+                                                            <span class="lang-en">Food / personal expenses</span>
+                                                            <span class="lang-ha" style="display:none;">Abinci / kuɗin kansu</span>
+                                                        </label>
                                                     </div>
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="checkbox" name="q8_expenses[]" value="Other" id="q8_other">
-                                                        <label class="form-check-label" for="q8_other">Other (please specify)</label>
+                                                        <label class="form-check-label" for="q8_other">
+                                                            <span class="lang-en">Other (please specify)</span>
+                                                            <span class="lang-ha" style="display:none;">Wani abu (bayyana)</span>
+                                                        </label>
                                                     </div>
-                                                    <input type="text" class="form-control mt-2" name="q8_other_specify" id="q8_other_specify" placeholder="Please specify other expenses">
+                                                    <input type="text" class="form-control mt-2" name="q8_other_specify" id="q8_other_specify">
                                                 </div>
                                                 
                                                 <div class="mb-3">
-                                                    <p class="fw-semibold mb-2">Estimated Total Cost (₦ range)</p>
+                                                    <p class="fw-semibold mb-2">
+                                                        <span class="lang-en">Estimated Total Cost (₦ range)</span>
+                                                        <span class="lang-ha" style="display:none;">Jimlar Kuɗin (₦)</span>
+                                                    </p>
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="radio" name="q8_cost" value="Less than ₦1,000 per day" id="q8_cost1">
-                                                        <label class="form-check-label" for="q8_cost1">Less than ₦1,000 per day</label>
+                                                        <label class="form-check-label" for="q8_cost1">
+                                                            <span class="lang-en">Less than ₦1,000 per day</span>
+                                                            <span class="lang-ha" style="display:none;">Ƙasa da Naira dubu daya a rana</span>
+                                                        </label>
                                                     </div>
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="radio" name="q8_cost" value="₦1,000 – ₦3,000 per day" id="q8_cost2">
-                                                        <label class="form-check-label" for="q8_cost2">₦1,000 – ₦3,000 per day</label>
+                                                        <label class="form-check-label" for="q8_cost2">
+                                                            <span class="lang-en">₦1,000 – ₦3,000 per day</span>
+                                                            <span class="lang-ha" style="display:none;">Naira dubu daya zuwa dubu uku a rana</span>
+                                                        </label>
                                                     </div>
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="radio" name="q8_cost" value="₦3,001 – ₦5,000 per day" id="q8_cost3">
-                                                        <label class="form-check-label" for="q8_cost3">₦3,001 – ₦5,000 per day</label>
+                                                        <label class="form-check-label" for="q8_cost3">
+                                                            <span class="lang-en">₦3,001 – ₦5,000 per day</span>
+                                                            <span class="lang-ha" style="display:none;">Naira dubu uku zuwa biyar a rana</span>
+                                                        </label>
                                                     </div>
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="radio" name="q8_cost" value="Above ₦5,000 per day" id="q8_cost4">
-                                                        <label class="form-check-label" for="q8_cost4">Above ₦5,000 per day</label>
+                                                        <label class="form-check-label" for="q8_cost4">
+                                                            <span class="lang-en">Above ₦5,000 per day</span>
+                                                            <span class="lang-ha" style="display:none;">Fiye da Naira dubu biyar a rana</span>
+                                                        </label>
                                                     </div>
                                                 </div>
                                             </div>
                                             
                                             <div class="mb-4">
-                                                <label class="form-label fw-semibold">9. Do your earnings change a lot from week to week?</label>
-                                                <p class="text-muted small">(Income stability measure)</p>
+                                                <label class="form-label fw-semibold">
+                                                    <span class="lang-en">9. Do your earnings change a lot from week to week?</span>
+                                                    <span class="lang-ha" style="display:none;">9. Kuɗin da kake samu yana canzawa sosai daga mako zuwa mako?</span>
+                                                </label>
+                                                <p class="text-muted small">
+                                                    <span class="lang-en">(Income stability measure)</span>
+                                                    <span class="lang-ha" style="display:none;">(Auna kwanciyar hankali na kuɗi)</span>
+                                                </p>
                                                 
                                                 <div class="mb-3">
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="radio" name="q9" value="Yes, very much (big changes every week)" id="q9_1">
-                                                        <label class="form-check-label" for="q9_1">Yes, very much (big changes every week)</label>
+                                                        <label class="form-check-label" for="q9_1">
+                                                            <span class="lang-en">Yes, very much (big changes every week)</span>
+                                                            <span class="lang-ha" style="display:none;">E, sosai (canje-canje masu yawa kowane mako)</span>
+                                                        </label>
                                                     </div>
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="radio" name="q9" value="Yes, somewhat (some weeks are clearly better than others)" id="q9_2">
-                                                        <label class="form-check-label" for="q9_2">Yes, somewhat (some weeks are clearly better than others)</label>
+                                                        <label class="form-check-label" for="q9_2">
+                                                            <span class="lang-en">Yes, somewhat (some weeks are clearly better than others)</span>
+                                                            <span class="lang-ha" style="display:none;">E, kaɗan (wasu makonni sun fi wasu</span>
+                                                        </label>
                                                     </div>
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="radio" name="q9" value="A little (mostly stable with small changes)" id="q9_3">
-                                                        <label class="form-check-label" for="q9_3">A little (mostly stable with small changes)</label>
+                                                        <label class="form-check-label" for="q9_3">
+                                                            <span class="lang-en">A little (mostly stable with small changes)</span>
+                                                            <span class="lang-ha" style="display:none;">Kaɗan (galibi yana kwanciyar hankali)</span>
+                                                        </label>
                                                     </div>
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="radio" name="q9" value="Not really (almost the same every week)" id="q9_4">
-                                                        <label class="form-check-label" for="q9_4">Not really (almost the same every week)</label>
+                                                        <label class="form-check-label" for="q9_4">
+                                                            <span class="lang-en">Not really (almost the same every week)</span>
+                                                            <span class="lang-ha" style="display:none;">A'a (kusan daya kowane mako)</span>
+                                                        </label>
                                                     </div>
                                                 </div>
                                                 
                                                 <div class="mb-3">
-                                                    <p class="fw-semibold mb-2">Optional Follow-up: When earnings change, about how big is the difference between a good week and a bad week?</p>
+                                                    <p class="fw-semibold mb-2">
+                                                        <span class="lang-en">Optional Follow-up: When earnings change, about how big is the difference between a good week and a bad week?</span>
+                                                        <span class="lang-ha" style="display:none;">Ƙari (zaɓi): Lokacin da kuɗi ya canza, nawa ne bambanci tsakanin mako mai kyau da mako mara kyau?</span>
+                                                    </p>
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="radio" name="q9_followup" value="Less than ₦5,000" id="q9_f1">
-                                                        <label class="form-check-label" for="q9_f1">Less than ₦5,000</label>
+                                                        <label class="form-check-label" for="q9_f1">
+                                                            <span class="lang-en">Less than ₦5,000</span>
+                                                            <span class="lang-ha" style="display:none;">Ƙasa da Naira dubu biyar</span>
+                                                        </label>
                                                     </div>
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="radio" name="q9_followup" value="₦5,000 – ₦10,000" id="q9_f2">
-                                                        <label class="form-check-label" for="q9_f2">₦5,000 – ₦10,000</label>
+                                                        <label class="form-check-label" for="q9_f2">
+                                                            <span class="lang-en">₦5,000 – ₦10,000</span>
+                                                            <span class="lang-ha" style="display:none;">Naira dubu biyar zuwa goma</span>
+                                                        </label>
                                                     </div>
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="radio" name="q9_followup" value="₦10,001 – ₦20,000" id="q9_f3">
-                                                        <label class="form-check-label" for="q9_f3">₦10,001 – ₦20,000</label>
+                                                        <label class="form-check-label" for="q9_f3">
+                                                            <span class="lang-en">₦10,001 – ₦20,000</span>
+                                                            <span class="lang-ha" style="display:none;">Naira dubu goma zuwa ashirin</span>
+                                                        </label>
                                                     </div>
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="radio" name="q9_followup" value="Above ₦20,000" id="q9_f4">
-                                                        <label class="form-check-label" for="q9_f4">Above ₦20,000</label>
+                                                        <label class="form-check-label" for="q9_f4">
+                                                            <span class="lang-en">Above ₦20,000</span>
+                                                            <span class="lang-ha" style="display:none;">Fiye da Naira dubu ashirin</span>
+                                                        </label>
                                                     </div>
                                                 </div>
                                             </div>
                                             
                                             <div class="mb-4">
-                                                <label class="form-label fw-semibold">10. Are you usually able to save anything?</label>
-                                                <p class="text-muted small">(Savings capacity, not behaviour judgement)</p>
+                                                <label class="form-label fw-semibold">
+                                                    <span class="lang-en">10. Are you usually able to save anything?</span>
+                                                    <span class="lang-ha" style="display:none;">10. Kana iya ajiye kuɗi?</span>
+                                                </label>
+                                                <p class="text-muted small">
+                                                    <span class="lang-en">(Savings capacity, not behaviour judgement)</span>
+                                                    <span class="lang-ha" style="display:none;">(Ikon ajiyar kuɗi, ba yin hukunci ba)</span>
+                                                </p>
                                                 
                                                 <div class="mb-3">
-                                                    <p class="fw-semibold mb-2">Primary Question</p>
+                                                    <p class="fw-semibold mb-2">
+                                                        <span class="lang-en">Primary Question</span>
+                                                        <span class="lang-ha" style="display:none;">Tambaya Ta Farko</span>
+                                                    </p>
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="radio" name="q10" value="Yes, regularly" id="q10_1">
-                                                        <label class="form-check-label" for="q10_1">Yes, regularly</label>
+                                                        <label class="form-check-label" for="q10_1">
+                                                            <span class="lang-en">Yes, regularly</span>
+                                                            <span class="lang-ha" style="display:none;">E, kullum</span>
+                                                        </label>
                                                     </div>
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="radio" name="q10" value="Yes, sometimes" id="q10_2">
-                                                        <label class="form-check-label" for="q10_2">Yes, sometimes</label>
+                                                        <label class="form-check-label" for="q10_2">
+                                                            <span class="lang-en">Yes, sometimes</span>
+                                                            <span class="lang-ha" style="display:none;">E, wani lokaci</span>
+                                                        </label>
                                                     </div>
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="radio" name="q10" value="Rarely" id="q10_3">
-                                                        <label class="form-check-label" for="q10_3">Rarely</label>
+                                                        <label class="form-check-label" for="q10_3">
+                                                            <span class="lang-en">Rarely</span>
+                                                            <span class="lang-ha" style="display:none;">Da wuya</span>
+                                                        </label>
                                                     </div>
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="radio" name="q10" value="Never" id="q10_4">
-                                                        <label class="form-check-label" for="q10_4">Never</label>
+                                                        <label class="form-check-label" for="q10_4">
+                                                            <span class="lang-en">Never</span>
+                                                            <span class="lang-ha" style="display:none;">Ba na iya</span>
+                                                        </label>
                                                     </div>
                                                 </div>
                                                 
                                                 <div class="mb-3">
-                                                    <p class="fw-semibold mb-2">If yes, how much do you usually save? (₦ range)</p>
+                                                    <p class="fw-semibold mb-2">
+                                                        <span class="lang-en">If yes, how much do you usually save? (₦ range)</span>
+                                                        <span class="lang-ha" style="display:none;">Idan e, nawa kake ajiye a mako?</span>
+                                                    </p>
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="radio" name="q10_amount" value="Less than ₦2,000 per week" id="q10_a1">
-                                                        <label class="form-check-label" for="q10_a1">Less than ₦2,000 per week</label>
+                                                        <label class="form-check-label" for="q10_a1">
+                                                            <span class="lang-en">Less than ₦2,000 per week</span>
+                                                            <span class="lang-ha" style="display:none;">Ƙasa da Naira dubu biyu a mako</span>
+                                                        </label>
                                                     </div>
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="radio" name="q10_amount" value="₦2,000 – ₦5,000 per week" id="q10_a2">
-                                                        <label class="form-check-label" for="q10_a2">₦2,000 – ₦5,000 per week</label>
+                                                        <label class="form-check-label" for="q10_a2">
+                                                            <span class="lang-en">₦2,000 – ₦5,000 per week</span>
+                                                            <span class="lang-ha" style="display:none;">Naira dubu biyu zuwa biyar a mako</span>
+                                                        </label>
                                                     </div>
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="radio" name="q10_amount" value="₦5,001 – ₦10,000 per week" id="q10_a3">
-                                                        <label class="form-check-label" for="q10_a3">₦5,001 – ₦10,000 per week</label>
+                                                        <label class="form-check-label" for="q10_a3">
+                                                            <span class="lang-en">₦5,001 – ₦10,000 per week</span>
+                                                            <span class="lang-ha" style="display:none;">Naira dubu biyar zuwa goma a mako</span>
+                                                        </label>
                                                     </div>
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="radio" name="q10_amount" value="More than ₦10,000 per week" id="q10_a4">
-                                                        <label class="form-check-label" for="q10_a4">More than ₦10,000 per week</label>
+                                                        <label class="form-check-label" for="q10_a4">
+                                                            <span class="lang-en">More than ₦10,000 per week</span>
+                                                            <span class="lang-ha" style="display:none;">Fiye da Naira dubu goma a mako</span>
+                                                        </label>
                                                     </div>
                                                 </div>
                                                 
                                                 <div class="mb-3">
-                                                    <p class="fw-semibold mb-2">If no, what is the main reason?</p>
+                                                    <p class="fw-semibold mb-2">
+                                                        <span class="lang-en">If no, what is the main reason?</span>
+                                                        <span class="lang-ha" style="display:none;">Idan a'a, menene babban dalili?</span>
+                                                    </p>
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="radio" name="q10_reason" value="Earnings are too unpredictable" id="q10_r1">
-                                                        <label class="form-check-label" for="q10_r1">Earnings are too unpredictable</label>
+                                                        <label class="form-check-label" for="q10_r1">
+                                                            <span class="lang-en">Earnings are too unpredictable</span>
+                                                            <span class="lang-ha" style="display:none;">Kuɗin da nake samu ba shi da tabbas</span>
+                                                        </label>
                                                     </div>
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="radio" name="q10_reason" value="Expenses are too high" id="q10_r2">
-                                                        <label class="form-check-label" for="q10_r2">Expenses are too high</label>
+                                                        <label class="form-check-label" for="q10_r2">
+                                                            <span class="lang-en">Expenses are too high</span>
+                                                            <span class="lang-ha" style="display:none;">Kuɗin kashewa ya yi yawa</span>
+                                                        </label>
                                                     </div>
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="radio" name="q10_reason" value="Emergencies always come up" id="q10_r3">
-                                                        <label class="form-check-label" for="q10_r3">Emergencies always come up</label>
+                                                        <label class="form-check-label" for="q10_r3">
+                                                            <span class="lang-en">Emergencies always come up</span>
+                                                            <span class="lang-ha" style="display:none;">Matsaloli kullum suna fitowa</span>
+                                                        </label>
                                                     </div>
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="radio" name="q10_reason" value="No safe place or system to save" id="q10_r4">
-                                                        <label class="form-check-label" for="q10_r4">No safe place or system to save</label>
+                                                        <label class="form-check-label" for="q10_r4">
+                                                            <span class="lang-en">No safe place or system to save</span>
+                                                            <span class="lang-ha" style="display:none;">Babu wuri mai aminci ko tsarin ajiya</span>
+                                                        </label>
                                                     </div>
                                                 </div>
                                             </div>
@@ -507,92 +736,160 @@ session_start();
                                         
                                         <!-- SECTION 4: SAFETY & DIGNITY -->
                                         <div class="mb-5">
-                                            <h5 class="text-primary mb-4 pb-2 border-bottom">Section 4: Safety & Dignity</h5>
+                                            <h5 class="text-primary mb-4 pb-2 border-bottom">
+                                                <span class="lang-en">Section 4: Safety & Dignity</span>
+                                                <span class="lang-ha" style="display:none;">Sashe na 4: Aminci da Ƙirma</span>
+                                            </h5>
                                             
                                             <div class="mb-4">
-                                                <label for="q11" class="form-label fw-semibold">11. Have you ever felt unsafe or uncomfortable while working? What happened?</label>
-                                                <textarea class="form-control" id="q11" name="q11" rows="3" placeholder="Your answer..."></textarea>
+                                                <label for="q11" class="form-label fw-semibold">
+                                                    <span class="lang-en">11. Have you ever felt unsafe or uncomfortable while working? What happened?</span>
+                                                    <span class="lang-ha" style="display:none;">11. Ka taɓa jin rashin lafiya lokacin aiki? Me ya faru?</span>
+                                                </label>
+                                                <textarea class="form-control" id="q11" name="q11" rows="3"></textarea>
                                             </div>
                                             
                                             <div class="mb-4">
-                                                <label for="q12" class="form-label fw-semibold">12. Which types of passengers or trips are most difficult for you?</label>
-                                                <textarea class="form-control" id="q12" name="q12" rows="2" placeholder="Your answer..."></textarea>
+                                                <label for="q12" class="form-label fw-semibold">
+                                                    <span class="lang-en">12. Which types of passengers or trips are most difficult for you?</span>
+                                                    <span class="lang-ha" style="display:none;">12. Wanne irin fasinjoji ko tafiye-tafiye yake da wahala a gare ka?</span>
+                                                </label>
+                                                <textarea class="form-control" id="q12" name="q12" rows="2"></textarea>
                                             </div>
                                             
                                             <div class="mb-4">
-                                                <label for="q13" class="form-label fw-semibold">13. What do you personally do to stay safe?</label>
-                                                <textarea class="form-control" id="q13" name="q13" rows="2" placeholder="Your answer..."></textarea>
+                                                <label for="q13" class="form-label fw-semibold">
+                                                    <span class="lang-en">13. What do you personally do to stay safe?</span>
+                                                    <span class="lang-ha" style="display:none;">13. Me kake yi don ka kasance lafiya?</span>
+                                                </label>
+                                                <textarea class="form-control" id="q13" name="q13" rows="2"></textarea>
                                             </div>
                                             
                                             <div class="mb-4">
-                                                <label for="q14" class="form-label fw-semibold">14. Do you feel this work is respected in your community? Why or why not?</label>
-                                                <textarea class="form-control" id="q14" name="q14" rows="3" placeholder="Your answer..."></textarea>
+                                                <label for="q14" class="form-label fw-semibold">
+                                                    <span class="lang-en">14. Do you feel this work is respected in your community? Why or why not?</span>
+                                                    <span class="lang-ha" style="display:none;">14. Kana ganin ana girmama wannan aikin a cikin al'ummar ka? Me ya sa?</span>
+                                                </label>
+                                                <textarea class="form-control" id="q14" name="q14" rows="3"></textarea>
                                             </div>
                                         </div>
                                         
                                         <!-- SECTION 5: TECH & ACCESS -->
                                         <div class="mb-5">
-                                            <h5 class="text-primary mb-4 pb-2 border-bottom">Section 5: Tech & Access</h5>
+                                            <h5 class="text-primary mb-4 pb-2 border-bottom">
+                                                <span class="lang-en">Section 5: Tech & Access</span>
+                                                <span class="lang-ha" style="display:none;">Sashe na 5: Fasaha da Samun Damar Aiki</span>
+                                            </h5>
                                             
                                             <div class="mb-4">
-                                                <label for="q15" class="form-label fw-semibold">15. How do passengers usually find or contact you?</label>
-                                                <textarea class="form-control" id="q15" name="q15" rows="2" placeholder="Your answer..."></textarea>
+                                                <label for="q15" class="form-label fw-semibold">
+                                                    <span class="lang-en">15. How do passengers usually find or contact you?</span>
+                                                    <span class="lang-ha" style="display:none;">15. Ta yaya fasinjoji suke same ka ko tuntubar ka?</span>
+                                                </label>
+                                                <textarea class="form-control" id="q15" name="q15" rows="2"></textarea>
                                             </div>
                                             
                                             <div class="mb-4">
-                                                <label for="q16" class="form-label fw-semibold">16. How important is your phone to your work?</label>
-                                                <textarea class="form-control" id="q16" name="q16" rows="2" placeholder="Your answer..."></textarea>
+                                                <label for="q16" class="form-label fw-semibold">
+                                                    <span class="lang-en">16. How important is your phone to your work?</span>
+                                                    <span class="lang-ha" style="display:none;">16. Wayar ka tana da muhimmanci ga aikin ka?</span>
+                                                </label>
+                                                <textarea class="form-control" id="q16" name="q16" rows="2"></textarea>
                                             </div>
                                             
                                             <div class="mb-4">
-                                                <label for="q17" class="form-label fw-semibold">17. Are there things your phone cannot do that limit your work?</label>
-                                                <textarea class="form-control" id="q17" name="q17" rows="2" placeholder="Your answer..."></textarea>
+                                                <label for="q17" class="form-label fw-semibold">
+                                                    <span class="lang-en">17. Are there things your phone cannot do that limit your work?</span>
+                                                    <span class="lang-ha" style="display:none;">17. Akwai abubuwan da wayar ka ba za ta iya ba wadanda ke takura aikin ka?</span>
+                                                </label>
+                                                <textarea class="form-control" id="q17" name="q17" rows="2"></textarea>
                                             </div>
                                         </div>
                                         
                                         <!-- SECTION 6: PLATFORM FIT (VERY IMPORTANT) -->
                                         <div class="mb-5">
-                                            <h5 class="text-primary mb-4 pb-2 border-bottom">Section 6: Platform Fit</h5>
+                                            <h5 class="text-primary mb-4 pb-2 border-bottom">
+                                                <span class="lang-en">Section 6: Platform Fit</span>
+                                                <span class="lang-ha" style="display:none;">Sashe na 6: Dacewa da Tsari</span>
+                                            </h5>
                                             
                                             <div class="mb-4">
-                                                <label for="q18" class="form-label fw-semibold">18. If passengers could book you to come pick them from inside streets, how would you feel about that?</label>
-                                                <textarea class="form-control" id="q18" name="q18" rows="3" placeholder="Your answer..."></textarea>
+                                                <label for="q18" class="form-label fw-semibold">
+                                                    <span class="lang-en">18. If passengers could book you to come pick them from inside streets, how would you feel about that?</span>
+                                                    <span class="lang-ha" style="display:none;">18. Idan fasinjoji za su iya bookɗin ka don ka dauko su daga cikin tituna, yaya za ka ji game da hakan?</span>
+                                                </label>
+                                                <textarea class="form-control" id="q18" name="q18" rows="3"></textarea>
                                             </div>
                                             
                                             <div class="mb-4">
-                                                <label for="q19" class="form-label fw-semibold">19. How would you feel about pickup-only errands where the customer has already paid the vendor?</label>
-                                                <textarea class="form-control" id="q19" name="q19" rows="3" placeholder="Your answer..."></textarea>
+                                                <label for="q19" class="form-label fw-semibold">
+                                                    <span class="lang-en">19. How would you feel about pickup-only errands where the customer has already paid the vendor?</span>
+                                                    <span class="lang-ha" style="display:none;">19. Yaya za ka ji game da ɗaukar kaya kawai inda abokin ciniki ya riga ya biya mai siyarwa?</span>
+                                                </label>
+                                                <textarea class="form-control" id="q19" name="q19" rows="3"></textarea>
                                             </div>
                                             
                                             <div class="mb-4">
-                                                <label for="q20" class="form-label fw-semibold">20. What would make you trust or distrust such a system?</label>
-                                                <textarea class="form-control" id="q20" name="q20" rows="3" placeholder="Your answer..."></textarea>
+                                                <label for="q20" class="form-label fw-semibold">
+                                                    <span class="lang-en">20. What would make you trust or distrust such a system?</span>
+                                                    <span class="lang-ha" style="display:none;">20. Me zai sa ka amince ko ka kin amincewa da irin wannan tsari?</span>
+                                                </label>
+                                                <textarea class="form-control" id="q20" name="q20" rows="3"></textarea>
                                             </div>
                                         </div>
                                         
                                         <!-- SECTION 7: FUTURE & SUPPORT -->
                                         <div class="mb-5">
-                                            <h5 class="text-primary mb-4 pb-2 border-bottom">Section 7: Future & Support</h5>
+                                            <h5 class="text-primary mb-4 pb-2 border-bottom">
+                                                <span class="lang-en">Section 7: Future & Support</span>
+                                                <span class="lang-ha" style="display:none;">Sashe na 7: Makomar Aiki da Tallafi</span>
+                                            </h5>
                                             
                                             <div class="mb-4">
-                                                <label for="q21" class="form-label fw-semibold">21. Are you part of any rider group or association? How does it help?</label>
-                                                <textarea class="form-control" id="q21" name="q21" rows="2" placeholder="Your answer..."></textarea>
+                                                <label for="q21" class="form-label fw-semibold">
+                                                    <span class="lang-en">21. Are you part of any rider group or association? How does it help?</span>
+                                                    <span class="lang-ha" style="display:none;">21. Kana cikin wata ƙungiyar masu babur? Ta yaya take taimaka?</span>
+                                                </label>
+                                                <textarea class="form-control" id="q21" name="q21" rows="2"></textarea>
                                             </div>
                                             
                                             <div class="mb-4">
-                                                <label for="q22" class="form-label fw-semibold">22. What would make this work more secure or dignified for you?</label>
-                                                <textarea class="form-control" id="q22" name="q22" rows="3" placeholder="Your answer..."></textarea>
+                                                <label for="q22" class="form-label fw-semibold">
+                                                    <span class="lang-en">22. What would make this work more secure or dignified for you?</span>
+                                                    <span class="lang-ha" style="display:none;">22. Me zai sa wannan aikin ya fi tsaro da daraja a gare ka?</span>
+                                                </label>
+                                                <textarea class="form-control" id="q22" name="q22" rows="3"></textarea>
                                             </div>
                                             
                                             <div class="mb-4">
-                                                <label for="q23" class="form-label fw-semibold">23. If a company wanted to genuinely support riders in Bauchi, where should they start?</label>
-                                                <textarea class="form-control" id="q23" name="q23" rows="3" placeholder="Your answer..."></textarea>
+                                                <label for="q23" class="form-label fw-semibold">
+                                                    <span class="lang-en">23. If a company wanted to genuinely support riders in Bauchi, where should they start?</span>
+                                                    <span class="lang-ha" style="display:none;">23. Idan kamfani yana son tallafa wa masu babur a Bauchi, ina ya kamata su fara?</span>
+                                                </label>
+                                                <textarea class="form-control" id="q23" name="q23" rows="3"></textarea>
                                             </div>
                                             
                                             <div class="mb-4">
-                                                <label for="q24" class="form-label fw-semibold">24. Is there anything important about your work we haven't talked about?</label>
-                                                <textarea class="form-control" id="q24" name="q24" rows="3" placeholder="Your answer..."></textarea>
+                                                <label for="q24" class="form-label fw-semibold">
+                                                    <span class="lang-en">24. Is there anything important about your work we haven't talked about?</span>
+                                                    <span class="lang-ha" style="display:none;">24. Akwai wani abu mai muhimmanci game da aikin ka da ba mu tattauna ba?</span>
+                                                </label>
+                                                <textarea class="form-control" id="q24" name="q24" rows="3"></textarea>
                                             </div>
+                                        </div>
+                                        
+                                        <!-- Submit/Back Buttons for Rider Survey -->
+                                        <div class="d-flex justify-content-between mt-4">
+                                            <button type="button" class="btn btn-outline-secondary btn-lg px-4" onclick="prevStep(2)">
+                                                <i class="fas fa-arrow-left me-2"></i>
+                                                <span class="lang-en">Back</span>
+                                                <span class="lang-ha" style="display:none;">Komawa</span>
+                                            </button>
+                                            <button type="submit" class="btn btn-primary btn-lg px-5" id="submitBtn">
+                                                <span class="lang-en">Submit Survey</span>
+                                                <span class="lang-ha" style="display:none;">Aika Tambayoyi</span>
+                                                <i class="fas fa-check ms-2"></i>
+                                            </button>
                                         </div>
                                         
                                     </div>
@@ -603,56 +900,101 @@ session_start();
                                         
                                         <!-- SECTION 1 -->
                                         <div class="mb-5">
-                                            <h5 class="text-primary mb-4 pb-2 border-bottom">Section 1: Usage Pattern</h5>
+                                            <h5 class="text-primary mb-4 pb-2 border-bottom">
+                                                <span class="lang-en">Section 1: Usage Pattern</span>
+                                                <span class="lang-ha" style="display:none;">Sashe na 1: Tsarin Amfani</span>
+                                            </h5>
                                             
                                             <div class="mb-4">
-                                                <label class="form-label fw-semibold">1. How often do you use motorcycle transport? <span class="text-danger">*</span></label>
+                                                <label class="form-label fw-semibold">
+                                                    <span class="lang-en">1. How often do you use motorcycle transport?</span>
+                                                    <span class="lang-ha" style="display:none;">1. Sau nawa kake amfani da motar achaba?</span>
+                                                    <span class="text-danger">*</span>
+                                                </label>
                                                 <div>
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="radio" name="usage_frequency" id="usage_daily" value="Daily" required>
-                                                        <label class="form-check-label" for="usage_daily">Daily</label>
+                                                        <label class="form-check-label" for="usage_daily">
+                                                            <span class="lang-en">Daily</span>
+                                                            <span class="lang-ha" style="display:none;">Kullum</span>
+                                                        </label>
                                                     </div>
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="radio" name="usage_frequency" id="usage_few_times" value="A few times a week">
-                                                        <label class="form-check-label" for="usage_few_times">A few times a week</label>
+                                                        <label class="form-check-label" for="usage_few_times">
+                                                            <span class="lang-en">A few times a week</span>
+                                                            <span class="lang-ha" style="display:none;">Sau da yawa a mako</span>
+                                                        </label>
                                                     </div>
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="radio" name="usage_frequency" id="usage_occasionally" value="Occasionally">
-                                                        <label class="form-check-label" for="usage_occasionally">Occasionally</label>
+                                                        <label class="form-check-label" for="usage_occasionally">
+                                                            <span class="lang-en">Occasionally</span>
+                                                            <span class="lang-ha" style="display:none;">Lokaci-lokaci</span>
+                                                        </label>
                                                     </div>
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="radio" name="usage_frequency" id="usage_rarely" value="Rarely">
-                                                        <label class="form-check-label" for="usage_rarely">Rarely</label>
+                                                        <label class="form-check-label" for="usage_rarely">
+                                                            <span class="lang-en">Rarely</span>
+                                                            <span class="lang-ha" style="display:none;">Da wuya</span>
+                                                        </label>
                                                     </div>
                                                 </div>
                                             </div>
                                             
                                             <div class="mb-4">
-                                                <label class="form-label fw-semibold">2. What is your primary reason for using motorcycle transport? <span class="text-danger">*</span></label>
+                                                <label class="form-label fw-semibold">
+                                                    <span class="lang-en">2. What is your primary reason for using motorcycle transport?</span>
+                                                    <span class="lang-ha" style="display:none;">2. Menene babban dalili na amfani da motar achaba?</span>
+                                                    <span class="text-danger">*</span>
+                                                </label>
                                                 <div>
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="radio" name="primary_reason" id="reason_speed" value="Speed / avoiding traffic" required>
-                                                        <label class="form-check-label" for="reason_speed">Speed / avoiding traffic</label>
+                                                        <label class="form-check-label" for="reason_speed">
+                                                            <span class="lang-en">Speed / avoiding traffic</span>
+                                                            <span class="lang-ha" style="display:none;">Sauri / guje wa cunkoso</span>
+                                                        </label>
                                                     </div>
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="radio" name="primary_reason" id="reason_accessibility" value="Accessibility">
-                                                        <label class="form-check-label" for="reason_accessibility">Accessibility</label>
+                                                        <label class="form-check-label" for="reason_accessibility">
+                                                            <span class="lang-en">Accessibility</span>
+                                                            <span class="lang-ha" style="display:none;">Sauƙin samunsa</span>
+                                                        </label>
                                                     </div>
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="radio" name="primary_reason" id="reason_cost" value="Cost">
-                                                        <label class="form-check-label" for="reason_cost">Cost</label>
+                                                        <label class="form-check-label" for="reason_cost">
+                                                            <span class="lang-en">Cost</span>
+                                                            <span class="lang-ha" style="display:none;">Kuɗi</span>
+                                                        </label>
                                                     </div>
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="radio" name="primary_reason" id="reason_convenience" value="Convenience">
-                                                        <label class="form-check-label" for="reason_convenience">Convenience</label>
+                                                        <label class="form-check-label" for="reason_convenience">
+                                                            <span class="lang-en">Convenience</span>
+                                                            <span class="lang-ha" style="display:none;">Sauƙi</span>
+                                                        </label>
                                                     </div>
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="radio" name="primary_reason" id="reason_alternatives" value="Lack of alternatives">
                                                         <label class="form-check-label" for="reason_alternatives">Lack of alternatives</label>
                                                     </div>
                                                     <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="primary_reason" id="reason_lack" value="Lack of alternatives">
+                                                        <label class="form-check-label" for="reason_lack">
+                                                            <span class="lang-en">Lack of alternatives</span>
+                                                            <span class="lang-ha" style="display:none;">Rashin wasu hanyoyi</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
                                                         <input class="form-check-input" type="radio" name="primary_reason" id="reason_other" value="Other">
-                                                        <label class="form-check-label" for="reason_other">Other</label>
+                                                        <label class="form-check-label" for="reason_other">
+                                                            <span class="lang-en">Other</span>
+                                                            <span class="lang-ha" style="display:none;">Wani dalili</span>
+                                                        </label>
                                                     </div>
                                                 </div>
                                             </div>
@@ -660,66 +1002,114 @@ session_start();
                                         
                                         <!-- SECTION 2: USAGE BEHAVIOUR -->
                                         <div class="mb-5">
-                                            <h5 class="text-primary mb-4 pb-2 border-bottom">Section 2: Usage Behaviour</h5>
+                                            <h5 class="text-primary mb-4 pb-2 border-bottom">
+                                                <span class="lang-en">Section 2: Usage Behaviour</span>
+                                                <span class="lang-ha" style="display:none;">Sashe na 2: Yanayin Amfani</span>
+                                            </h5>
                                             
                                             <div class="mb-4">
-                                                <label class="form-label fw-semibold">3. When do you most often use motorcycle transport? <span class="text-danger">*</span></label>
+                                                <label class="form-label fw-semibold">
+                                                    <span class="lang-en">3. When do you most often use motorcycle transport?</span>
+                                                    <span class="lang-ha" style="display:none;">3. Yaushe kake amfani da motar achaba?</span>
+                                                    <span class="text-danger">*</span>
+                                                </label>
                                                 <div>
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="radio" name="usage_time" id="time_morning" value="Morning" required>
-                                                        <label class="form-check-label" for="time_morning">Morning</label>
+                                                        <label class="form-check-label" for="time_morning">
+                                                            <span class="lang-en">Morning</span>
+                                                            <span class="lang-ha" style="display:none;">Safiya</span>
+                                                        </label>
                                                     </div>
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="radio" name="usage_time" id="time_afternoon" value="Afternoon">
-                                                        <label class="form-check-label" for="time_afternoon">Afternoon</label>
+                                                        <label class="form-check-label" for="time_afternoon">
+                                                            <span class="lang-en">Afternoon</span>
+                                                            <span class="lang-ha" style="display:none;">Rana</span>
+                                                        </label>
                                                     </div>
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="radio" name="usage_time" id="time_evening" value="Evening">
-                                                        <label class="form-check-label" for="time_evening">Evening</label>
+                                                        <label class="form-check-label" for="time_evening">
+                                                            <span class="lang-en">Evening</span>
+                                                            <span class="lang-ha" style="display:none;">Maraice</span>
+                                                        </label>
                                                     </div>
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="radio" name="usage_time" id="time_late" value="Late night">
-                                                        <label class="form-check-label" for="time_late">Late night</label>
+                                                        <label class="form-check-label" for="time_late">
+                                                            <span class="lang-en">Late night</span>
+                                                            <span class="lang-ha" style="display:none;">Dare</span>
+                                                        </label>
                                                     </div>
                                                 </div>
                                             </div>
                                             
                                             <div class="mb-4">
-                                                <label class="form-label fw-semibold">4. Where do you usually get motorcycle rides? <span class="text-danger">*</span></label>
+                                                <label class="form-label fw-semibold">
+                                                    <span class="lang-en">4. Where do you usually get motorcycle rides?</span>
+                                                    <span class="lang-ha" style="display:none;">4. A ina kake samun motar achaba?</span>
+                                                    <span class="text-danger">*</span>
+                                                </label>
                                                 <div>
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="radio" name="ride_location" id="loc_roadside" value="Roadside / junction" required>
-                                                        <label class="form-check-label" for="loc_roadside">Roadside / junction</label>
+                                                        <label class="form-check-label" for="loc_roadside">
+                                                            <span class="lang-en">Roadside / junction</span>
+                                                            <span class="lang-ha" style="display:none;">Gefen hanya / mararraba</span>
+                                                        </label>
                                                     </div>
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="radio" name="ride_location" id="loc_park" value="Motorcycle park">
-                                                        <label class="form-check-label" for="loc_park">Motorcycle park</label>
+                                                        <label class="form-check-label" for="loc_park">
+                                                            <span class="lang-en">Motorcycle park</span>
+                                                            <span class="lang-ha" style="display:none;">Tashar achaba</span>
+                                                        </label>
                                                     </div>
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="radio" name="ride_location" id="loc_near" value="Near home or workplace">
-                                                        <label class="form-check-label" for="loc_near">Near home or workplace</label>
+                                                        <label class="form-check-label" for="loc_near">
+                                                            <span class="lang-en">Near home or workplace</span>
+                                                            <span class="lang-ha" style="display:none;">Kusa da gida ko wurin aiki</span>
+                                                        </label>
                                                     </div>
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="radio" name="ride_location" id="loc_contact" value="Through a personal contact">
-                                                        <label class="form-check-label" for="loc_contact">Through a personal contact</label>
+                                                        <label class="form-check-label" for="loc_contact">
+                                                            <span class="lang-en">Through a personal contact</span>
+                                                            <span class="lang-ha" style="display:none;">Ta hanyar wanda na sani</span>
+                                                        </label>
                                                     </div>
                                                 </div>
                                             </div>
                                             
                                             <div class="mb-4">
-                                                <label class="form-label fw-semibold">5. Do you usually ride with the same rider or different riders? <span class="text-danger">*</span></label>
+                                                <label class="form-label fw-semibold">
+                                                    <span class="lang-en">5. Do you usually ride with the same rider or different riders?</span>
+                                                    <span class="lang-ha" style="display:none;">5. Kana amfani da dan achaba guda daya ko daban-daban?</span>
+                                                    <span class="text-danger">*</span>
+                                                </label>
                                                 <div>
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="radio" name="rider_consistency" id="rider_same" value="Mostly the same" required>
-                                                        <label class="form-check-label" for="rider_same">Mostly the same</label>
+                                                        <label class="form-check-label" for="rider_same">
+                                                            <span class="lang-en">Mostly the same</span>
+                                                            <span class="lang-ha" style="display:none;">Galibi daya</span>
+                                                        </label>
                                                     </div>
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="radio" name="rider_consistency" id="rider_different" value="Different riders">
-                                                        <label class="form-check-label" for="rider_different">Different riders</label>
+                                                        <label class="form-check-label" for="rider_different">
+                                                            <span class="lang-en">Different riders</span>
+                                                            <span class="lang-ha" style="display:none;">Daban-daban</span>
+                                                        </label>
                                                     </div>
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="radio" name="rider_consistency" id="rider_no_pref" value="No preference">
-                                                        <label class="form-check-label" for="rider_no_pref">No preference</label>
+                                                        <label class="form-check-label" for="rider_no_pref">
+                                                            <span class="lang-en">No preference</span>
+                                                            <span class="lang-ha" style="display:none;">Ba na damu</span>
+                                                        </label>
                                                     </div>
                                                 </div>
                                             </div>
@@ -727,74 +1117,128 @@ session_start();
                                         
                                         <!-- SECTION 3: BOOKING & COMMUNICATION PATTERNS -->
                                         <div class="mb-5">
-                                            <h5 class="text-primary mb-4 pb-2 border-bottom">Section 3: Booking & Communication Patterns</h5>
+                                            <h5 class="text-primary mb-4 pb-2 border-bottom">
+                                                <span class="lang-en">Section 3: Booking & Communication Patterns</span>
+                                                <span class="lang-ha" style="display:none;">Sashe na 3: Tsarin Booking da Sadarwa</span>
+                                            </h5>
                                             
                                             <div class="mb-4">
-                                                <label class="form-label fw-semibold">6. How do you usually find or contact a rider? <span class="text-danger">*</span></label>
+                                                <label class="form-label fw-semibold">
+                                                    <span class="lang-en">6. How do you usually find or contact a rider?</span>
+                                                    <span class="lang-ha" style="display:none;">6. Yaya kake samun ko tuntubar dan achaba?</span>
+                                                    <span class="text-danger">*</span>
+                                                </label>
                                                 <div>
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="radio" name="find_rider" id="find_walk" value="Walk to rider location" required>
-                                                        <label class="form-check-label" for="find_walk">Walk to rider location</label>
+                                                        <label class="form-check-label" for="find_walk">
+                                                            <span class="lang-en">Walk to rider location</span>
+                                                            <span class="lang-ha" style="display:none;">Tafi wurin dan achaba</span>
+                                                        </label>
                                                     </div>
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="radio" name="find_rider" id="find_call" value="Call a rider directly">
-                                                        <label class="form-check-label" for="find_call">Call a rider directly</label>
+                                                        <label class="form-check-label" for="find_call">
+                                                            <span class="lang-en">Call a rider directly</span>
+                                                            <span class="lang-ha" style="display:none;">Kira dan achaba kai tsaye</span>
+                                                        </label>
                                                     </div>
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="radio" name="find_rider" id="find_contacts" value="Rider contacts me">
-                                                        <label class="form-check-label" for="find_contacts">Rider contacts me</label>
+                                                        <label class="form-check-label" for="find_contacts">
+                                                            <span class="lang-en">Rider contacts me</span>
+                                                            <span class="lang-ha" style="display:none;">Dan achaba yana tuntubar ni</span>
+                                                        </label>
                                                     </div>
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="radio" name="find_rider" id="find_third_party" value="Through a third party">
-                                                        <label class="form-check-label" for="find_third_party">Through a third party</label>
+                                                        <label class="form-check-label" for="find_third_party">
+                                                            <span class="lang-en">Through a third party</span>
+                                                            <span class="lang-ha" style="display:none;">Ta hanyar wani mutum</span>
+                                                        </label>
                                                     </div>
                                                 </div>
                                             </div>
                                             
                                             <div class="mb-4">
-                                                <label class="form-label fw-semibold">7. Have you ever struggled to find a rider when needed? <span class="text-danger">*</span></label>
+                                                <label class="form-label fw-semibold">
+                                                    <span class="lang-en">7. Have you ever struggled to find a rider when needed?</span>
+                                                    <span class="lang-ha" style="display:none;">7. Ka taɓa fuskanci wahala wajen samun dan achaba lokacin bukatar ka?</span>
+                                                    <span class="text-danger">*</span>
+                                                </label>
                                                 <div>
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="radio" name="struggled_rider" id="struggle_often" value="Yes, often" required>
-                                                        <label class="form-check-label" for="struggle_often">Yes, often</label>
+                                                        <label class="form-check-label" for="struggle_often">
+                                                            <span class="lang-en">Yes, often</span>
+                                                            <span class="lang-ha" style="display:none;">E, sau da yawa</span>
+                                                        </label>
                                                     </div>
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="radio" name="struggled_rider" id="struggle_sometimes" value="Yes, sometimes">
-                                                        <label class="form-check-label" for="struggle_sometimes">Yes, sometimes</label>
+                                                        <label class="form-check-label" for="struggle_sometimes">
+                                                            <span class="lang-en">Yes, sometimes</span>
+                                                            <span class="lang-ha" style="display:none;">E, wani lokaci</span>
+                                                        </label>
                                                     </div>
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="radio" name="struggled_rider" id="struggle_rarely" value="Rarely">
-                                                        <label class="form-check-label" for="struggle_rarely">Rarely</label>
+                                                        <label class="form-check-label" for="struggle_rarely">
+                                                            <span class="lang-en">Rarely</span>
+                                                            <span class="lang-ha" style="display:none;">Da wuya</span>
+                                                        </label>
                                                     </div>
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="radio" name="struggled_rider" id="struggle_never" value="Never">
-                                                        <label class="form-check-label" for="struggle_never">Never</label>
+                                                        <label class="form-check-label" for="struggle_never">
+                                                            <span class="lang-en">Never</span>
+                                                            <span class="lang-ha" style="display:none;">Ba na taɓa</span>
+                                                        </label>
                                                     </div>
                                                 </div>
                                             </div>
                                             
                                             <div class="mb-4">
-                                                <label class="form-label fw-semibold">8. What usually causes this difficulty? <span class="text-danger">*</span></label>
+                                                <label class="form-label fw-semibold">
+                                                    <span class="lang-en">8. What usually causes this difficulty?</span>
+                                                    <span class="lang-ha" style="display:none;">8. Me yake haddasa wannan wahala?</span>
+                                                    <span class="text-danger">*</span>
+                                                </label>
                                                 <div>
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="radio" name="difficulty_cause" id="cause_time" value="Time of day" required>
-                                                        <label class="form-check-label" for="cause_time">Time of day</label>
+                                                        <label class="form-check-label" for="cause_time">
+                                                            <span class="lang-en">Time of day</span>
+                                                            <span class="lang-ha" style="display:none;">Lokacin rana</span>
+                                                        </label>
                                                     </div>
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="radio" name="difficulty_cause" id="cause_location" value="Location">
-                                                        <label class="form-check-label" for="cause_location">Location</label>
+                                                        <label class="form-check-label" for="cause_location">
+                                                            <span class="lang-en">Location</span>
+                                                            <span class="lang-ha" style="display:none;">Wurin</span>
+                                                        </label>
                                                     </div>
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="radio" name="difficulty_cause" id="cause_weather" value="Weather">
-                                                        <label class="form-check-label" for="cause_weather">Weather</label>
+                                                        <label class="form-check-label" for="cause_weather">
+                                                            <span class="lang-en">Weather</span>
+                                                            <span class="lang-ha" style="display:none;">Yanayi</span>
+                                                        </label>
                                                     </div>
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="radio" name="difficulty_cause" id="cause_availability" value="Rider availability">
-                                                        <label class="form-check-label" for="cause_availability">Rider availability</label>
+                                                        <label class="form-check-label" for="cause_availability">
+                                                            <span class="lang-en">Rider availability</span>
+                                                            <span class="lang-ha" style="display:none;">Rashin samun dan achaba</span>
+                                                        </label>
                                                     </div>
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="radio" name="difficulty_cause" id="cause_other" value="Other">
-                                                        <label class="form-check-label" for="cause_other">Other</label>
+                                                        <label class="form-check-label" for="cause_other">
+                                                            <span class="lang-en">Other</span>
+                                                            <span class="lang-ha" style="display:none;">Wani dalili</span>
+                                                        </label>
                                                     </div>
                                                 </div>
                                             </div>
@@ -802,62 +1246,107 @@ session_start();
                                         
                                         <!-- SECTION 4: PRICING & PAYMENT EXPERIENCE -->
                                         <div class="mb-5">
-                                            <h5 class="text-primary mb-4 pb-2 border-bottom">Section 4: Pricing & Payment Experience</h5>
+                                            <h5 class="text-primary mb-4 pb-2 border-bottom">
+                                                <span class="lang-en">Section 4: Pricing & Payment Experience</span>
+                                                <span class="lang-ha" style="display:none;">Sashe na 4: Farashin Kuɗi da Biya</span>
+                                            </h5>
                                             
                                             <div class="mb-4">
-                                                <label class="form-label fw-semibold">9. Do you usually agree on fare before the trip? <span class="text-danger">*</span></label>
+                                                <label class="form-label fw-semibold">
+                                                    <span class="lang-en">9. How do you usually agree on the fare?</span>
+                                                    <span class="lang-ha" style="display:none;">9. Yaya kuke yarjenya kan kuɗin tafiya?</span>
+                                                    <span class="text-danger">*</span>
+                                                </label>
                                                 <div>
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="fare_agreement" id="fare_always" value="Always" required>
-                                                        <label class="form-check-label" for="fare_always">Always</label>
+                                                        <input class="form-check-input" type="radio" name="fare_agreement" id="fare_negotiation" value="Negotiation" required>
+                                                        <label class="form-check-label" for="fare_negotiation">
+                                                            <span class="lang-en">Negotiation</span>
+                                                            <span class="lang-ha" style="display:none;">Tattaunawa</span>
+                                                        </label>
                                                     </div>
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="fare_agreement" id="fare_sometimes" value="Sometimes">
-                                                        <label class="form-check-label" for="fare_sometimes">Sometimes</label>
+                                                        <input class="form-check-input" type="radio" name="fare_agreement" id="fare_decides" value="Rider decides">
+                                                        <label class="form-check-label" for="fare_decides">
+                                                            <span class="lang-en">Rider decides</span>
+                                                            <span class="lang-ha" style="display:none;">Dan achaba yake yanke shawara</span>
+                                                        </label>
                                                     </div>
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="fare_agreement" id="fare_rarely" value="Rarely">
-                                                        <label class="form-check-label" for="fare_rarely">Rarely</label>
+                                                        <input class="form-check-input" type="radio" name="fare_agreement" id="fare_fixed" value="Known/fixed price">
+                                                        <label class="form-check-label" for="fare_fixed">
+                                                            <span class="lang-en">Known/fixed price</span>
+                                                            <span class="lang-ha" style="display:none;">Kuɗi da aka riga aka sani</span>
+                                                        </label>
                                                     </div>
                                                 </div>
                                             </div>
                                             
                                             <div class="mb-4">
-                                                <label class="form-label fw-semibold">10. Have you experienced disagreements over pricing? <span class="text-danger">*</span></label>
+                                                <label class="form-label fw-semibold">
+                                                    <span class="lang-en">10. Have you experienced pricing disagreements?</span>
+                                                    <span class="lang-ha" style="display:none;">10. Ka taɓa samun rigima kan farashin kuɗi?</span>
+                                                    <span class="text-danger">*</span>
+                                                </label>
                                                 <div>
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="pricing_disagreements" id="disagree_yes_often" value="Yes, often" required>
-                                                        <label class="form-check-label" for="disagree_yes_often">Yes, often</label>
+                                                        <input class="form-check-input" type="radio" name="pricing_disagreements" id="disagree_frequently" value="Frequently" required>
+                                                        <label class="form-check-label" for="disagree_frequently">
+                                                            <span class="lang-en">Frequently</span>
+                                                            <span class="lang-ha" style="display:none;">Sau da yawa</span>
+                                                        </label>
                                                     </div>
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="pricing_disagreements" id="disagree_yes_sometimes" value="Yes, sometimes">
-                                                        <label class="form-check-label" for="disagree_yes_sometimes">Yes, sometimes</label>
+                                                        <input class="form-check-input" type="radio" name="pricing_disagreements" id="disagree_occasionally" value="Occasionally">
+                                                        <label class="form-check-label" for="disagree_occasionally">
+                                                            <span class="lang-en">Occasionally</span>
+                                                            <span class="lang-ha" style="display:none;">Lokaci-lokaci</span>
+                                                        </label>
                                                     </div>
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="radio" name="pricing_disagreements" id="disagree_rarely" value="Rarely">
-                                                        <label class="form-check-label" for="disagree_rarely">Rarely</label>
+                                                        <label class="form-check-label" for="disagree_rarely">
+                                                            <span class="lang-en">Rarely</span>
+                                                            <span class="lang-ha" style="display:none;">Da wuya</span>
+                                                        </label>
                                                     </div>
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="radio" name="pricing_disagreements" id="disagree_never" value="Never">
-                                                        <label class="form-check-label" for="disagree_never">Never</label>
+                                                        <label class="form-check-label" for="disagree_never">
+                                                            <span class="lang-en">Never</span>
+                                                            <span class="lang-ha" style="display:none;">Ba na taɓa</span>
+                                                        </label>
                                                     </div>
                                                 </div>
                                             </div>
                                             
                                             <div class="mb-4">
-                                                <label class="form-label fw-semibold">11. What payment method do you usually use? <span class="text-danger">*</span></label>
+                                                <label class="form-label fw-semibold">
+                                                    <span class="lang-en">11. How do you usually pay?</span>
+                                                    <span class="lang-ha" style="display:none;">11. Yaya kake biyan kuɗin tafiya?</span>
+                                                    <span class="text-danger">*</span>
+                                                </label>
                                                 <div>
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="payment_method" id="payment_cash" value="Cash only" required>
-                                                        <label class="form-check-label" for="payment_cash">Cash only</label>
+                                                        <input class="form-check-input" type="radio" name="payment_method" id="payment_cash" value="Cash" required>
+                                                        <label class="form-check-label" for="payment_cash">
+                                                            <span class="lang-en">Cash</span>
+                                                            <span class="lang-ha" style="display:none;">Kuɗi</span>
+                                                        </label>
                                                     </div>
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="payment_method" id="payment_transfer" value="Mobile transfer">
-                                                        <label class="form-check-label" for="payment_transfer">Mobile transfer</label>
+                                                        <input class="form-check-input" type="radio" name="payment_method" id="payment_transfer" value="Bank transfer">
+                                                        <label class="form-check-label" for="payment_transfer">
+                                                            <span class="lang-en">Bank transfer</span>
+                                                            <span class="lang-ha" style="display:none;">Canja wurin kuɗi</span>
+                                                        </label>
                                                     </div>
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="payment_method" id="payment_both" value="Both">
-                                                        <label class="form-check-label" for="payment_both">Both</label>
+                                                        <input class="form-check-input" type="radio" name="payment_method" id="payment_mobile" value="Mobile money">
+                                                        <label class="form-check-label" for="payment_mobile">
+                                                            <span class="lang-en">Mobile money</span>
+                                                            <span class="lang-ha" style="display:none;">Kuɗin waya</span>
+                                                        </label>
                                                     </div>
                                                 </div>
                                             </div>
@@ -865,78 +1354,135 @@ session_start();
                                         
                                         <!-- SECTION 5: SAFETY & TRUST PERCEPTION -->
                                         <div class="mb-5">
-                                            <h5 class="text-primary mb-4 pb-2 border-bottom">Section 5: Safety & Trust Perception</h5>
+                                            <h5 class="text-primary mb-4 pb-2 border-bottom">
+                                                <span class="lang-en">Section 5: Safety & Trust Perception</span>
+                                                <span class="lang-ha" style="display:none;">Sashe na 5: Aminci da Amana</span>
+                                            </h5>
                                             
                                             <div class="mb-4">
-                                                <label class="form-label fw-semibold">12. How do you generally feel about your safety using motorcycles? <span class="text-danger">*</span></label>
+                                                <label class="form-label fw-semibold">
+                                                    <span class="lang-en">12. How safe do you generally feel using motorcycle transport?</span>
+                                                    <span class="lang-ha" style="display:none;">12. Yaya kake jin lafiya lokacin amfani da motar achaba?</span>
+                                                    <span class="text-danger">*</span>
+                                                </label>
                                                 <div>
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="radio" name="safety_feeling" id="safety_very_safe" value="Very safe" required>
-                                                        <label class="form-check-label" for="safety_very_safe">Very safe</label>
+                                                        <label class="form-check-label" for="safety_very_safe">
+                                                            <span class="lang-en">Very safe</span>
+                                                            <span class="lang-ha" style="display:none;">Ina da aminci sosai</span>
+                                                        </label>
                                                     </div>
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="radio" name="safety_feeling" id="safety_somewhat_safe" value="Somewhat safe">
-                                                        <label class="form-check-label" for="safety_somewhat_safe">Somewhat safe</label>
+                                                        <label class="form-check-label" for="safety_somewhat_safe">
+                                                            <span class="lang-en">Somewhat safe</span>
+                                                            <span class="lang-ha" style="display:none;">Ina da ɗan aminci</span>
+                                                        </label>
                                                     </div>
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="radio" name="safety_feeling" id="safety_neutral" value="Neutral">
-                                                        <label class="form-check-label" for="safety_neutral">Neutral</label>
+                                                        <label class="form-check-label" for="safety_neutral">
+                                                            <span class="lang-en">Neutral</span>
+                                                            <span class="lang-ha" style="display:none;">Matsakaici</span>
+                                                        </label>
                                                     </div>
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="radio" name="safety_feeling" id="safety_somewhat_unsafe" value="Somewhat unsafe">
-                                                        <label class="form-check-label" for="safety_somewhat_unsafe">Somewhat unsafe</label>
+                                                        <label class="form-check-label" for="safety_somewhat_unsafe">
+                                                            <span class="lang-en">Somewhat unsafe</span>
+                                                            <span class="lang-ha" style="display:none;">Ba aminci sosai ba</span>
+                                                        </label>
                                                     </div>
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="radio" name="safety_feeling" id="safety_very_unsafe" value="Very unsafe">
-                                                        <label class="form-check-label" for="safety_very_unsafe">Very unsafe</label>
+                                                        <label class="form-check-label" for="safety_very_unsafe">
+                                                            <span class="lang-en">Very unsafe</span>
+                                                            <span class="lang-ha" style="display:none;">Babu aminci</span>
+                                                        </label>
                                                     </div>
                                                 </div>
                                             </div>
                                             
                                             <div class="mb-4">
-                                                <label class="form-label fw-semibold">13. What safety concerns do you have? <span class="text-danger">*</span></label>
+                                                <label class="form-label fw-semibold">
+                                                    <span class="lang-en">13. What safety concerns have you experienced or worried about?</span>
+                                                    <span class="lang-ha" style="display:none;">13. Wanne irin matsalar aminci ka taɓa fuskanta ko ka damu da ita?</span>
+                                                    <span class="text-danger">*</span>
+                                                </label>
                                                 <div>
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="safety_concerns" id="concern_reckless" value="Reckless driving" required>
-                                                        <label class="form-check-label" for="concern_reckless">Reckless driving</label>
+                                                        <input class="form-check-input" type="radio" name="safety_concerns" id="concern_reckless" value="Reckless riding" required>
+                                                        <label class="form-check-label" for="concern_reckless">
+                                                            <span class="lang-en">Reckless riding</span>
+                                                            <span class="lang-ha" style="display:none;">Tukin hauka</span>
+                                                        </label>
                                                     </div>
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="safety_concerns" id="concern_accidents" value="Accidents">
-                                                        <label class="form-check-label" for="concern_accidents">Accidents</label>
+                                                        <input class="form-check-input" type="radio" name="safety_concerns" id="concern_roads" value="Poor roads">
+                                                        <label class="form-check-label" for="concern_roads">
+                                                            <span class="lang-en">Poor roads</span>
+                                                            <span class="lang-ha" style="display:none;">Hanyoyi marasa kyau</span>
+                                                        </label>
                                                     </div>
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="safety_concerns" id="concern_theft" value="Theft / robbery">
-                                                        <label class="form-check-label" for="concern_theft">Theft / robbery</label>
+                                                        <input class="form-check-input" type="radio" name="safety_concerns" id="concern_helmet" value="No helmet">
+                                                        <label class="form-check-label" for="concern_helmet">
+                                                            <span class="lang-en">No helmet</span>
+                                                            <span class="lang-ha" style="display:none;">Babu hular kariya</span>
+                                                        </label>
                                                     </div>
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="safety_concerns" id="concern_stranger" value="Riding with strangers">
-                                                        <label class="form-check-label" for="concern_stranger">Riding with strangers</label>
+                                                        <input class="form-check-input" type="radio" name="safety_concerns" id="concern_theft" value="Theft or harassment">
+                                                        <label class="form-check-label" for="concern_theft">
+                                                            <span class="lang-en">Theft or harassment</span>
+                                                            <span class="lang-ha" style="display:none;">Sata ko cin zarafi</span>
+                                                        </label>
                                                     </div>
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="safety_concerns" id="concern_harassment" value="Harassment">
-                                                        <label class="form-check-label" for="concern_harassment">Harassment</label>
+                                                        <input class="form-check-input" type="radio" name="safety_concerns" id="concern_unfamiliar" value="Rider unfamiliarity">
+                                                        <label class="form-check-label" for="concern_unfamiliar">
+                                                            <span class="lang-en">Rider unfamiliarity</span>
+                                                            <span class="lang-ha" style="display:none;">Rashin sanin dan achaba</span>
+                                                        </label>
                                                     </div>
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="radio" name="safety_concerns" id="concern_none_safety" value="None">
-                                                        <label class="form-check-label" for="concern_none_safety">None</label>
+                                                        <label class="form-check-label" for="concern_none_safety">
+                                                            <span class="lang-en">None</span>
+                                                            <span class="lang-ha" style="display:none;">Babu</span>
+                                                        </label>
                                                     </div>
                                                 </div>
                                             </div>
                                             
                                             <div class="mb-4">
-                                                <label class="form-label fw-semibold">14. If something goes wrong, how confident are you in getting help? <span class="text-danger">*</span></label>
+                                                <label class="form-label fw-semibold">
+                                                    <span class="lang-en">14. If something goes wrong during a ride, how confident are you that help would be available?</span>
+                                                    <span class="lang-ha" style="display:none;">14. Idan wani abu ya faru a lokacin tafiya, kana da	abbas cewa za a same ka da taimako?</span>
+                                                    <span class="text-danger">*</span>
+                                                </label>
                                                 <div>
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="help_confidence" id="help_confident" value="Confident" required>
-                                                        <label class="form-check-label" for="help_confident">Confident</label>
+                                                        <input class="form-check-input" type="radio" name="help_confidence" id="help_very_confident" value="Very confident" required>
+                                                        <label class="form-check-label" for="help_very_confident">
+                                                            <span class="lang-en">Very confident</span>
+                                                            <span class="lang-ha" style="display:none;">Ina da tabbas sosai</span>
+                                                        </label>
                                                     </div>
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="help_confidence" id="help_unsure" value="Unsure">
-                                                        <label class="form-check-label" for="help_unsure">Unsure</label>
+                                                        <input class="form-check-input" type="radio" name="help_confidence" id="help_somewhat" value="Somewhat confident">
+                                                        <label class="form-check-label" for="help_somewhat">
+                                                            <span class="lang-en">Somewhat confident</span>
+                                                            <span class="lang-ha" style="display:none;">Ina da ɗan tabbas</span>
+                                                        </label>
                                                     </div>
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="radio" name="help_confidence" id="help_not_confident" value="Not confident">
-                                                        <label class="form-check-label" for="help_not_confident">Not confident</label>
+                                                        <label class="form-check-label" for="help_not_confident">
+                                                            <span class="lang-en">Not confident</span>
+                                                            <span class="lang-ha" style="display:none;">Ba na da tabbas</span>
+                                                        </label>
                                                     </div>
                                                 </div>
                                             </div>
@@ -944,48 +1490,82 @@ session_start();
                                         
                                         <!-- SECTION 6: RELIABILITY & EXPERIENCE QUALITY -->
                                         <div class="mb-5">
-                                            <h5 class="text-primary mb-4 pb-2 border-bottom">Section 6: Reliability & Experience Quality</h5>
+                                            <h5 class="text-primary mb-4 pb-2 border-bottom">
+                                                <span class="lang-en">Section 6: Reliability & Experience Quality</span>
+                                                <span class="lang-ha" style="display:none;">Sashe na 6: Tabbas da Inganci</span>
+                                            </h5>
                                             
                                             <div class="mb-4">
-                                                <label class="form-label fw-semibold">15. How would you rate the reliability of motorcycle transport? <span class="text-danger">*</span></label>
-                                                <div>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="reliability" id="reliability_very" value="Very reliable" required>
-                                                        <label class="form-check-label" for="reliability_very">Very reliable</label>
-                                                    </div>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="reliability" id="reliability_somewhat" value="Somewhat reliable">
-                                                        <label class="form-check-label" for="reliability_somewhat">Somewhat reliable</label>
-                                                    </div>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="reliability" id="reliability_unreliable" value="Unreliable">
-                                                        <label class="form-check-label" for="reliability_unreliable">Unreliable</label>
-                                                    </div>
+                                <label class="form-label fw-semibold">
+                                    <span class="lang-en">15. How would you rate the reliability of motorcycle transport?</span>
+                                    <span class="lang-ha" style="display:none;">15. Yaya kake ganin amincin motar achaba?</span>
+                                    <span class="text-danger">*</span>
+                                </label>
+                                <div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="reliability" id="reliability_very" value="Very reliable" required>
+                                        <label class="form-check-label" for="reliability_very">
+                                            <span class="lang-en">Very reliable</span>
+                                            <span class="lang-ha" style="display:none;">Amintacce sosai</span>
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="reliability" id="reliability_somewhat" value="Somewhat reliable">
+                                        <label class="form-check-label" for="reliability_somewhat">
+                                            <span class="lang-en">Somewhat reliable</span>
+                                            <span class="lang-ha" style="display:none;">Yana da ɗan aminci</span>
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="reliability" id="reliability_unreliable" value="Unreliable">
+                                        <label class="form-check-label" for="reliability_unreliable">
+                                            <span class="lang-en">Unreliable</span>
+                                            <span class="lang-ha" style="display:none;">Ba amintacce ba</span>
+                                        </label>
                                                 </div>
                                             </div>
                                             
                                             <div class="mb-4">
-                                                <label class="form-label fw-semibold">16. Have you had any memorable experiences (good or bad)? <span class="text-danger">*</span></label>
+                                                <label class="form-label fw-semibold">
+                                                    <span class="lang-en">16. Have you had any memorable experiences (good or bad)?</span>
+                                                    <span class="lang-ha" style="display:none;">16. Shin kana da wasu abubuwan da suka faru da kai (mai kyau ko marar kyau)?</span>
+                                                    <span class="text-danger">*</span>
+                                                </label>
                                                 <div>
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="radio" name="experiences" id="exp_mostly_good" value="Mostly good" required>
-                                                        <label class="form-check-label" for="exp_mostly_good">Mostly good</label>
+                                                        <label class="form-check-label" for="exp_mostly_good">
+                                                            <span class="lang-en">Mostly good</span>
+                                                            <span class="lang-ha" style="display:none;">Mafi yawan abubuwa masu kyau</span>
+                                                        </label>
                                                     </div>
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="radio" name="experiences" id="exp_mostly_bad" value="Mostly bad">
-                                                        <label class="form-check-label" for="exp_mostly_bad">Mostly bad</label>
+                                                        <label class="form-check-label" for="exp_mostly_bad">
+                                                            <span class="lang-en">Mostly bad</span>
+                                                            <span class="lang-ha" style="display:none;">Mafi yawan abubuwa marasa kyau</span>
+                                                        </label>
                                                     </div>
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="radio" name="experiences" id="exp_mixed" value="Mixed">
-                                                        <label class="form-check-label" for="exp_mixed">Mixed</label>
+                                                        <label class="form-check-label" for="exp_mixed">
+                                                            <span class="lang-en">Mixed</span>
+                                                            <span class="lang-ha" style="display:none;">Gauraye</span>
+                                                        </label>
                                                     </div>
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="radio" name="experiences" id="exp_neutral" value="Neutral">
-                                                        <label class="form-check-label" for="exp_neutral">Neutral</label>
+                                                        <label class="form-check-label" for="exp_neutral">
+                                                            <span class="lang-en">Neutral</span>
+                                                            <span class="lang-ha" style="display:none;\">Na tsaka-tsaki</span>
+                                                        </label>
                                                     </div>
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="radio" name="experiences" id="exp_none" value="None">
-                                                        <label class="form-check-label" for="exp_none">None</label>
+                                                        <label class="form-check-label" for="exp_none">
+                                                            <span class="lang-en">None</span>
+                                                            <span class="lang-ha" style="display:none;">Babu</span>
+                                                        </label>
                                                     </div>
                                                 </div>
                                             </div>
@@ -993,77 +1573,130 @@ session_start();
                                         
                                         <!-- SECTION 7: REFLECTION & EXPECTATIONS -->
                                         <div class="mb-5">
-                                            <h5 class="text-primary mb-4 pb-2 border-bottom">Section 7: Reflection & Expectations</h5>
+                                            <h5 class="text-primary mb-4 pb-2 border-bottom">
+                                                <span class="lang-en">Section 7: Reflection & Expectations</span>
+                                                <span class="lang-ha" style="display:none;">Sashe na 7: Tunani da Tsammanin</span>
+                                            </h5>
                                             
                                             <div class="mb-4">
-                                                <label for="frustration" class="form-label fw-semibold">17. What frustrates you most about the current experience? <span class="text-danger">*</span></label>
-                                                <textarea class="form-control" id="frustration" name="frustration" rows="3" placeholder="Tell us what frustrates you..." required></textarea>
-                                            </div>
-                                            
-                                            <div class="mb-4">
-                                                <label for="improvement" class="form-label fw-semibold">18. What would improve your experience with motorcycles? <span class="text-danger">*</span></label>
-                                                <textarea class="form-control" id="improvement" name="improvement" rows="3" placeholder="Tell us what would make it better..." required></textarea>
-                                            </div>
-                                            
-                                            <div class="mb-4">
-                                                <label class="form-label fw-semibold">19. Would you switch to a safer, more reliable option if available? <span class="text-danger">*</span></label>
-                                                <div>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="would_switch" id="switch_yes" value="Yes" required>
-                                                        <label class="form-check-label" for="switch_yes">Yes</label>
-                                                    </div>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="would_switch" id="switch_maybe" value="Maybe">
-                                                        <label class="form-check-label" for="switch_maybe">Maybe</label>
-                                                    </div>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="would_switch" id="switch_no" value="No">
-                                                        <label class="form-check-label" for="switch_no">No</label>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                <label for="frustration" class="form-label fw-semibold">
+                                    <span class="lang-en">17. What frustrates you most about the current experience?</span>
+                                    <span class="lang-ha" style="display:none;">17. Menene yake damunka sosai game da yadda ake hawan motar achaba?</span>
+                                    <span class="text-danger">*</span>
+                                </label>
+                                <textarea class="form-control" id="frustration" name="frustration" rows="3" placeholder="Tell us what frustrates you..." required></textarea>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="improvement" class="form-label fw-semibold">
+                                    <span class="lang-en">18. What would improve your experience with motorcycles?</span>
+                                    <span class="lang-ha" style="display:none;">18. Menene zai sa ka sami ingantacciyar hawan motar achaba?</span>
+                                    <span class="text-danger">*</span>
+                                </label>
+                                <textarea class="form-control" id="improvement" name="improvement" rows="3" placeholder="Tell us what would make it better..." required></textarea>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label class="form-label fw-semibold">
+                                    <span class="lang-en">19. Would you switch to a safer, more reliable option if available?</span>
+                                    <span class="lang-ha" style="display:none;">19. Shin za ka canza zuwa zaɓi mai aminci idan akwai?</span>
+                                    <span class="text-danger">*</span>
+                                </label>
+                                <div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="would_switch" id="switch_yes" value="Yes" required>
+                                        <label class="form-check-label" for="switch_yes">
+                                            <span class="lang-en">Yes</span>
+                                            <span class="lang-ha" style="display:none;">Eh</span>
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="would_switch" id="switch_maybe" value="Maybe">
+                                        <label class="form-check-label" for="switch_maybe">
+                                            <span class="lang-en">Maybe</span>
+                                            <span class="lang-ha" style="display:none;">Watakila</span>
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="would_switch" id="switch_no" value="No">
+                                        <label class="form-check-label" for="switch_no">
+                                            <span class="lang-en">No</span>
+                                            <span class="lang-ha" style="display:none;">A'a</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
                                         </div>
                                         
                                         <!-- SECTION 8: DEMOGRAPHICS (OPTIONAL) -->
                                         <div class="mb-5">
-                                            <h5 class="text-primary mb-4 pb-2 border-bottom">Section 8: Demographics (Optional)</h5>
+                                            <h5 class="text-primary mb-4 pb-2 border-bottom">
+                                                <span class="lang-en">Section 8: Demographics (Optional)</span>
+                                                <span class="lang-ha" style="display:none;">Sashe na 8: Bayanai (Zaɓi)</span>
+                                            </h5>
                                             
                                             <div class="mb-4">
-                                                <label class="form-label fw-semibold">20. What is your age range?</label>
-                                                <div>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="age_range" id="age_under18" value="Under 18">
-                                                        <label class="form-check-label" for="age_under18">Under 18</label>
-                                                    </div>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="age_range" id="age_18_24" value="18-24">
-                                                        <label class="form-check-label" for="age_18_24">18-24</label>
-                                                    </div>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="age_range" id="age_25_34" value="25-34">
-                                                        <label class="form-check-label" for="age_25_34">25-34</label>
-                                                    </div>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="age_range" id="age_35_44" value="35-44">
-                                                        <label class="form-check-label" for="age_35_44">35-44</label>
-                                                    </div>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="age_range" id="age_45_plus" value="45+">
-                                                        <label class="form-check-label" for="age_45_plus">45+</label>
-                                                    </div>
+                                <label class="form-label fw-semibold">
+                                    <span class="lang-en">20. What is your age range?</span>
+                                    <span class="lang-ha" style="display:none;">20. Shekarunka nawa ne?</span>
+                                </label>
+                                <div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="age_range" id="age_under18" value="Under 18">
+                                        <label class="form-check-label" for="age_under18">
+                                            <span class="lang-en">Under 18</span>
+                                            <span class="lang-ha" style="display:none;">Kasa da shekara 18</span>
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="age_range" id="age_18_24" value="18-24">
+                                        <label class="form-check-label" for="age_18_24">
+                                            <span class="lang-en">18-24</span>
+                                            <span class="lang-ha" style="display:none;">18-24</span>
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="age_range" id="age_25_34" value="25-34">
+                                        <label class="form-check-label" for="age_25_34">
+                                            <span class="lang-en">25-34</span>
+                                            <span class="lang-ha" style="display:none;">25-34</span>
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="age_range" id="age_35_44" value="35-44">
+                                        <label class="form-check-label" for="age_35_44">
+                                            <span class="lang-en">35-44</span>
+                                            <span class="lang-ha" style="display:none;">35-44</span>
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="age_range" id="age_45_plus" value="45+">
+                                        <label class="form-check-label" for="age_45_plus">
+                                            <span class="lang-en">45+</span>
+                                            <span class="lang-ha" style="display:none;">Sama da 45</span>
+                                        </label>
                                                 </div>
                                             </div>
                                             
                                             <div class="mb-4">
-                                                <label class="form-label fw-semibold">21. What type of phone do you use?</label>
+                                                <label class="form-label fw-semibold">
+                                                    <span class="lang-en">21. What type of phone do you use?</span>
+                                                    <span class="lang-ha" style="display:none;">21. Wane nau'in wayar kake amfani da ita?</span>
+                                                </label>
                                                 <div>
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="radio" name="phone_type" id="phone_smartphone" value="Smartphone">
-                                                        <label class="form-check-label" for="phone_smartphone">Smartphone</label>
+                                                        <label class="form-check-label" for="phone_smartphone">
+                                                            <span class="lang-en">Smartphone</span>
+                                                            <span class="lang-ha" style="display:none;">Wayar hannu mai fasaha (Smartphone)</span>
+                                                        </label>
                                                     </div>
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="radio" name="phone_type" id="phone_basic" value="Basic phone">
-                                                        <label class="form-check-label" for="phone_basic">Basic phone</label>
+                                                        <label class="form-check-label" for="phone_basic">
+                                                            <span class="lang-en">Basic phone</span>
+                                                            <span class="lang-ha" style="display:none;">Wayar hannu ta yau da kullum</span>
+                                                        </label>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1073,10 +1706,14 @@ session_start();
                                 
                                 <div class="d-flex justify-content-between mt-4">
                                     <button type="button" class="btn btn-outline-secondary btn-lg px-4" onclick="prevStep(2)">
-                                        <i class="fas fa-arrow-left me-2"></i>Back
+                                        <i class="fas fa-arrow-left me-2"></i>
+                                        <span class="lang-en">Back</span>
+                                        <span class="lang-ha" style="display:none;">Komawa</span>
                                     </button>
                                     <button type="submit" class="btn btn-primary btn-lg px-5" id="submitBtn">
-                                        Submit Survey <i class="fas fa-check ms-2"></i>
+                                        <span class="lang-en">Submit Survey</span>
+                                        <span class="lang-ha" style="display:none;">Aika Tambayoyi</span>
+                                        <i class="fas fa-check ms-2"></i>
                                     </button>
                                 </div>
                             </div>
@@ -1155,8 +1792,116 @@ session_start();
     
     <!-- Survey Form Handler -->
     <script>
-        // Auto-advance from Step 1 when survey type is selected
+        // Language switching functionality
         document.addEventListener('DOMContentLoaded', function() {
+            const langRadios = document.querySelectorAll('input[name="language"]');
+            const surveyLanguageInput = document.getElementById('surveyLanguage');
+            
+            // Define placeholder translations
+            const placeholders = {
+                english: {
+                    'name': 'Enter your full name',
+                    'email': 'Enter your email address',
+                    'phone': 'Enter your phone number',
+                    'location': 'Where are you located?',
+                    'income': 'How much do you earn monthly?',
+                    'frustration': 'Tell us what frustrates you...',
+                    'improvement': 'Tell us what would make it better...',
+                    'routeDetails': 'Please describe your main routes',
+                    'comfortDetails': 'Tell us more about your comfort level',
+                    'safetyDetails': 'Tell us more about how you feel',
+                    'otherExpense': 'Please specify',
+                    'savingsReason': 'Please explain why',
+                    'incomeDetails': 'Please provide details'
+                },
+                hausa: {
+                    'name': 'Rubuta sunanka',
+                    'email': 'Rubuta adireshin imelinka',
+                    'phone': 'Rubuta lambar wayarka',
+                    'location': 'Ina kake zaune?',
+                    'income': 'Nawa kake samun kuɗi a wata?',
+                    'frustration': 'Faɗa mana abin da yake damunka...',
+                    'improvement': 'Faɗa mana abin da zai inganta...',
+                    'routeDetails': 'Ka bayyana yadda kake tafiya',
+                    'comfortDetails': 'Faɗa mana game da jin daɗinka',
+                    'safetyDetails': 'Faɗa mana yadda kake ji',
+                    'otherExpense': 'Ka fayyace',
+                    'savingsReason': 'Ka bayyana dalilin',
+                    'incomeDetails': 'Ka bayyana dalla-dalla'
+                }
+            };
+            
+            function updatePlaceholders(lang) {
+                const langKey = lang === 'english' ? 'english' : 'hausa';
+                
+                // Update all input and textarea placeholders with null checks
+                const nameField = document.getElementById('name');
+                if (nameField) nameField.placeholder = placeholders[langKey].name;
+                
+                const emailField = document.getElementById('email');
+                if (emailField) emailField.placeholder = placeholders[langKey].email;
+                
+                const phoneField = document.getElementById('phone');
+                if (phoneField) phoneField.placeholder = placeholders[langKey].phone;
+                
+                const locationField = document.getElementById('location');
+                if (locationField) locationField.placeholder = placeholders[langKey].location;
+                
+                const incomeField = document.getElementById('income');
+                if (incomeField) incomeField.placeholder = placeholders[langKey].income;
+                
+                const frustrationField = document.getElementById('frustration');
+                if (frustrationField) frustrationField.placeholder = placeholders[langKey].frustration;
+                
+                const improvementField = document.getElementById('improvement');
+                if (improvementField) improvementField.placeholder = placeholders[langKey].improvement;
+                
+                const routeDetailsField = document.getElementById('routeDetails');
+                if (routeDetailsField) routeDetailsField.placeholder = placeholders[langKey].routeDetails;
+                
+                const comfortDetailsField = document.getElementById('comfortDetails');
+                if (comfortDetailsField) comfortDetailsField.placeholder = placeholders[langKey].comfortDetails;
+                
+                const safetyDetailsField = document.getElementById('safetyDetails');
+                if (safetyDetailsField) safetyDetailsField.placeholder = placeholders[langKey].safetyDetails;
+                
+                const otherExpenseField = document.getElementById('q8_other_specify');
+                if (otherExpenseField) otherExpenseField.placeholder = placeholders[langKey].otherExpense;
+                
+                const savingsReasonField = document.getElementById('q10_reason');
+                if (savingsReasonField) savingsReasonField.placeholder = placeholders[langKey].savingsReason;
+                
+                const incomeDetailsField = document.getElementById('q9_followup');
+                if (incomeDetailsField) incomeDetailsField.placeholder = placeholders[langKey].incomeDetails;
+            }
+            
+            langRadios.forEach(radio => {
+                radio.addEventListener('change', function() {
+                    const selectedLang = this.value;
+                    surveyLanguageInput.value = selectedLang;
+                    
+                    // Hide all language elements
+                    document.querySelectorAll('.lang-en, .lang-ha').forEach(el => {
+                        el.style.display = 'none';
+                    });
+                    
+                    // Show selected language elements
+                    if (selectedLang === 'english') {
+                        document.querySelectorAll('.lang-en').forEach(el => {
+                            el.style.display = '';
+                        });
+                    } else if (selectedLang === 'hausa') {
+                        document.querySelectorAll('.lang-ha').forEach(el => {
+                            el.style.display = '';
+                        });
+                    }
+                    
+                    // Update placeholders
+                    updatePlaceholders(selectedLang);
+                });
+            });
+            
+            // Auto-advance from Step 1 when survey type is selected
             const surveyTypeRadios = document.querySelectorAll('input[name="surveyType"]');
             
             surveyTypeRadios.forEach(radio => {
