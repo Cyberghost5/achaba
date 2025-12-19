@@ -885,7 +885,7 @@ session_start();
                                                 <span class="lang-en">Back</span>
                                                 <span class="lang-ha" style="display:none;">Komawa</span>
                                             </button>
-                                            <button type="submit" class="btn btn-primary btn-lg px-5" id="submitBtn">
+                                            <button type="submit" class="btn btn-primary btn-lg px-5" class="submit-survey-btn">
                                                 <span class="lang-en">Submit Survey</span>
                                                 <span class="lang-ha" style="display:none;">Aika Tambayoyi</span>
                                                 <i class="fas fa-check ms-2"></i>
@@ -1710,7 +1710,7 @@ session_start();
                                         <span class="lang-en">Back</span>
                                         <span class="lang-ha" style="display:none;">Komawa</span>
                                     </button>
-                                    <button type="submit" class="btn btn-primary btn-lg px-5" id="submitBtn">
+                                    <button type="submit" class="btn btn-primary btn-lg px-5" class="submit-survey-btn">
                                         <span class="lang-en">Submit Survey</span>
                                         <span class="lang-ha" style="display:none;">Aika Tambayoyi</span>
                                         <i class="fas fa-check ms-2"></i>
@@ -1965,7 +1965,7 @@ session_start();
         document.getElementById('surveyForm').addEventListener('submit', async function(e) {
             e.preventDefault();
             
-            const submitBtn = document.getElementById('submitBtn');
+            const submitBtn = e.submitter || this.querySelector('button[type="submit"]');
             const responseMessage = document.getElementById('responseMessage');
             
             // Disable button and show loading state
