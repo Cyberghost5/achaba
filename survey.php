@@ -244,7 +244,7 @@ session_start();
                                 
                                 <div class="row g-3">
                                     <div class="col-md-6">
-                                        <input type="radio" class="btn-check" name="surveyType" id="typeUser" value="user" required>
+                                        <input type="radio" class="btn-check" name="surveyType" id="typeUser" value="user">
                                         <label class="btn btn-outline-primary w-100 py-4" for="typeUser">
                                             <i class="fas fa-user fa-2x d-block mb-3"></i>
                                             <h5 class="mb-2">
@@ -258,7 +258,7 @@ session_start();
                                         </label>
                                     </div>
                                     <div class="col-md-6">
-                                        <input type="radio" class="btn-check" name="surveyType" id="typeRider" value="rider" required>
+                                        <input type="radio" class="btn-check" name="surveyType" id="typeRider" value="rider">
                                         <label class="btn btn-outline-primary w-100 py-4" for="typeRider">
                                             <i class="fas fa-motorcycle fa-2x d-block mb-3"></i>
                                             <h5 class="mb-2">
@@ -299,7 +299,7 @@ session_start();
                                         <span class="lang-ha" style="display:none;">Cikakken Suna</span>
                                         <span class="text-danger">*</span>
                                     </label>
-                                    <input type="text" class="form-control form-control-lg" id="fullName" name="fullName" required>
+                                    <input type="text" class="form-control form-control-lg" id="fullName" name="fullName">
                                 </div>
                                 
                                 <div class="mb-4">
@@ -308,7 +308,7 @@ session_start();
                                         <span class="lang-ha" style="display:none;">Adireshin Email</span>
                                         <span class="text-danger">*</span>
                                     </label>
-                                    <input type="email" class="form-control form-control-lg" id="email" name="email" placeholder="yourname@example.com" required>
+                                    <input type="email" class="form-control form-control-lg" id="email" name="email" placeholder="yourname@example.com">
                                 </div>
                                 
                                 <div class="mb-4">
@@ -317,7 +317,7 @@ session_start();
                                         <span class="lang-ha" style="display:none;">Lambar Waya</span>
                                         <span class="text-danger">*</span>
                                     </label>
-                                    <input type="tel" class="form-control form-control-lg" id="phone" name="phone" placeholder="080XXXXXXXX" required>
+                                    <input type="tel" class="form-control form-control-lg" id="phone" name="phone" placeholder="080XXXXXXXX">
                                 </div>
                                 
                                 <div class="d-flex justify-content-between mt-4">
@@ -885,7 +885,7 @@ session_start();
                                                 <span class="lang-en">Back</span>
                                                 <span class="lang-ha" style="display:none;">Komawa</span>
                                             </button>
-                                            <button type="submit" class="btn btn-primary btn-lg px-5" class="submit-survey-btn">
+                                            <button type="submit" class="btn btn-primary btn-lg px-5">
                                                 <span class="lang-en">Submit Survey</span>
                                                 <span class="lang-ha" style="display:none;">Aika Tambayoyi</span>
                                                 <i class="fas fa-check ms-2"></i>
@@ -913,7 +913,7 @@ session_start();
                                                 </label>
                                                 <div>
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="usage_frequency" id="usage_daily" value="Daily" required>
+                                                        <input class="form-check-input" type="radio" name="usage_frequency" id="usage_daily" value="Daily">
                                                         <label class="form-check-label" for="usage_daily">
                                                             <span class="lang-en">Daily</span>
                                                             <span class="lang-ha" style="display:none;">Kullum</span>
@@ -951,7 +951,7 @@ session_start();
                                                 </label>
                                                 <div>
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="primary_reason" id="reason_speed" value="Speed / avoiding traffic" required>
+                                                        <input class="form-check-input" type="radio" name="primary_reason" id="reason_speed" value="Speed / avoiding traffic">
                                                         <label class="form-check-label" for="reason_speed">
                                                             <span class="lang-en">Speed / avoiding traffic</span>
                                                             <span class="lang-ha" style="display:none;">Sauri / guje wa cunkoso</span>
@@ -1015,7 +1015,7 @@ session_start();
                                                 </label>
                                                 <div>
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="usage_time" id="time_morning" value="Morning" required>
+                                                        <input class="form-check-input" type="radio" name="usage_time" id="time_morning" value="Morning">
                                                         <label class="form-check-label" for="time_morning">
                                                             <span class="lang-en">Morning</span>
                                                             <span class="lang-ha" style="display:none;">Safiya</span>
@@ -1053,7 +1053,7 @@ session_start();
                                                 </label>
                                                 <div>
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="ride_location" id="loc_roadside" value="Roadside / junction" required>
+                                                        <input class="form-check-input" type="radio" name="ride_location" id="loc_roadside" value="Roadside / junction">
                                                         <label class="form-check-label" for="loc_roadside">
                                                             <span class="lang-en">Roadside / junction</span>
                                                             <span class="lang-ha" style="display:none;">Gefen hanya / mararraba</span>
@@ -1091,7 +1091,7 @@ session_start();
                                                 </label>
                                                 <div>
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="rider_consistency" id="rider_same" value="Mostly the same" required>
+                                                        <input class="form-check-input" type="radio" name="rider_consistency" id="rider_same" value="Mostly the same">
                                                         <label class="form-check-label" for="rider_same">
                                                             <span class="lang-en">Mostly the same</span>
                                                             <span class="lang-ha" style="display:none;">Galibi daya</span>
@@ -1130,7 +1130,7 @@ session_start();
                                                 </label>
                                                 <div>
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="find_rider" id="find_walk" value="Walk to rider location" required>
+                                                        <input class="form-check-input" type="radio" name="find_rider" id="find_walk" value="Walk to rider location">
                                                         <label class="form-check-label" for="find_walk">
                                                             <span class="lang-en">Walk to rider location</span>
                                                             <span class="lang-ha" style="display:none;">Tafi wurin dan achaba</span>
@@ -1168,7 +1168,7 @@ session_start();
                                                 </label>
                                                 <div>
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="struggled_rider" id="struggle_often" value="Yes, often" required>
+                                                        <input class="form-check-input" type="radio" name="struggled_rider" id="struggle_often" value="Yes, often">
                                                         <label class="form-check-label" for="struggle_often">
                                                             <span class="lang-en">Yes, often</span>
                                                             <span class="lang-ha" style="display:none;">E, sau da yawa</span>
@@ -1206,7 +1206,7 @@ session_start();
                                                 </label>
                                                 <div>
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="difficulty_cause" id="cause_time" value="Time of day" required>
+                                                        <input class="form-check-input" type="radio" name="difficulty_cause" id="cause_time" value="Time of day">
                                                         <label class="form-check-label" for="cause_time">
                                                             <span class="lang-en">Time of day</span>
                                                             <span class="lang-ha" style="display:none;">Lokacin rana</span>
@@ -1259,7 +1259,7 @@ session_start();
                                                 </label>
                                                 <div>
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="fare_agreement" id="fare_negotiation" value="Negotiation" required>
+                                                        <input class="form-check-input" type="radio" name="fare_agreement" id="fare_negotiation" value="Negotiation">
                                                         <label class="form-check-label" for="fare_negotiation">
                                                             <span class="lang-en">Negotiation</span>
                                                             <span class="lang-ha" style="display:none;">Tattaunawa</span>
@@ -1290,7 +1290,7 @@ session_start();
                                                 </label>
                                                 <div>
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="pricing_disagreements" id="disagree_frequently" value="Frequently" required>
+                                                        <input class="form-check-input" type="radio" name="pricing_disagreements" id="disagree_frequently" value="Frequently">
                                                         <label class="form-check-label" for="disagree_frequently">
                                                             <span class="lang-en">Frequently</span>
                                                             <span class="lang-ha" style="display:none;">Sau da yawa</span>
@@ -1328,7 +1328,7 @@ session_start();
                                                 </label>
                                                 <div>
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="payment_method" id="payment_cash" value="Cash" required>
+                                                        <input class="form-check-input" type="radio" name="payment_method" id="payment_cash" value="Cash">
                                                         <label class="form-check-label" for="payment_cash">
                                                             <span class="lang-en">Cash</span>
                                                             <span class="lang-ha" style="display:none;">Kuɗi</span>
@@ -1367,7 +1367,7 @@ session_start();
                                                 </label>
                                                 <div>
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="safety_feeling" id="safety_very_safe" value="Very safe" required>
+                                                        <input class="form-check-input" type="radio" name="safety_feeling" id="safety_very_safe" value="Very safe">
                                                         <label class="form-check-label" for="safety_very_safe">
                                                             <span class="lang-en">Very safe</span>
                                                             <span class="lang-ha" style="display:none;">Ina da aminci sosai</span>
@@ -1412,7 +1412,7 @@ session_start();
                                                 </label>
                                                 <div>
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="safety_concerns" id="concern_reckless" value="Reckless riding" required>
+                                                        <input class="form-check-input" type="radio" name="safety_concerns" id="concern_reckless" value="Reckless riding">
                                                         <label class="form-check-label" for="concern_reckless">
                                                             <span class="lang-en">Reckless riding</span>
                                                             <span class="lang-ha" style="display:none;">Tukin hauka</span>
@@ -1464,7 +1464,7 @@ session_start();
                                                 </label>
                                                 <div>
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="help_confidence" id="help_very_confident" value="Very confident" required>
+                                                        <input class="form-check-input" type="radio" name="help_confidence" id="help_very_confident" value="Very confident">
                                                         <label class="form-check-label" for="help_very_confident">
                                                             <span class="lang-en">Very confident</span>
                                                             <span class="lang-ha" style="display:none;">Ina da tabbas sosai</span>
@@ -1503,7 +1503,7 @@ session_start();
                                 </label>
                                 <div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="reliability" id="reliability_very" value="Very reliable" required>
+                                        <input class="form-check-input" type="radio" name="reliability" id="reliability_very" value="Very reliable">
                                         <label class="form-check-label" for="reliability_very">
                                             <span class="lang-en">Very reliable</span>
                                             <span class="lang-ha" style="display:none;">Amintacce sosai</span>
@@ -1533,7 +1533,7 @@ session_start();
                                                 </label>
                                                 <div>
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="experiences" id="exp_mostly_good" value="Mostly good" required>
+                                                        <input class="form-check-input" type="radio" name="experiences" id="exp_mostly_good" value="Mostly good">
                                                         <label class="form-check-label" for="exp_mostly_good">
                                                             <span class="lang-en">Mostly good</span>
                                                             <span class="lang-ha" style="display:none;">Mafi yawan abubuwa masu kyau</span>
@@ -1584,7 +1584,7 @@ session_start();
                                     <span class="lang-ha" style="display:none;">17. Menene yake damunka sosai game da yadda ake hawan motar achaba?</span>
                                     <span class="text-danger">*</span>
                                 </label>
-                                <textarea class="form-control" id="frustration" name="frustration" rows="3" placeholder="Tell us what frustrates you..." required></textarea>
+                                <textarea class="form-control" id="frustration" name="frustration" rows="3" placeholder="Tell us what frustrates you..."></textarea>
                             </div>
                             
                             <div class="mb-4">
@@ -1593,7 +1593,7 @@ session_start();
                                     <span class="lang-ha" style="display:none;">18. Menene zai sa ka sami ingantacciyar hawan motar achaba?</span>
                                     <span class="text-danger">*</span>
                                 </label>
-                                <textarea class="form-control" id="improvement" name="improvement" rows="3" placeholder="Tell us what would make it better..." required></textarea>
+                                <textarea class="form-control" id="improvement" name="improvement" rows="3" placeholder="Tell us what would make it better..."></textarea>
                             </div>
                             
                             <div class="mb-4">
@@ -1604,7 +1604,7 @@ session_start();
                                 </label>
                                 <div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="would_switch" id="switch_yes" value="Yes" required>
+                                        <input class="form-check-input" type="radio" name="would_switch" id="switch_yes" value="Yes">
                                         <label class="form-check-label" for="switch_yes">
                                             <span class="lang-en">Yes</span>
                                             <span class="lang-ha" style="display:none;">Eh</span>
@@ -1710,7 +1710,7 @@ session_start();
                                         <span class="lang-en">Back</span>
                                         <span class="lang-ha" style="display:none;">Komawa</span>
                                     </button>
-                                    <button type="submit" class="btn btn-primary btn-lg px-5" class="submit-survey-btn">
+                                    <button type="submit" class="btn btn-primary btn-lg px-5">
                                         <span class="lang-en">Submit Survey</span>
                                         <span class="lang-ha" style="display:none;">Aika Tambayoyi</span>
                                         <i class="fas fa-check ms-2"></i>
@@ -1916,19 +1916,8 @@ session_start();
         
         // Step navigation
         function nextStep(stepNumber) {
-            // Validate current step
+            // Get current step
             const currentStep = document.querySelector('.survey-step.active');
-            const inputs = currentStep.querySelectorAll('input[required], select[required], textarea[required]');
-            let isValid = true;
-            
-            inputs.forEach(input => {
-                if (!input.checkValidity()) {
-                    input.reportValidity();
-                    isValid = false;
-                }
-            });
-            
-            if (!isValid) return;
             
             // If moving to step 3, load appropriate questions
             if (stepNumber === 3) {
