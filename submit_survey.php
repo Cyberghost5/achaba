@@ -1,13 +1,19 @@
 <?php
 // Enable error reporting for development (disable in production)
-ini_set('display_errors', 0);
+ini_set('display_errors', 1);
 error_reporting(E_ALL);
+ini_set('log_errors', 1);
+ini_set('error_log', __DIR__ . '/survey_errors.log');
 
 // Include database configuration
 require_once __DIR__ . '/config/database.php';
 
 // Set JSON response header
 header('Content-Type: application/json');
+
+// Log all incoming POST data for debugging
+error_log("=== Survey Submission Start ===");
+error_log("POST data: " . print_r($_POST, true));
 
 // Initialize response
 $response = [
@@ -135,9 +141,12 @@ $user_agent = $_SERVER['HTTP_USER_AGENT'] ?? '';
 // Get database connection
 $conn = getDBConnection();
 
+error_log("Database connection result: " . ($conn ? "Success" : "Failed"));
+
 if (!$conn) {
     http_response_code(500);
     $response['message'] = 'Database connection failed. Please try again later.';
+    error_log("ERROR: Database connection failed");
     echo json_encode($response);
     exit;
 }
@@ -196,6 +205,9 @@ try {
         'ip_address' => $ip_address,
         'user_agent' => $user_agent
     ]);
+    
+    $insertedId = $conn->lastInsertId();
+    error_log("Survey response inserted successfully with ID: " . $insertedId);
     
     http_response_code(201);
     $response['success'] = true;
