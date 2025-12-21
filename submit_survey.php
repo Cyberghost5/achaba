@@ -104,34 +104,43 @@ if ($surveyType === 'rider') {
         $surveyResponses[$questionKey] = trim($_POST[$questionKey] ?? '');
     }
 } else {
-    // For user surveys, collect all user questions
-    $surveyResponses['contact_followup'] = $_POST['contact_followup'] ?? '';
-    $surveyResponses['user_location'] = trim($_POST['user_location'] ?? '');
-    $surveyResponses['user_type'] = $_POST['user_type'] ?? '';
-    $surveyResponses['movement_frequency'] = $_POST['movement_frequency'] ?? '';
-    $surveyResponses['transport_method'] = $_POST['transport_method'] ?? '';
-    $surveyResponses['movement_challenge'] = trim($_POST['movement_challenge'] ?? '');
-    $surveyResponses['ever_late'] = $_POST['ever_late'] ?? '';
-    $surveyResponses['motorcycle_frequency'] = $_POST['motorcycle_frequency'] ?? '';
+    // For user surveys, collect all user questions based on actual form field names
+    // Section 1: Usage Pattern
+    $surveyResponses['usage_frequency'] = $_POST['usage_frequency'] ?? '';
+    $surveyResponses['primary_reason'] = $_POST['primary_reason'] ?? '';
+    
+    // Section 2: Usage Behaviour
+    $surveyResponses['usage_time'] = $_POST['usage_time'] ?? '';
+    $surveyResponses['ride_location'] = $_POST['ride_location'] ?? '';
+    $surveyResponses['rider_consistency'] = $_POST['rider_consistency'] ?? '';
+    
+    // Section 3: Booking & Communication Patterns
     $surveyResponses['find_rider'] = $_POST['find_rider'] ?? '';
-    $surveyResponses['motorcycle_concern'] = $_POST['motorcycle_concern'] ?? '';
-    $surveyResponses['needed_pickup'] = $_POST['needed_pickup'] ?? '';
-    $surveyResponses['pickup_items'] = $_POST['pickup_items'] ?? '';
-    $surveyResponses['pickup_difficulty'] = $_POST['pickup_difficulty'] ?? '';
-    $surveyResponses['pickup_usefulness'] = $_POST['pickup_usefulness'] ?? '';
-    $surveyResponses['use_booking_service'] = $_POST['use_booking_service'] ?? '';
+    $surveyResponses['struggled_rider'] = $_POST['struggled_rider'] ?? '';
+    $surveyResponses['difficulty_cause'] = $_POST['difficulty_cause'] ?? '';
     
-    // Trust factors is a multi-select checkbox array
-    $trustFactors = [];
-    if (isset($_POST['trust_factors']) && is_array($_POST['trust_factors'])) {
-        $trustFactors = $_POST['trust_factors'];
-    }
-    $surveyResponses['trust_factors'] = $trustFactors;
+    // Section 4: Pricing & Payment Experience
+    $surveyResponses['fare_agreement'] = $_POST['fare_agreement'] ?? '';
+    $surveyResponses['pricing_disagreements'] = $_POST['pricing_disagreements'] ?? '';
+    $surveyResponses['payment_method'] = $_POST['payment_method'] ?? '';
     
+    // Section 5: Safety & Trust Perception
+    $surveyResponses['safety_feeling'] = $_POST['safety_feeling'] ?? '';
+    $surveyResponses['safety_concerns'] = $_POST['safety_concerns'] ?? '';
+    $surveyResponses['help_confidence'] = $_POST['help_confidence'] ?? '';
+    
+    // Section 6: Reliability & Experience Quality
+    $surveyResponses['reliability'] = $_POST['reliability'] ?? '';
+    $surveyResponses['experiences'] = $_POST['experiences'] ?? '';
+    
+    // Section 7: Reflection & Expectations
+    $surveyResponses['frustration'] = trim($_POST['frustration'] ?? '');
+    $surveyResponses['improvement'] = trim($_POST['improvement'] ?? '');
+    $surveyResponses['would_switch'] = $_POST['would_switch'] ?? '';
+    
+    // Section 8: Demographics (Optional)
+    $surveyResponses['age_range'] = $_POST['age_range'] ?? '';
     $surveyResponses['phone_type'] = $_POST['phone_type'] ?? '';
-    $surveyResponses['booking_preference'] = $_POST['booking_preference'] ?? '';
-    $surveyResponses['would_try'] = $_POST['would_try'] ?? '';
-    $surveyResponses['must_get_right'] = trim($_POST['must_get_right'] ?? '');
 }
 
 // Get additional data
