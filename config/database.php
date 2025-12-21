@@ -2,15 +2,15 @@
 // Database Configuration
 // Update these values with your actual database credentials
 
-// define('DB_HOST', 'localhost');
-// define('DB_NAME', 'achabang_db');
-// define('DB_USER', 'achabang_db');
-// define('DB_PASS', 'achabang_db');
-
 define('DB_HOST', 'localhost');
-define('DB_NAME', 'achaba_db');
-define('DB_USER', 'root');
-define('DB_PASS', '');
+define('DB_NAME', 'achabang_db');
+define('DB_USER', 'achabang_db');
+define('DB_PASS', 'achabang_db');
+
+// define('DB_HOST', 'localhost');
+// define('DB_NAME', 'achaba_db');
+// define('DB_USER', 'root');
+// define('DB_PASS', '');
 
 // Create database connection
 function getDBConnection() {
