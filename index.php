@@ -881,9 +881,9 @@
                 </div>
                 <div class="col-lg-2 col-md-4 col-6">
                     <div class="team-card text-center">
-                        <img src="assets/images/team/5.png" alt="Team Member" class="rounded-circle mb-3 img-fluid">
-                        <h6 class="fw-bold mb-1">Abdulmalik Ango</h6>
-                        <small class="text-muted d-block mb-1">Product Critique</small>
+                        <img src="assets/images/team/5.jpeg" alt="Team Member" class="rounded-circle mb-3 img-fluid">
+                        <h6 class="fw-bold mb-1">Nusaiba Adamu</h6>
+                        <small class="text-muted d-block mb-1">Jnr. UI/UX Designer</small>
                         <!-- <small class="text-primary">Design</small> -->
                     </div>
                 </div>
