@@ -26,8 +26,62 @@ if (isset($_GET['export']) && $_GET['export'] === 'csv') {
     // Add BOM for proper Excel UTF-8 encoding
     fprintf($output, chr(0xEF).chr(0xBB).chr(0xBF));
     
-    // CSV Headers
-    fputcsv($output, ['ID', 'Survey Type', 'Full Name', 'Email', 'Phone', 'Submitted At', 'IP Address']);
+    // Define question headers based on survey type
+    $riderQuestions = [
+        'Q1: How long riding motorcycles for work?',
+        'Q2: Main source of income? What else?',
+        'Q3: Which areas in Bauchi?',
+        'Q4: Typical workday',
+        'Q5: Best time of day? Why?',
+        'Q6: What makes a day go badly?',
+        'Q7: What makes you feel satisfied?',
+        'Q8: Expense Types',
+        'Q8: Other Expenses',
+        'Q8: Estimated Cost',
+        'Q9: Earnings change week to week?',
+        'Q9: Difference good/bad week',
+        'Q10: Able to save?',
+        'Q10: Amount saved',
+        'Q10: Reason not saving',
+        'Q11: Felt unsafe? What happened?',
+        'Q12: Most difficult passengers/trips?',
+        'Q13: What do you do to stay safe?',
+        'Q14: Is work respected? Why?',
+        'Q15: How do passengers find you?',
+        'Q16: Phone importance to work?',
+        'Q17: Phone limitations?',
+        'Q18: Book from inside streets?',
+        'Q19: Pickup-only errands?',
+        'Q20: Trust/distrust system?',
+        'Q21: Rider group/association?',
+        'Q22: What would make work more secure?',
+        'Q23: Where should company start?',
+        'Q24: Anything else important?'
+    ];
+    
+    $userQuestions = [
+        'Q1: Usage frequency',
+        'Q2: Primary reason',
+        'Q3: Usage time',
+        'Q4: Ride location',
+        'Q5: Rider consistency',
+        'Q6: How find rider',
+        'Q7: Struggled to find rider?',
+        'Q8: Difficulty cause',
+        'Q9: Fare agreement',
+        'Q10: Pricing disagreements',
+        'Q11: Payment method',
+        'Q12: Safety feeling',
+        'Q13: Safety concerns',
+        'Q14: Help confidence',
+        'Q15: Reliability rating',
+        'Q16: Memorable experiences',
+        'Q17: Main frustration',
+        'Q18: What would improve?',
+        'Q19: Would switch?',
+        'Q20: Age range',
+        'Q21: Phone type'
+    ];
     
     // Query
     if ($surveyType === 'all') {
@@ -37,8 +91,24 @@ if (isset($_GET['export']) && $_GET['export'] === 'csv') {
         $stmt->execute(['type' => $surveyType]);
     }
     
-    while ($row = $stmt->fetch()) {
-        fputcsv($output, [
+    $rows = $stmt->fetchAll();
+    
+    // Determine headers based on export type
+    if ($surveyType === 'rider') {
+        $headers = array_merge(['ID', 'Survey Type', 'Full Name', 'Email', 'Phone', 'Submitted At', 'IP Address'], $riderQuestions);
+    } elseif ($surveyType === 'user') {
+        $headers = array_merge(['ID', 'Survey Type', 'Full Name', 'Email', 'Phone', 'Submitted At', 'IP Address'], $userQuestions);
+    } else {
+        // For 'all', use a generic approach
+        $headers = ['ID', 'Survey Type', 'Full Name', 'Email', 'Phone', 'Submitted At', 'IP Address', 'All Responses'];
+    }
+    
+    fputcsv($output, $headers);
+    
+    // Export data
+    foreach ($rows as $row) {
+        $responses = json_decode($row['responses'], true);
+        $csvRow = [
             $row['id'],
             ucfirst($row['survey_type']),
             $row['full_name'],
@@ -46,7 +116,48 @@ if (isset($_GET['export']) && $_GET['export'] === 'csv') {
             $row['phone'],
             $row['submitted_at'],
             $row['ip_address']
-        ]);
+        ];
+        
+        if ($row['survey_type'] === 'rider') {
+            // Extract rider responses
+            for ($i = 1; $i <= 7; $i++) {
+                $csvRow[] = $responses["q$i"] ?? '';
+            }
+            // Q8 - Expenses
+            $csvRow[] = isset($responses['q8_expenses']) && is_array($responses['q8_expenses']) ? implode('; ', $responses['q8_expenses']) : '';
+            $csvRow[] = $responses['q8_other_specify'] ?? '';
+            $csvRow[] = $responses['q8_cost'] ?? '';
+            // Q9 - Earnings
+            $csvRow[] = $responses['q9'] ?? '';
+            $csvRow[] = $responses['q9_followup'] ?? '';
+            // Q10 - Savings
+            $csvRow[] = $responses['q10'] ?? '';
+            $csvRow[] = $responses['q10_amount'] ?? '';
+            $csvRow[] = $responses['q10_reason'] ?? '';
+            // Q11-24
+            for ($i = 11; $i <= 24; $i++) {
+                $csvRow[] = $responses["q$i"] ?? '';
+            }
+        } elseif ($row['survey_type'] === 'user') {
+            // Extract user responses
+            $userFields = [
+                'usage_frequency', 'primary_reason', 'usage_time', 'ride_location', 
+                'rider_consistency', 'find_rider', 'struggled_rider', 'difficulty_cause',
+                'fare_agreement', 'pricing_disagreements', 'payment_method', 
+                'safety_feeling', 'safety_concerns', 'help_confidence',
+                'reliability', 'experiences', 'frustration', 'improvement', 
+                'would_switch', 'age_range', 'phone_type'
+            ];
+            
+            foreach ($userFields as $field) {
+                $csvRow[] = $responses[$field] ?? '';
+            }
+        } else {
+            // For mixed export, just dump all responses as JSON
+            $csvRow[] = $row['responses'];
+        }
+        
+        fputcsv($output, $csvRow);
     }
     
     fclose($output);
