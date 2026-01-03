@@ -82,6 +82,12 @@ if (isset($_GET['export']) && $_GET['export'] === 'csv') {
         'Q20: Age range',
         'Q21: Phone type'
     ];
+
+    // Helper to place both question text and answer in one CSV cell
+    function qaCell(string $question, $answer): string {
+        $ans = ($answer === null || $answer === '') ? '' : $answer;
+        return $question . ' | Answer: ' . $ans;
+    }
     
     // Query
     if ($surveyType === 'all') {
@@ -120,23 +126,24 @@ if (isset($_GET['export']) && $_GET['export'] === 'csv') {
         
         if ($row['survey_type'] === 'rider') {
             // Extract rider responses
+            // Q1-7 (simple text)
             for ($i = 1; $i <= 7; $i++) {
-                $csvRow[] = $responses["q$i"] ?? '';
+                $csvRow[] = qaCell($riderQuestions[$i-1], $responses["q$i"] ?? '');
             }
-            // Q8 - Expenses
-            $csvRow[] = isset($responses['q8_expenses']) && is_array($responses['q8_expenses']) ? implode('; ', $responses['q8_expenses']) : '';
-            $csvRow[] = $responses['q8_other_specify'] ?? '';
-            $csvRow[] = $responses['q8_cost'] ?? '';
+            // Q8 - Expenses (multi-part)
+            $csvRow[] = qaCell('Q8: Expense Types', isset($responses['q8_expenses']) && is_array($responses['q8_expenses']) ? implode('; ', $responses['q8_expenses']) : '');
+            $csvRow[] = qaCell('Q8: Other Expenses', $responses['q8_other_specify'] ?? '');
+            $csvRow[] = qaCell('Q8: Estimated Cost', $responses['q8_cost'] ?? '');
             // Q9 - Earnings
-            $csvRow[] = $responses['q9'] ?? '';
-            $csvRow[] = $responses['q9_followup'] ?? '';
+            $csvRow[] = qaCell('Q9: Earnings change week to week?', $responses['q9'] ?? '');
+            $csvRow[] = qaCell('Q9: Difference good/bad week', $responses['q9_followup'] ?? '');
             // Q10 - Savings
-            $csvRow[] = $responses['q10'] ?? '';
-            $csvRow[] = $responses['q10_amount'] ?? '';
-            $csvRow[] = $responses['q10_reason'] ?? '';
+            $csvRow[] = qaCell('Q10: Able to save?', $responses['q10'] ?? '');
+            $csvRow[] = qaCell('Q10: Amount saved', $responses['q10_amount'] ?? '');
+            $csvRow[] = qaCell('Q10: Reason not saving', $responses['q10_reason'] ?? '');
             // Q11-24
             for ($i = 11; $i <= 24; $i++) {
-                $csvRow[] = $responses["q$i"] ?? '';
+                $csvRow[] = qaCell($riderQuestions[$i-1], $responses["q$i"] ?? '');
             }
         } elseif ($row['survey_type'] === 'user') {
             // Extract user responses
@@ -149,8 +156,8 @@ if (isset($_GET['export']) && $_GET['export'] === 'csv') {
                 'would_switch', 'age_range', 'phone_type'
             ];
             
-            foreach ($userFields as $field) {
-                $csvRow[] = $responses[$field] ?? '';
+            foreach ($userFields as $index => $field) {
+                $csvRow[] = qaCell($userQuestions[$index], $responses[$field] ?? '');
             }
         } else {
             // For mixed export, just dump all responses as JSON
