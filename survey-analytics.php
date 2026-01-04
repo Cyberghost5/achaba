@@ -72,14 +72,44 @@ foreach ($responses as $response) {
     $responseData = json_decode($response['responses'], true);
     
     if ($response['survey_type'] === 'rider') {
-        // Analyze rider-specific questions
-        if (!isset($riderDataMap['income'])) {
+        // Initialize rider data structures
+        if (!isset($riderDataMap['riding_duration'])) {
+            $riderDataMap['riding_duration'] = [];
             $riderDataMap['income'] = ['main' => 0, 'additional' => 0];
+            $riderDataMap['operating_areas'] = [];
+            $riderDataMap['best_time'] = [];
+            $riderDataMap['expenses'] = [];
+            $riderDataMap['expense_cost'] = [];
+            $riderDataMap['earnings_stable'] = [];
+            $riderDataMap['earnings_difference'] = [];
+            $riderDataMap['can_save'] = [];
+            $riderDataMap['save_amount'] = [];
+            $riderDataMap['cannot_save_reason'] = [];
             $riderDataMap['safety_concerns'] = 0;
-            $riderDataMap['can_save'] = ['yes' => 0, 'no' => 0];
-            $riderDataMap['earnings_stable'] = ['yes' => 0, 'no' => 0];
+            $riderDataMap['difficult_passengers'] = [];
+            $riderDataMap['safety_measures'] = [];
+            $riderDataMap['work_respect'] = [];
+            $riderDataMap['passenger_contact'] = [];
+            $riderDataMap['phone_importance'] = [];
+            $riderDataMap['phone_limitations'] = [];
+            $riderDataMap['doorstep_pickup_feeling'] = [];
+            $riderDataMap['delivery_errands_feeling'] = [];
+            $riderDataMap['trust_factors'] = [];
+            $riderDataMap['rider_group'] = [];
+            $riderDataMap['security_needs'] = [];
+            $riderDataMap['support_priorities'] = [];
         }
         
+        // Q1: Riding duration
+        if (isset($responseData['q1']) && !empty($responseData['q1'])) {
+            $duration = $responseData['q1'];
+            if (!isset($riderDataMap['riding_duration'][$duration])) {
+                $riderDataMap['riding_duration'][$duration] = 0;
+            }
+            $riderDataMap['riding_duration'][$duration]++;
+        }
+        
+        // Q2: Income source
         if (isset($responseData['q2'])) {
             if (stripos($responseData['q2'], 'only') !== false || stripos($responseData['q2'], 'main') !== false) {
                 $riderDataMap['income']['main']++;
@@ -88,58 +118,180 @@ foreach ($responses as $response) {
             }
         }
         
+        // Q3: Operating areas
+        if (isset($responseData['q3']) && !empty($responseData['q3'])) {
+            $area = $responseData['q3'];
+            if (!isset($riderDataMap['operating_areas'][$area])) {
+                $riderDataMap['operating_areas'][$area] = 0;
+            }
+            $riderDataMap['operating_areas'][$area]++;
+        }
+        
+        // Q5: Best time of day
+        if (isset($responseData['q5']) && !empty($responseData['q5'])) {
+            $time = $responseData['q5'];
+            if (!isset($riderDataMap['best_time'][$time])) {
+                $riderDataMap['best_time'][$time] = 0;
+            }
+            $riderDataMap['best_time'][$time]++;
+        }
+        
+        // Q8: Expenses
+        if (isset($responseData['q8_expenses']) && is_array($responseData['q8_expenses'])) {
+            foreach ($responseData['q8_expenses'] as $expense) {
+                if (!isset($riderDataMap['expenses'][$expense])) {
+                    $riderDataMap['expenses'][$expense] = 0;
+                }
+                $riderDataMap['expenses'][$expense]++;
+            }
+        }
+        
+        // Q8: Expense cost range
+        if (isset($responseData['q8_cost']) && !empty($responseData['q8_cost'])) {
+            $cost = $responseData['q8_cost'];
+            if (!isset($riderDataMap['expense_cost'][$cost])) {
+                $riderDataMap['expense_cost'][$cost] = 0;
+            }
+            $riderDataMap['expense_cost'][$cost]++;
+        }
+        
+        // Q9: Earnings stability
+        if (isset($responseData['q9']) && !empty($responseData['q9'])) {
+            $stability = $responseData['q9'];
+            if (!isset($riderDataMap['earnings_stable'][$stability])) {
+                $riderDataMap['earnings_stable'][$stability] = 0;
+            }
+            $riderDataMap['earnings_stable'][$stability]++;
+        }
+        
+        // Q9: Earnings difference
+        if (isset($responseData['q9_followup']) && !empty($responseData['q9_followup'])) {
+            $diff = $responseData['q9_followup'];
+            if (!isset($riderDataMap['earnings_difference'][$diff])) {
+                $riderDataMap['earnings_difference'][$diff] = 0;
+            }
+            $riderDataMap['earnings_difference'][$diff]++;
+        }
+        
+        // Q10: Can save
+        if (isset($responseData['q10']) && !empty($responseData['q10'])) {
+            $save = $responseData['q10'];
+            if (!isset($riderDataMap['can_save'][$save])) {
+                $riderDataMap['can_save'][$save] = 0;
+            }
+            $riderDataMap['can_save'][$save]++;
+        }
+        
+        // Q10: Save amount
+        if (isset($responseData['q10_amount']) && !empty($responseData['q10_amount'])) {
+            $amount = $responseData['q10_amount'];
+            if (!isset($riderDataMap['save_amount'][$amount])) {
+                $riderDataMap['save_amount'][$amount] = 0;
+            }
+            $riderDataMap['save_amount'][$amount]++;
+        }
+        
+        // Q10: Cannot save reason
+        if (isset($responseData['q10_reason']) && !empty($responseData['q10_reason'])) {
+            $reason = $responseData['q10_reason'];
+            if (!isset($riderDataMap['cannot_save_reason'][$reason])) {
+                $riderDataMap['cannot_save_reason'][$reason] = 0;
+            }
+            $riderDataMap['cannot_save_reason'][$reason]++;
+        }
+        
+        // Q11: Safety concerns
         if (isset($responseData['q11']) && !empty($responseData['q11'])) {
             $riderDataMap['safety_concerns']++;
         }
         
-        if (isset($responseData['q10'])) {
-            if (strtolower($responseData['q10']) === 'yes') {
-                $riderDataMap['can_save']['yes']++;
-            } else {
-                $riderDataMap['can_save']['no']++;
+        // Q14: Work respect
+        if (isset($responseData['q14']) && !empty($responseData['q14'])) {
+            $respect = $responseData['q14'];
+            if (!isset($riderDataMap['work_respect'][$respect])) {
+                $riderDataMap['work_respect'][$respect] = 0;
             }
+            $riderDataMap['work_respect'][$respect]++;
         }
         
-        if (isset($responseData['q9'])) {
-            if (strtolower($responseData['q9']) === 'yes') {
-                $riderDataMap['earnings_stable']['yes']++;
-            } else {
-                $riderDataMap['earnings_stable']['no']++;
+        // Q15: How passengers contact
+        if (isset($responseData['q15']) && !empty($responseData['q15'])) {
+            $contact = $responseData['q15'];
+            if (!isset($riderDataMap['passenger_contact'][$contact])) {
+                $riderDataMap['passenger_contact'][$contact] = 0;
             }
+            $riderDataMap['passenger_contact'][$contact]++;
         }
+        
+        // Q18: Doorstep pickup feeling
+        if (isset($responseData['q18']) && !empty($responseData['q18'])) {
+            $feeling = $responseData['q18'];
+            if (!isset($riderDataMap['doorstep_pickup_feeling'][$feeling])) {
+                $riderDataMap['doorstep_pickup_feeling'][$feeling] = 0;
+            }
+            $riderDataMap['doorstep_pickup_feeling'][$feeling]++;
+        }
+        
+        // Q19: Delivery errands feeling
+        if (isset($responseData['q19']) && !empty($responseData['q19'])) {
+            $feeling = $responseData['q19'];
+            if (!isset($riderDataMap['delivery_errands_feeling'][$feeling])) {
+                $riderDataMap['delivery_errands_feeling'][$feeling] = 0;
+            }
+            $riderDataMap['delivery_errands_feeling'][$feeling]++;
+        }
+        
+        // Q21: Rider group membership
+        if (isset($responseData['q21']) && !empty($responseData['q21'])) {
+            $group = $responseData['q21'];
+            if (!isset($riderDataMap['rider_group'][$group])) {
+                $riderDataMap['rider_group'][$group] = 0;
+            }
+            $riderDataMap['rider_group'][$group]++;
+        }
+        
     } else {
-        // Analyze user-specific questions
+        // Initialize user data structures
         if (!isset($userDataMap['usage_frequency'])) {
             $userDataMap['usage_frequency'] = [];
+            $userDataMap['primary_reason'] = [];
+            $userDataMap['usage_time'] = [];
+            $userDataMap['ride_location'] = [];
+            $userDataMap['rider_consistency'] = [];
+            $userDataMap['find_rider'] = [];
+            $userDataMap['struggled_rider'] = [];
+            $userDataMap['difficulty_cause'] = [];
+            $userDataMap['fare_agreement'] = [];
+            $userDataMap['pricing_disagreements'] = [];
+            $userDataMap['payment_method'] = [];
             $userDataMap['safety_feeling'] = [];
-            $userDataMap['would_switch'] = ['yes' => 0, 'no' => 0];
-            $userDataMap['had_difficulties'] = ['yes' => 0, 'no' => 0];
+            $userDataMap['safety_concerns'] = [];
+            $userDataMap['help_confidence'] = [];
+            $userDataMap['reliability'] = [];
+            $userDataMap['experiences'] = [];
+            $userDataMap['would_switch'] = [];
+            $userDataMap['age_range'] = [];
+            $userDataMap['phone_type'] = [];
         }
         
-        if (isset($responseData['usage_frequency'])) {
-            $freq = $responseData['usage_frequency'];
-            if (!isset($userDataMap['usage_frequency'][$freq])) {
-                $userDataMap['usage_frequency'][$freq] = 0;
+        // Process all user questions
+        $userFields = [
+            'usage_frequency', 'primary_reason', 'usage_time', 'ride_location',
+            'rider_consistency', 'find_rider', 'struggled_rider', 'difficulty_cause',
+            'fare_agreement', 'pricing_disagreements', 'payment_method',
+            'safety_feeling', 'safety_concerns', 'help_confidence',
+            'reliability', 'experiences', 'would_switch',
+            'age_range', 'phone_type'
+        ];
+        
+        foreach ($userFields as $field) {
+            if (isset($responseData[$field]) && !empty($responseData[$field])) {
+                $value = $responseData[$field];
+                if (!isset($userDataMap[$field][$value])) {
+                    $userDataMap[$field][$value] = 0;
+                }
+                $userDataMap[$field][$value]++;
             }
-            $userDataMap['usage_frequency'][$freq]++;
-        }
-        
-        if (isset($responseData['safety_feeling'])) {
-            $safety = $responseData['safety_feeling'];
-            if (!isset($userDataMap['safety_feeling'][$safety])) {
-                $userDataMap['safety_feeling'][$safety] = 0;
-            }
-            $userDataMap['safety_feeling'][$safety]++;
-        }
-        
-        if (isset($responseData['would_switch'])) {
-            $switch = strtolower($responseData['would_switch']) === 'yes' ? 'yes' : 'no';
-            $userDataMap['would_switch'][$switch]++;
-        }
-        
-        if (isset($responseData['struggled_rider']) && !empty($responseData['struggled_rider'])) {
-            $switch = strtolower($responseData['struggled_rider']) === 'yes' ? 'yes' : 'no';
-            $userDataMap['had_difficulties'][$switch]++;
         }
     }
 }
@@ -441,33 +593,164 @@ $chartDataJson = json_encode($chartData);
                     </h4>
                 </div>
                 
+                <!-- Income & Background -->
+                <?php if (!empty($chartData['riderAnalysis']['income'])): ?>
                 <div class="col-md-6">
                     <div class="chart-container">
                         <div class="chart-title">Primary Income Source</div>
                         <canvas id="riderIncomeChart"></canvas>
                     </div>
                 </div>
+                <?php endif; ?>
                 
+                <?php if (!empty($chartData['riderAnalysis']['riding_duration'])): ?>
+                <div class="col-md-6">
+                    <div class="chart-container">
+                        <div class="chart-title">How Long Riding for Work</div>
+                        <canvas id="riderDurationChart"></canvas>
+                    </div>
+                </div>
+                <?php endif; ?>
+                
+                <?php if (!empty($chartData['riderAnalysis']['operating_areas'])): ?>
+                <div class="col-md-6">
+                    <div class="chart-container">
+                        <div class="chart-title">Operating Areas in Bauchi</div>
+                        <canvas id="riderAreasChart"></canvas>
+                    </div>
+                </div>
+                <?php endif; ?>
+                
+                <?php if (!empty($chartData['riderAnalysis']['best_time'])): ?>
+                <div class="col-md-6">
+                    <div class="chart-container">
+                        <div class="chart-title">Best Time of Day for Work</div>
+                        <canvas id="riderBestTimeChart"></canvas>
+                    </div>
+                </div>
+                <?php endif; ?>
+                
+                <!-- Money & Expenses -->
+                <?php if (!empty($chartData['riderAnalysis']['expenses'])): ?>
+                <div class="col-md-6">
+                    <div class="chart-container">
+                        <div class="chart-title">Biggest Expenses (Multiple Selection)</div>
+                        <canvas id="riderExpensesChart"></canvas>
+                    </div>
+                </div>
+                <?php endif; ?>
+                
+                <?php if (!empty($chartData['riderAnalysis']['expense_cost'])): ?>
+                <div class="col-md-6">
+                    <div class="chart-container">
+                        <div class="chart-title">Daily/Weekly Expense Range</div>
+                        <canvas id="riderExpenseCostChart"></canvas>
+                    </div>
+                </div>
+                <?php endif; ?>
+                
+                <?php if (!empty($chartData['riderAnalysis']['earnings_stable'])): ?>
+                <div class="col-md-6">
+                    <div class="chart-container">
+                        <div class="chart-title">Earnings Stability Week to Week</div>
+                        <canvas id="riderEarningsChart"></canvas>
+                    </div>
+                </div>
+                <?php endif; ?>
+                
+                <?php if (!empty($chartData['riderAnalysis']['earnings_difference'])): ?>
+                <div class="col-md-6">
+                    <div class="chart-container">
+                        <div class="chart-title">Good Week vs Bad Week Difference</div>
+                        <canvas id="riderEarningsDiffChart"></canvas>
+                    </div>
+                </div>
+                <?php endif; ?>
+                
+                <?php if (!empty($chartData['riderAnalysis']['can_save'])): ?>
                 <div class="col-md-6">
                     <div class="chart-container">
                         <div class="chart-title">Ability to Save</div>
                         <canvas id="riderSavingsChart"></canvas>
                     </div>
                 </div>
+                <?php endif; ?>
                 
+                <?php if (!empty($chartData['riderAnalysis']['save_amount'])): ?>
                 <div class="col-md-6">
                     <div class="chart-container">
-                        <div class="chart-title">Earnings Stability</div>
-                        <canvas id="riderEarningsChart"></canvas>
+                        <div class="chart-title">Usual Savings Amount</div>
+                        <canvas id="riderSaveAmountChart"></canvas>
                     </div>
                 </div>
+                <?php endif; ?>
                 
+                <?php if (!empty($chartData['riderAnalysis']['cannot_save_reason'])): ?>
                 <div class="col-md-6">
                     <div class="chart-container">
-                        <div class="chart-title">Safety Concerns</div>
+                        <div class="chart-title">Main Reason Cannot Save</div>
+                        <canvas id="riderCannotSaveReasonChart"></canvas>
+                    </div>
+                </div>
+                <?php endif; ?>
+                
+                <!-- Safety & Dignity -->
+                <?php if (isset($chartData['riderAnalysis']['safety_concerns'])): ?>
+                <div class="col-md-6">
+                    <div class="chart-container">
+                        <div class="chart-title">Safety Concerns Reported</div>
                         <canvas id="riderSafetyChart"></canvas>
                     </div>
                 </div>
+                <?php endif; ?>
+                
+                <?php if (!empty($chartData['riderAnalysis']['work_respect'])): ?>
+                <div class="col-md-6">
+                    <div class="chart-container">
+                        <div class="chart-title">Is Work Respected in Community?</div>
+                        <canvas id="riderWorkRespectChart"></canvas>
+                    </div>
+                </div>
+                <?php endif; ?>
+                
+                <!-- Tech & Communication -->
+                <?php if (!empty($chartData['riderAnalysis']['passenger_contact'])): ?>
+                <div class="col-md-6">
+                    <div class="chart-container">
+                        <div class="chart-title">How Passengers Find/Contact Riders</div>
+                        <canvas id="riderPassengerContactChart"></canvas>
+                    </div>
+                </div>
+                <?php endif; ?>
+                
+                <!-- Platform Fit (Critical for Achaba!) -->
+                <?php if (!empty($chartData['riderAnalysis']['doorstep_pickup_feeling'])): ?>
+                <div class="col-md-6">
+                    <div class="chart-container">
+                        <div class="chart-title">🔥 Doorstep Pickup Booking - How Riders Feel</div>
+                        <canvas id="riderDoorstepPickupChart"></canvas>
+                    </div>
+                </div>
+                <?php endif; ?>
+                
+                <?php if (!empty($chartData['riderAnalysis']['delivery_errands_feeling'])): ?>
+                <div class="col-md-6">
+                    <div class="chart-container">
+                        <div class="chart-title">🔥 Pickup-Only Errands - How Riders Feel</div>
+                        <canvas id="riderDeliveryErrandsChart"></canvas>
+                    </div>
+                </div>
+                <?php endif; ?>
+                
+                <!-- Support & Community -->
+                <?php if (!empty($chartData['riderAnalysis']['rider_group'])): ?>
+                <div class="col-md-6">
+                    <div class="chart-container">
+                        <div class="chart-title">Rider Group/Association Membership</div>
+                        <canvas id="riderGroupChart"></canvas>
+                    </div>
+                </div>
+                <?php endif; ?>
             </div>
             <?php endif; ?>
 
@@ -480,6 +763,7 @@ $chartDataJson = json_encode($chartData);
                     </h4>
                 </div>
                 
+                <!-- Usage Patterns -->
                 <?php if (!empty($chartData['userAnalysis']['usage_frequency'])): ?>
                 <div class="col-md-6">
                     <div class="chart-container">
@@ -489,28 +773,173 @@ $chartDataJson = json_encode($chartData);
                 </div>
                 <?php endif; ?>
                 
+                <?php if (!empty($chartData['userAnalysis']['primary_reason'])): ?>
+                <div class="col-md-6">
+                    <div class="chart-container">
+                        <div class="chart-title">Primary Reason for Using Motorcycles</div>
+                        <canvas id="userReasonChart"></canvas>
+                    </div>
+                </div>
+                <?php endif; ?>
+                
+                <?php if (!empty($chartData['userAnalysis']['usage_time'])): ?>
+                <div class="col-md-6">
+                    <div class="chart-container">
+                        <div class="chart-title">Most Common Usage Time</div>
+                        <canvas id="userTimeChart"></canvas>
+                    </div>
+                </div>
+                <?php endif; ?>
+                
+                <?php if (!empty($chartData['userAnalysis']['ride_location'])): ?>
+                <div class="col-md-6">
+                    <div class="chart-container">
+                        <div class="chart-title">Where Users Get Rides</div>
+                        <canvas id="userLocationChart"></canvas>
+                    </div>
+                </div>
+                <?php endif; ?>
+                
+                <?php if (!empty($chartData['userAnalysis']['rider_consistency'])): ?>
+                <div class="col-md-6">
+                    <div class="chart-container">
+                        <div class="chart-title">Same Rider or Different Riders?</div>
+                        <canvas id="userConsistencyChart"></canvas>
+                    </div>
+                </div>
+                <?php endif; ?>
+                
+                <!-- Booking & Communication -->
+                <?php if (!empty($chartData['userAnalysis']['find_rider'])): ?>
+                <div class="col-md-6">
+                    <div class="chart-container">
+                        <div class="chart-title">How Users Find/Contact Riders</div>
+                        <canvas id="userFindRiderChart"></canvas>
+                    </div>
+                </div>
+                <?php endif; ?>
+                
+                <?php if (!empty($chartData['userAnalysis']['struggled_rider'])): ?>
+                <div class="col-md-6">
+                    <div class="chart-container">
+                        <div class="chart-title">Struggled to Find Rider When Needed?</div>
+                        <canvas id="userStruggledChart"></canvas>
+                    </div>
+                </div>
+                <?php endif; ?>
+                
+                <?php if (!empty($chartData['userAnalysis']['difficulty_cause'])): ?>
+                <div class="col-md-6">
+                    <div class="chart-container">
+                        <div class="chart-title">What Causes Difficulty Finding Riders</div>
+                        <canvas id="userDifficultyCauseChart"></canvas>
+                    </div>
+                </div>
+                <?php endif; ?>
+                
+                <!-- Pricing & Payment -->
+                <?php if (!empty($chartData['userAnalysis']['fare_agreement'])): ?>
+                <div class="col-md-6">
+                    <div class="chart-container">
+                        <div class="chart-title">How Fare is Agreed</div>
+                        <canvas id="userFareChart"></canvas>
+                    </div>
+                </div>
+                <?php endif; ?>
+                
+                <?php if (!empty($chartData['userAnalysis']['pricing_disagreements'])): ?>
+                <div class="col-md-6">
+                    <div class="chart-container">
+                        <div class="chart-title">Frequency of Pricing Disagreements</div>
+                        <canvas id="userPricingDisagreementChart"></canvas>
+                    </div>
+                </div>
+                <?php endif; ?>
+                
+                <?php if (!empty($chartData['userAnalysis']['payment_method'])): ?>
+                <div class="col-md-6">
+                    <div class="chart-container">
+                        <div class="chart-title">Usual Payment Method</div>
+                        <canvas id="userPaymentChart"></canvas>
+                    </div>
+                </div>
+                <?php endif; ?>
+                
+                <!-- Safety & Trust -->
                 <?php if (!empty($chartData['userAnalysis']['safety_feeling'])): ?>
                 <div class="col-md-6">
                     <div class="chart-container">
-                        <div class="chart-title">Safety Perception</div>
+                        <div class="chart-title">How Safe Users Feel</div>
                         <canvas id="userSafetyChart"></canvas>
                     </div>
                 </div>
                 <?php endif; ?>
                 
+                <?php if (!empty($chartData['userAnalysis']['safety_concerns'])): ?>
                 <div class="col-md-6">
                     <div class="chart-container">
-                        <div class="chart-title">Would Switch to Safer Option</div>
+                        <div class="chart-title">Safety Concerns Experienced</div>
+                        <canvas id="userSafetyConcernsChart"></canvas>
+                    </div>
+                </div>
+                <?php endif; ?>
+                
+                <?php if (!empty($chartData['userAnalysis']['help_confidence'])): ?>
+                <div class="col-md-6">
+                    <div class="chart-container">
+                        <div class="chart-title">Confidence Help Would Be Available</div>
+                        <canvas id="userHelpConfidenceChart"></canvas>
+                    </div>
+                </div>
+                <?php endif; ?>
+                
+                <!-- Reliability & Experience -->
+                <?php if (!empty($chartData['userAnalysis']['reliability'])): ?>
+                <div class="col-md-6">
+                    <div class="chart-container">
+                        <div class="chart-title">Reliability of Motorcycle Rides</div>
+                        <canvas id="userReliabilityChart"></canvas>
+                    </div>
+                </div>
+                <?php endif; ?>
+                
+                <?php if (!empty($chartData['userAnalysis']['experiences'])): ?>
+                <div class="col-md-6">
+                    <div class="chart-container">
+                        <div class="chart-title">Negative Experiences</div>
+                        <canvas id="userExperiencesChart"></canvas>
+                    </div>
+                </div>
+                <?php endif; ?>
+                
+                <!-- Key Question: Would Switch -->
+                <?php if (!empty($chartData['userAnalysis']['would_switch'])): ?>
+                <div class="col-md-6">
+                    <div class="chart-container">
+                        <div class="chart-title">🔥 Would Switch to Safer Alternative?</div>
                         <canvas id="userSwitchChart"></canvas>
                     </div>
                 </div>
+                <?php endif; ?>
                 
+                <!-- Demographics -->
+                <?php if (!empty($chartData['userAnalysis']['age_range'])): ?>
                 <div class="col-md-6">
                     <div class="chart-container">
-                        <div class="chart-title">Struggled to Find Rider</div>
-                        <canvas id="userDifficultiesChart"></canvas>
+                        <div class="chart-title">Age Range Distribution</div>
+                        <canvas id="userAgeChart"></canvas>
                     </div>
                 </div>
+                <?php endif; ?>
+                
+                <?php if (!empty($chartData['userAnalysis']['phone_type'])): ?>
+                <div class="col-md-6">
+                    <div class="chart-container">
+                        <div class="chart-title">Phone Type Used</div>
+                        <canvas id="userPhoneTypeChart"></canvas>
+                    </div>
+                </div>
+                <?php endif; ?>
             </div>
             <?php endif; ?>
 
@@ -553,11 +982,21 @@ $chartDataJson = json_encode($chartData);
                             <div class="insight-label">Riders Who Can Save</div>
                             <div class="insight-value">
                                 <?php 
-                                $riderTotal = ($chartData['riderAnalysis']['can_save']['yes'] ?? 0) + ($chartData['riderAnalysis']['can_save']['no'] ?? 0);
-                                echo $riderTotal > 0 ? round((($chartData['riderAnalysis']['can_save']['yes'] ?? 0)/$riderTotal)*100, 1) : 0;
+                                $riderCanSave = array_sum($chartData['riderAnalysis']['can_save'] ?? []);
+                                if ($riderCanSave > 0) {
+                                    $canSaveYes = 0;
+                                    foreach ($chartData['riderAnalysis']['can_save'] as $key => $val) {
+                                        if (stripos($key, 'yes') !== false || stripos($key, 'regular') !== false || stripos($key, 'sometimes') !== false) {
+                                            $canSaveYes += $val;
+                                        }
+                                    }
+                                    echo round(($canSaveYes/$riderCanSave)*100, 1);
+                                } else {
+                                    echo 0;
+                                }
                                 ?>%
                             </div>
-                            <small class="text-muted">Can save from earnings</small>
+                            <small class="text-muted">Can save from earnings (regularly or sometimes)</small>
                         </div>
                         
                         <div class="insight-item">
@@ -565,18 +1004,51 @@ $chartDataJson = json_encode($chartData);
                             <div class="insight-value"><?php echo $chartData['riderAnalysis']['safety_concerns'] ?? 0; ?></div>
                             <small class="text-muted">Riders experiencing safety issues</small>
                         </div>
+                        
+                        <?php if (!empty($chartData['riderAnalysis']['doorstep_pickup_feeling'])): ?>
+                        <div class="insight-item">
+                            <div class="insight-label">🔥 Positive About Doorstep Pickup</div>
+                            <div class="insight-value">
+                                <?php 
+                                $doorstepTotal = array_sum($chartData['riderAnalysis']['doorstep_pickup_feeling']);
+                                if ($doorstepTotal > 0) {
+                                    $positive = 0;
+                                    foreach ($chartData['riderAnalysis']['doorstep_pickup_feeling'] as $key => $val) {
+                                        if (stripos($key, 'good') !== false || stripos($key, 'great') !== false || stripos($key, 'positive') !== false || stripos($key, 'yes') !== false) {
+                                            $positive += $val;
+                                        }
+                                    }
+                                    echo round(($positive/$doorstepTotal)*100, 1);
+                                } else {
+                                    echo 0;
+                                }
+                                ?>%
+                            </div>
+                            <small class="text-muted">Riders open to doorstep bookings</small>
+                        </div>
+                        <?php endif; ?>
                         <?php endif; ?>
                         
                         <?php if (!empty($chartData['userAnalysis'])): ?>
                         <div class="insight-item">
-                            <div class="insight-label">Would Switch Services</div>
+                            <div class="insight-label">🔥 Would Switch to Safer Service</div>
                             <div class="insight-value">
                                 <?php 
-                                $userTotal = ($chartData['userAnalysis']['would_switch']['yes'] ?? 0) + ($chartData['userAnalysis']['would_switch']['no'] ?? 0);
-                                echo $userTotal > 0 ? round((($chartData['userAnalysis']['would_switch']['yes'] ?? 0)/$userTotal)*100, 1) : 0;
+                                $switchTotal = array_sum($chartData['userAnalysis']['would_switch'] ?? []);
+                                if ($switchTotal > 0) {
+                                    $wouldSwitch = 0;
+                                    foreach ($chartData['userAnalysis']['would_switch'] as $key => $val) {
+                                        if (stripos($key, 'yes') !== false) {
+                                            $wouldSwitch += $val;
+                                        }
+                                    }
+                                    echo round(($wouldSwitch/$switchTotal)*100, 1);
+                                } else {
+                                    echo 0;
+                                }
                                 ?>%
                             </div>
-                            <small class="text-muted">Open to safer alternatives</small>
+                            <small class="text-muted">Users open to safer alternatives</small>
                         </div>
                         <?php endif; ?>
                     </div>
@@ -743,21 +1215,46 @@ $chartDataJson = json_encode($chartData);
         }
         <?php endif; ?>
 
-        // Rider Earnings Stability Chart
-        <?php if (!empty($chartData['riderAnalysis']['earnings_stable'])): ?>
-        const riderEarningsCtx = document.getElementById('riderEarningsChart');
-        if (riderEarningsCtx) {
-            new Chart(riderEarningsCtx, {
+        // Helper function to create bar charts
+        function createBarChart(canvasId, labels, data, title = 'Data', horizontal = false) {
+            const ctx = document.getElementById(canvasId);
+            if (!ctx) return;
+            
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: title,
+                        data: data,
+                        backgroundColor: colors.primary
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    indexAxis: horizontal ? 'y' : 'x',
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        [horizontal ? 'x' : 'y']: { beginAtZero: true, ticks: { stepSize: 1 } }
+                    }
+                }
+            });
+        }
+
+        // Helper function to create doughnut charts
+        function createDoughnutChart(canvasId, labels, data, backgroundColors = null) {
+            const ctx = document.getElementById(canvasId);
+            if (!ctx) return;
+            
+            new Chart(ctx, {
                 type: 'doughnut',
                 data: {
-                    labels: ['Stable Earnings', 'Variable Earnings'],
+                    labels: labels,
                     datasets: [{
-                        data: [
-                            chartData.riderAnalysis.earnings_stable.no,
-                            chartData.riderAnalysis.earnings_stable.yes
-                        ],
-                        backgroundColor: [colors.primary, colors.warning],
-                        borderColor: ['#fff', '#fff'],
+                        data: data,
+                        backgroundColor: backgroundColors || [colors.primary, colors.secondary, colors.info, colors.warning, colors.danger],
+                        borderColor: '#fff',
                         borderWidth: 2
                     }]
                 },
@@ -770,6 +1267,133 @@ $chartDataJson = json_encode($chartData);
                 }
             });
         }
+
+        // === RIDER CHARTS ===
+        
+        // Rider Duration
+        <?php if (!empty($chartData['riderAnalysis']['riding_duration'])): ?>
+        createBarChart('riderDurationChart', 
+            <?php echo json_encode(array_keys($chartData['riderAnalysis']['riding_duration'])); ?>,
+            <?php echo json_encode(array_values($chartData['riderAnalysis']['riding_duration'])); ?>
+        );
+        <?php endif; ?>
+        
+        // Rider Operating Areas
+        <?php if (!empty($chartData['riderAnalysis']['operating_areas'])): ?>
+        createBarChart('riderAreasChart', 
+            <?php echo json_encode(array_keys($chartData['riderAnalysis']['operating_areas'])); ?>,
+            <?php echo json_encode(array_values($chartData['riderAnalysis']['operating_areas'])); ?>
+        );
+        <?php endif; ?>
+        
+        // Rider Best Time
+        <?php if (!empty($chartData['riderAnalysis']['best_time'])): ?>
+        createBarChart('riderBestTimeChart', 
+            <?php echo json_encode(array_keys($chartData['riderAnalysis']['best_time'])); ?>,
+            <?php echo json_encode(array_values($chartData['riderAnalysis']['best_time'])); ?>
+        );
+        <?php endif; ?>
+        
+        // Rider Expenses (Horizontal bar for multiple items)
+        <?php if (!empty($chartData['riderAnalysis']['expenses'])): ?>
+        createBarChart('riderExpensesChart', 
+            <?php echo json_encode(array_keys($chartData['riderAnalysis']['expenses'])); ?>,
+            <?php echo json_encode(array_values($chartData['riderAnalysis']['expenses'])); ?>,
+            'Riders', true
+        );
+        <?php endif; ?>
+        
+        // Rider Expense Cost
+        <?php if (!empty($chartData['riderAnalysis']['expense_cost'])): ?>
+        createBarChart('riderExpenseCostChart', 
+            <?php echo json_encode(array_keys($chartData['riderAnalysis']['expense_cost'])); ?>,
+            <?php echo json_encode(array_values($chartData['riderAnalysis']['expense_cost'])); ?>
+        );
+        <?php endif; ?>
+        
+        // Rider Earnings Stability
+        <?php if (!empty($chartData['riderAnalysis']['earnings_stable'])): ?>
+        createDoughnutChart('riderEarningsChart',
+            <?php echo json_encode(array_keys($chartData['riderAnalysis']['earnings_stable'])); ?>,
+            <?php echo json_encode(array_values($chartData['riderAnalysis']['earnings_stable'])); ?>
+        );
+        <?php endif; ?>
+        
+        // Rider Earnings Difference
+        <?php if (!empty($chartData['riderAnalysis']['earnings_difference'])): ?>
+        createBarChart('riderEarningsDiffChart', 
+            <?php echo json_encode(array_keys($chartData['riderAnalysis']['earnings_difference'])); ?>,
+            <?php echo json_encode(array_values($chartData['riderAnalysis']['earnings_difference'])); ?>
+        );
+        <?php endif; ?>
+        
+        // Rider Can Save
+        <?php if (!empty($chartData['riderAnalysis']['can_save'])): ?>
+        createDoughnutChart('riderSavingsChart',
+            <?php echo json_encode(array_keys($chartData['riderAnalysis']['can_save'])); ?>,
+            <?php echo json_encode(array_values($chartData['riderAnalysis']['can_save'])); ?>,
+            [colors.primary, colors.danger, colors.warning, colors.secondary]
+        );
+        <?php endif; ?>
+        
+        // Rider Save Amount
+        <?php if (!empty($chartData['riderAnalysis']['save_amount'])): ?>
+        createBarChart('riderSaveAmountChart', 
+            <?php echo json_encode(array_keys($chartData['riderAnalysis']['save_amount'])); ?>,
+            <?php echo json_encode(array_values($chartData['riderAnalysis']['save_amount'])); ?>
+        );
+        <?php endif; ?>
+        
+        // Rider Cannot Save Reason
+        <?php if (!empty($chartData['riderAnalysis']['cannot_save_reason'])): ?>
+        createBarChart('riderCannotSaveReasonChart', 
+            <?php echo json_encode(array_keys($chartData['riderAnalysis']['cannot_save_reason'])); ?>,
+            <?php echo json_encode(array_values($chartData['riderAnalysis']['cannot_save_reason'])); ?>,
+            'Riders', true
+        );
+        <?php endif; ?>
+        
+        // Rider Work Respect
+        <?php if (!empty($chartData['riderAnalysis']['work_respect'])): ?>
+        createDoughnutChart('riderWorkRespectChart',
+            <?php echo json_encode(array_keys($chartData['riderAnalysis']['work_respect'])); ?>,
+            <?php echo json_encode(array_values($chartData['riderAnalysis']['work_respect'])); ?>
+        );
+        <?php endif; ?>
+        
+        // Rider Passenger Contact
+        <?php if (!empty($chartData['riderAnalysis']['passenger_contact'])): ?>
+        createBarChart('riderPassengerContactChart', 
+            <?php echo json_encode(array_keys($chartData['riderAnalysis']['passenger_contact'])); ?>,
+            <?php echo json_encode(array_values($chartData['riderAnalysis']['passenger_contact'])); ?>,
+            'Riders', true
+        );
+        <?php endif; ?>
+        
+        // Rider Doorstep Pickup (CRITICAL!)
+        <?php if (!empty($chartData['riderAnalysis']['doorstep_pickup_feeling'])): ?>
+        createDoughnutChart('riderDoorstepPickupChart',
+            <?php echo json_encode(array_keys($chartData['riderAnalysis']['doorstep_pickup_feeling'])); ?>,
+            <?php echo json_encode(array_values($chartData['riderAnalysis']['doorstep_pickup_feeling'])); ?>,
+            [colors.primary, colors.warning, colors.danger, colors.secondary]
+        );
+        <?php endif; ?>
+        
+        // Rider Delivery Errands (CRITICAL!)
+        <?php if (!empty($chartData['riderAnalysis']['delivery_errands_feeling'])): ?>
+        createDoughnutChart('riderDeliveryErrandsChart',
+            <?php echo json_encode(array_keys($chartData['riderAnalysis']['delivery_errands_feeling'])); ?>,
+            <?php echo json_encode(array_values($chartData['riderAnalysis']['delivery_errands_feeling'])); ?>,
+            [colors.primary, colors.warning, colors.danger, colors.secondary]
+        );
+        <?php endif; ?>
+        
+        // Rider Group
+        <?php if (!empty($chartData['riderAnalysis']['rider_group'])): ?>
+        createDoughnutChart('riderGroupChart',
+            <?php echo json_encode(array_keys($chartData['riderAnalysis']['rider_group'])); ?>,
+            <?php echo json_encode(array_values($chartData['riderAnalysis']['rider_group'])); ?>
+        );
         <?php endif; ?>
 
         // Rider Safety Chart
@@ -919,6 +1543,142 @@ $chartDataJson = json_encode($chartData);
                 }
             });
         }
+        <?php endif; ?>
+        
+        // === ADDITIONAL USER CHARTS ===
+        
+        // User Primary Reason
+        <?php if (!empty($chartData['userAnalysis']['primary_reason'])): ?>
+        createBarChart('userReasonChart', 
+            <?php echo json_encode(array_keys($chartData['userAnalysis']['primary_reason'])); ?>,
+            <?php echo json_encode(array_values($chartData['userAnalysis']['primary_reason'])); ?>,
+            'Users', true
+        );
+        <?php endif; ?>
+        
+        // User Usage Time
+        <?php if (!empty($chartData['userAnalysis']['usage_time'])): ?>
+        createBarChart('userTimeChart', 
+            <?php echo json_encode(array_keys($chartData['userAnalysis']['usage_time'])); ?>,
+            <?php echo json_encode(array_values($chartData['userAnalysis']['usage_time'])); ?>
+        );
+        <?php endif; ?>
+        
+        // User Ride Location
+        <?php if (!empty($chartData['userAnalysis']['ride_location'])): ?>
+        createBarChart('userLocationChart', 
+            <?php echo json_encode(array_keys($chartData['userAnalysis']['ride_location'])); ?>,
+            <?php echo json_encode(array_values($chartData['userAnalysis']['ride_location'])); ?>,
+            'Users', true
+        );
+        <?php endif; ?>
+        
+        // User Rider Consistency
+        <?php if (!empty($chartData['userAnalysis']['rider_consistency'])): ?>
+        createDoughnutChart('userConsistencyChart',
+            <?php echo json_encode(array_keys($chartData['userAnalysis']['rider_consistency'])); ?>,
+            <?php echo json_encode(array_values($chartData['userAnalysis']['rider_consistency'])); ?>
+        );
+        <?php endif; ?>
+        
+        // User Find Rider
+        <?php if (!empty($chartData['userAnalysis']['find_rider'])): ?>
+        createBarChart('userFindRiderChart', 
+            <?php echo json_encode(array_keys($chartData['userAnalysis']['find_rider'])); ?>,
+            <?php echo json_encode(array_values($chartData['userAnalysis']['find_rider'])); ?>,
+            'Users', true
+        );
+        <?php endif; ?>
+        
+        // User Struggled
+        <?php if (!empty($chartData['userAnalysis']['struggled_rider'])): ?>
+        createDoughnutChart('userStruggledChart',
+            <?php echo json_encode(array_keys($chartData['userAnalysis']['struggled_rider'])); ?>,
+            <?php echo json_encode(array_values($chartData['userAnalysis']['struggled_rider'])); ?>
+        );
+        <?php endif; ?>
+        
+        // User Difficulty Cause
+        <?php if (!empty($chartData['userAnalysis']['difficulty_cause'])): ?>
+        createBarChart('userDifficultyCauseChart', 
+            <?php echo json_encode(array_keys($chartData['userAnalysis']['difficulty_cause'])); ?>,
+            <?php echo json_encode(array_values($chartData['userAnalysis']['difficulty_cause'])); ?>,
+            'Users', true
+        );
+        <?php endif; ?>
+        
+        // User Fare Agreement
+        <?php if (!empty($chartData['userAnalysis']['fare_agreement'])): ?>
+        createDoughnutChart('userFareChart',
+            <?php echo json_encode(array_keys($chartData['userAnalysis']['fare_agreement'])); ?>,
+            <?php echo json_encode(array_values($chartData['userAnalysis']['fare_agreement'])); ?>
+        );
+        <?php endif; ?>
+        
+        // User Pricing Disagreements
+        <?php if (!empty($chartData['userAnalysis']['pricing_disagreements'])): ?>
+        createBarChart('userPricingDisagreementChart', 
+            <?php echo json_encode(array_keys($chartData['userAnalysis']['pricing_disagreements'])); ?>,
+            <?php echo json_encode(array_values($chartData['userAnalysis']['pricing_disagreements'])); ?>
+        );
+        <?php endif; ?>
+        
+        // User Payment Method
+        <?php if (!empty($chartData['userAnalysis']['payment_method'])): ?>
+        createDoughnutChart('userPaymentChart',
+            <?php echo json_encode(array_keys($chartData['userAnalysis']['payment_method'])); ?>,
+            <?php echo json_encode(array_values($chartData['userAnalysis']['payment_method'])); ?>
+        );
+        <?php endif; ?>
+        
+        // User Safety Concerns
+        <?php if (!empty($chartData['userAnalysis']['safety_concerns'])): ?>
+        createBarChart('userSafetyConcernsChart', 
+            <?php echo json_encode(array_keys($chartData['userAnalysis']['safety_concerns'])); ?>,
+            <?php echo json_encode(array_values($chartData['userAnalysis']['safety_concerns'])); ?>,
+            'Users', true
+        );
+        <?php endif; ?>
+        
+        // User Help Confidence
+        <?php if (!empty($chartData['userAnalysis']['help_confidence'])): ?>
+        createBarChart('userHelpConfidenceChart', 
+            <?php echo json_encode(array_keys($chartData['userAnalysis']['help_confidence'])); ?>,
+            <?php echo json_encode(array_values($chartData['userAnalysis']['help_confidence'])); ?>
+        );
+        <?php endif; ?>
+        
+        // User Reliability
+        <?php if (!empty($chartData['userAnalysis']['reliability'])): ?>
+        createBarChart('userReliabilityChart', 
+            <?php echo json_encode(array_keys($chartData['userAnalysis']['reliability'])); ?>,
+            <?php echo json_encode(array_values($chartData['userAnalysis']['reliability'])); ?>
+        );
+        <?php endif; ?>
+        
+        // User Experiences
+        <?php if (!empty($chartData['userAnalysis']['experiences'])): ?>
+        createBarChart('userExperiencesChart', 
+            <?php echo json_encode(array_keys($chartData['userAnalysis']['experiences'])); ?>,
+            <?php echo json_encode(array_values($chartData['userAnalysis']['experiences'])); ?>,
+            'Users', true
+        );
+        <?php endif; ?>
+        
+        // User Age Range
+        <?php if (!empty($chartData['userAnalysis']['age_range'])): ?>
+        createBarChart('userAgeChart', 
+            <?php echo json_encode(array_keys($chartData['userAnalysis']['age_range'])); ?>,
+            <?php echo json_encode(array_values($chartData['userAnalysis']['age_range'])); ?>
+        );
+        <?php endif; ?>
+        
+        // User Phone Type
+        <?php if (!empty($chartData['userAnalysis']['phone_type'])): ?>
+        createDoughnutChart('userPhoneTypeChart',
+            <?php echo json_encode(array_keys($chartData['userAnalysis']['phone_type'])); ?>,
+            <?php echo json_encode(array_values($chartData['userAnalysis']['phone_type'])); ?>
+        );
         <?php endif; ?>
         </script>
 </body>
