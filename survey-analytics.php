@@ -282,8 +282,6 @@ $chartDataJson = json_encode($chartData);
                 <i class="fas fa-chart-pie me-2"></i>Survey Analytics
             </a>
             <div class="navbar-nav ms-auto">
-                <a class="nav-link" href="partners">Partners</a>
-                <a class="nav-link" href="waitlists">Waitlist</a>
                 <a class="nav-link" href="surveys">Responses</a>
                 <a class="nav-link active" href="survey-analytics">Analytics</a>
             </div>

@@ -342,7 +342,7 @@ $responses = $stmt->fetchAll();
             <div class="navbar-nav ms-auto">
                 <a class="nav-link" href="partners">Partners</a>
                 <a class="nav-link" href="waitlists">Waitlist</a>
-                <a class="nav-link active" href="surveys">Survey</a>
+                <a class="nav-link" href="survey-analytics">Analytics</a>
             </div>
         </div>
     </nav>
