@@ -659,6 +659,7 @@ $chartDataJson = json_encode($chartData);
                 }
             });
         }
+        <?php endif; ?>
 
         // Rider Income Chart
         <?php if (!empty($chartData['riderAnalysis']['income'])): ?>
