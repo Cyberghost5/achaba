@@ -1154,6 +1154,10 @@ $chartDataJson = json_encode($chartData);
         }
         <?php endif; ?>
 
+
+
+        // === RIDER CHARTS ===
+        
         // Rider Income Chart
         <?php if (!empty($chartData['riderAnalysis']['income'])): ?>
         const riderIncomeCtx = document.getElementById('riderIncomeChart');
@@ -1185,75 +1189,149 @@ $chartDataJson = json_encode($chartData);
             });
         }
         <?php endif; ?>
-
-        // Rider Savings Chart
-        <?php if (!empty($chartData['riderAnalysis']['can_save'])): ?>
-        const riderSavingsCtx = document.getElementById('riderSavingsChart');
-        if (riderSavingsCtx) {
-            new Chart(riderSavingsCtx, {
-                type: 'doughnut',
-                data: {
-                    labels: ['Can Save', 'Cannot Save'],
-                    datasets: [{
-                        data: [
-                            chartData.riderAnalysis.can_save.yes,
-                            chartData.riderAnalysis.can_save.no
-                        ],
-                        backgroundColor: [colors.primary, colors.danger],
-                        borderColor: ['#fff', '#fff'],
-                        borderWidth: 2
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: { position: 'bottom', labels: { font: { family: "'Inter', sans-serif" }, padding: 20 } }
-                    }
-                }
-            });
-        }
-        <?php endif; ?>
-
-        // Helper function to create bar charts
-        function createBarChart(canvasId, labels, data, title = 'Data', horizontal = false) {
-            const ctx = document.getElementById(canvasId);
-            if (!ctx) return;
-            
-            new Chart(ctx, {
+        
+        // Rider Duration
+        <?php if (!empty($chartData['riderAnalysis']['riding_duration'])): ?>
+        const riderDurationCtx = document.getElementById('riderDurationChart');
+        if (riderDurationCtx) {
+            new Chart(riderDurationCtx, {
                 type: 'bar',
                 data: {
-                    labels: labels,
+                    labels: <?php echo json_encode(array_keys($chartData['riderAnalysis']['riding_duration'])); ?>,
                     datasets: [{
-                        label: title,
-                        data: data,
+                        label: 'Riders',
+                        data: <?php echo json_encode(array_values($chartData['riderAnalysis']['riding_duration'])); ?>,
                         backgroundColor: colors.primary
                     }]
                 },
                 options: {
                     responsive: true,
                     maintainAspectRatio: false,
-                    indexAxis: horizontal ? 'y' : 'x',
                     plugins: { legend: { display: false } },
                     scales: {
-                        [horizontal ? 'x' : 'y']: { beginAtZero: true, ticks: { stepSize: 1 } }
+                        y: { beginAtZero: true, ticks: { stepSize: 1 } }
                     }
                 }
             });
         }
-
-        // Helper function to create doughnut charts
-        function createDoughnutChart(canvasId, labels, data, backgroundColors = null) {
-            const ctx = document.getElementById(canvasId);
-            if (!ctx) return;
-            
-            new Chart(ctx, {
+        <?php endif; ?>
+        
+        // Rider Operating Areas
+        <?php if (!empty($chartData['riderAnalysis']['operating_areas'])): ?>
+        const riderAreasCtx = document.getElementById('riderAreasChart');
+        if (riderAreasCtx) {
+            new Chart(riderAreasCtx, {
+                type: 'bar',
+                data: {
+                    labels: <?php echo json_encode(array_keys($chartData['riderAnalysis']['operating_areas'])); ?>,
+                    datasets: [{
+                        label: 'Riders',
+                        data: <?php echo json_encode(array_values($chartData['riderAnalysis']['operating_areas'])); ?>,
+                        backgroundColor: colors.primary
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        y: { beginAtZero: true, ticks: { stepSize: 1 } }
+                    }
+                }
+            });
+        }
+        <?php endif; ?>
+        
+        // Rider Best Time
+        <?php if (!empty($chartData['riderAnalysis']['best_time'])): ?>
+        const riderBestTimeCtx = document.getElementById('riderBestTimeChart');
+        if (riderBestTimeCtx) {
+            new Chart(riderBestTimeCtx, {
+                type: 'bar',
+                data: {
+                    labels: <?php echo json_encode(array_keys($chartData['riderAnalysis']['best_time'])); ?>,
+                    datasets: [{
+                        label: 'Riders',
+                        data: <?php echo json_encode(array_values($chartData['riderAnalysis']['best_time'])); ?>,
+                        backgroundColor: colors.primary
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        y: { beginAtZero: true, ticks: { stepSize: 1 } }
+                    }
+                }
+            });
+        }
+        <?php endif; ?>
+        
+        // Rider Expenses (Horizontal)
+        <?php if (!empty($chartData['riderAnalysis']['expenses'])): ?>
+        const riderExpensesCtx = document.getElementById('riderExpensesChart');
+        if (riderExpensesCtx) {
+            new Chart(riderExpensesCtx, {
+                type: 'bar',
+                data: {
+                    labels: <?php echo json_encode(array_keys($chartData['riderAnalysis']['expenses'])); ?>,
+                    datasets: [{
+                        label: 'Riders',
+                        data: <?php echo json_encode(array_values($chartData['riderAnalysis']['expenses'])); ?>,
+                        backgroundColor: colors.primary
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    indexAxis: 'y',
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        x: { beginAtZero: true, ticks: { stepSize: 1 } }
+                    }
+                }
+            });
+        }
+        <?php endif; ?>
+        
+        // Rider Expense Cost
+        <?php if (!empty($chartData['riderAnalysis']['expense_cost'])): ?>
+        const riderExpenseCostCtx = document.getElementById('riderExpenseCostChart');
+        if (riderExpenseCostCtx) {
+            new Chart(riderExpenseCostCtx, {
+                type: 'bar',
+                data: {
+                    labels: <?php echo json_encode(array_keys($chartData['riderAnalysis']['expense_cost'])); ?>,
+                    datasets: [{
+                        label: 'Riders',
+                        data: <?php echo json_encode(array_values($chartData['riderAnalysis']['expense_cost'])); ?>,
+                        backgroundColor: colors.primary
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        y: { beginAtZero: true, ticks: { stepSize: 1 } }
+                    }
+                }
+            });
+        }
+        <?php endif; ?>
+        
+        // Rider Earnings Stability
+        <?php if (!empty($chartData['riderAnalysis']['earnings_stable'])): ?>
+        const riderEarningsCtx = document.getElementById('riderEarningsChart');
+        if (riderEarningsCtx) {
+            new Chart(riderEarningsCtx, {
                 type: 'doughnut',
                 data: {
-                    labels: labels,
+                    labels: <?php echo json_encode(array_keys($chartData['riderAnalysis']['earnings_stable'])); ?>,
                     datasets: [{
-                        data: data,
-                        backgroundColor: backgroundColors || [colors.primary, colors.secondary, colors.info, colors.warning, colors.danger],
+                        data: <?php echo json_encode(array_values($chartData['riderAnalysis']['earnings_stable'])); ?>,
+                        backgroundColor: [colors.primary, colors.secondary, colors.info, colors.warning, colors.danger],
                         borderColor: '#fff',
                         borderWidth: 2
                     }]
@@ -1267,133 +1345,242 @@ $chartDataJson = json_encode($chartData);
                 }
             });
         }
-
-        // === RIDER CHARTS ===
-        
-        // Rider Duration
-        <?php if (!empty($chartData['riderAnalysis']['riding_duration'])): ?>
-        createBarChart('riderDurationChart', 
-            <?php echo json_encode(array_keys($chartData['riderAnalysis']['riding_duration'])); ?>,
-            <?php echo json_encode(array_values($chartData['riderAnalysis']['riding_duration'])); ?>
-        );
-        <?php endif; ?>
-        
-        // Rider Operating Areas
-        <?php if (!empty($chartData['riderAnalysis']['operating_areas'])): ?>
-        createBarChart('riderAreasChart', 
-            <?php echo json_encode(array_keys($chartData['riderAnalysis']['operating_areas'])); ?>,
-            <?php echo json_encode(array_values($chartData['riderAnalysis']['operating_areas'])); ?>
-        );
-        <?php endif; ?>
-        
-        // Rider Best Time
-        <?php if (!empty($chartData['riderAnalysis']['best_time'])): ?>
-        createBarChart('riderBestTimeChart', 
-            <?php echo json_encode(array_keys($chartData['riderAnalysis']['best_time'])); ?>,
-            <?php echo json_encode(array_values($chartData['riderAnalysis']['best_time'])); ?>
-        );
-        <?php endif; ?>
-        
-        // Rider Expenses (Horizontal bar for multiple items)
-        <?php if (!empty($chartData['riderAnalysis']['expenses'])): ?>
-        createBarChart('riderExpensesChart', 
-            <?php echo json_encode(array_keys($chartData['riderAnalysis']['expenses'])); ?>,
-            <?php echo json_encode(array_values($chartData['riderAnalysis']['expenses'])); ?>,
-            'Riders', true
-        );
-        <?php endif; ?>
-        
-        // Rider Expense Cost
-        <?php if (!empty($chartData['riderAnalysis']['expense_cost'])): ?>
-        createBarChart('riderExpenseCostChart', 
-            <?php echo json_encode(array_keys($chartData['riderAnalysis']['expense_cost'])); ?>,
-            <?php echo json_encode(array_values($chartData['riderAnalysis']['expense_cost'])); ?>
-        );
-        <?php endif; ?>
-        
-        // Rider Earnings Stability
-        <?php if (!empty($chartData['riderAnalysis']['earnings_stable'])): ?>
-        createDoughnutChart('riderEarningsChart',
-            <?php echo json_encode(array_keys($chartData['riderAnalysis']['earnings_stable'])); ?>,
-            <?php echo json_encode(array_values($chartData['riderAnalysis']['earnings_stable'])); ?>
-        );
         <?php endif; ?>
         
         // Rider Earnings Difference
         <?php if (!empty($chartData['riderAnalysis']['earnings_difference'])): ?>
-        createBarChart('riderEarningsDiffChart', 
-            <?php echo json_encode(array_keys($chartData['riderAnalysis']['earnings_difference'])); ?>,
-            <?php echo json_encode(array_values($chartData['riderAnalysis']['earnings_difference'])); ?>
-        );
+        const riderEarningsDiffCtx = document.getElementById('riderEarningsDiffChart');
+        if (riderEarningsDiffCtx) {
+            new Chart(riderEarningsDiffCtx, {
+                type: 'bar',
+                data: {
+                    labels: <?php echo json_encode(array_keys($chartData['riderAnalysis']['earnings_difference'])); ?>,
+                    datasets: [{
+                        label: 'Riders',
+                        data: <?php echo json_encode(array_values($chartData['riderAnalysis']['earnings_difference'])); ?>,
+                        backgroundColor: colors.primary
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        y: { beginAtZero: true, ticks: { stepSize: 1 } }
+                    }
+                }
+            });
+        }
         <?php endif; ?>
         
         // Rider Can Save
         <?php if (!empty($chartData['riderAnalysis']['can_save'])): ?>
-        createDoughnutChart('riderSavingsChart',
-            <?php echo json_encode(array_keys($chartData['riderAnalysis']['can_save'])); ?>,
-            <?php echo json_encode(array_values($chartData['riderAnalysis']['can_save'])); ?>,
-            [colors.primary, colors.danger, colors.warning, colors.secondary]
-        );
+        const riderSavingsCtx = document.getElementById('riderSavingsChart');
+        if (riderSavingsCtx) {
+            new Chart(riderSavingsCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: <?php echo json_encode(array_keys($chartData['riderAnalysis']['can_save'])); ?>,
+                    datasets: [{
+                        data: <?php echo json_encode(array_values($chartData['riderAnalysis']['can_save'])); ?>,
+                        backgroundColor: [colors.primary, colors.danger, colors.warning, colors.secondary],
+                        borderColor: '#fff',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { position: 'bottom', labels: { font: { family: "'Inter', sans-serif" }, padding: 20 } }
+                    }
+                }
+            });
+        }
         <?php endif; ?>
         
         // Rider Save Amount
         <?php if (!empty($chartData['riderAnalysis']['save_amount'])): ?>
-        createBarChart('riderSaveAmountChart', 
-            <?php echo json_encode(array_keys($chartData['riderAnalysis']['save_amount'])); ?>,
-            <?php echo json_encode(array_values($chartData['riderAnalysis']['save_amount'])); ?>
-        );
+        const riderSaveAmountCtx = document.getElementById('riderSaveAmountChart');
+        if (riderSaveAmountCtx) {
+            new Chart(riderSaveAmountCtx, {
+                type: 'bar',
+                data: {
+                    labels: <?php echo json_encode(array_keys($chartData['riderAnalysis']['save_amount'])); ?>,
+                    datasets: [{
+                        label: 'Riders',
+                        data: <?php echo json_encode(array_values($chartData['riderAnalysis']['save_amount'])); ?>,
+                        backgroundColor: colors.primary
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        y: { beginAtZero: true, ticks: { stepSize: 1 } }
+                    }
+                }
+            });
+        }
         <?php endif; ?>
         
         // Rider Cannot Save Reason
         <?php if (!empty($chartData['riderAnalysis']['cannot_save_reason'])): ?>
-        createBarChart('riderCannotSaveReasonChart', 
-            <?php echo json_encode(array_keys($chartData['riderAnalysis']['cannot_save_reason'])); ?>,
-            <?php echo json_encode(array_values($chartData['riderAnalysis']['cannot_save_reason'])); ?>,
-            'Riders', true
-        );
+        const riderCannotSaveReasonCtx = document.getElementById('riderCannotSaveReasonChart');
+        if (riderCannotSaveReasonCtx) {
+            new Chart(riderCannotSaveReasonCtx, {
+                type: 'bar',
+                data: {
+                    labels: <?php echo json_encode(array_keys($chartData['riderAnalysis']['cannot_save_reason'])); ?>,
+                    datasets: [{
+                        label: 'Riders',
+                        data: <?php echo json_encode(array_values($chartData['riderAnalysis']['cannot_save_reason'])); ?>,
+                        backgroundColor: colors.primary
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    indexAxis: 'y',
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        x: { beginAtZero: true, ticks: { stepSize: 1 } }
+                    }
+                }
+            });
+        }
         <?php endif; ?>
         
         // Rider Work Respect
         <?php if (!empty($chartData['riderAnalysis']['work_respect'])): ?>
-        createDoughnutChart('riderWorkRespectChart',
-            <?php echo json_encode(array_keys($chartData['riderAnalysis']['work_respect'])); ?>,
-            <?php echo json_encode(array_values($chartData['riderAnalysis']['work_respect'])); ?>
-        );
+        const riderWorkRespectCtx = document.getElementById('riderWorkRespectChart');
+        if (riderWorkRespectCtx) {
+            new Chart(riderWorkRespectCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: <?php echo json_encode(array_keys($chartData['riderAnalysis']['work_respect'])); ?>,
+                    datasets: [{
+                        data: <?php echo json_encode(array_values($chartData['riderAnalysis']['work_respect'])); ?>,
+                        backgroundColor: [colors.primary, colors.secondary, colors.info, colors.warning, colors.danger],
+                        borderColor: '#fff',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { position: 'bottom', labels: { font: { family: "'Inter', sans-serif" }, padding: 20 } }
+                    }
+                }
+            });
+        }
         <?php endif; ?>
         
         // Rider Passenger Contact
         <?php if (!empty($chartData['riderAnalysis']['passenger_contact'])): ?>
-        createBarChart('riderPassengerContactChart', 
-            <?php echo json_encode(array_keys($chartData['riderAnalysis']['passenger_contact'])); ?>,
-            <?php echo json_encode(array_values($chartData['riderAnalysis']['passenger_contact'])); ?>,
-            'Riders', true
-        );
+        const riderPassengerContactCtx = document.getElementById('riderPassengerContactChart');
+        if (riderPassengerContactCtx) {
+            new Chart(riderPassengerContactCtx, {
+                type: 'bar',
+                data: {
+                    labels: <?php echo json_encode(array_keys($chartData['riderAnalysis']['passenger_contact'])); ?>,
+                    datasets: [{
+                        label: 'Riders',
+                        data: <?php echo json_encode(array_values($chartData['riderAnalysis']['passenger_contact'])); ?>,
+                        backgroundColor: colors.primary
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    indexAxis: 'y',
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        x: { beginAtZero: true, ticks: { stepSize: 1 } }
+                    }
+                }
+            });
+        }
         <?php endif; ?>
         
         // Rider Doorstep Pickup (CRITICAL!)
         <?php if (!empty($chartData['riderAnalysis']['doorstep_pickup_feeling'])): ?>
-        createDoughnutChart('riderDoorstepPickupChart',
-            <?php echo json_encode(array_keys($chartData['riderAnalysis']['doorstep_pickup_feeling'])); ?>,
-            <?php echo json_encode(array_values($chartData['riderAnalysis']['doorstep_pickup_feeling'])); ?>,
-            [colors.primary, colors.warning, colors.danger, colors.secondary]
-        );
+        const riderDoorstepPickupCtx = document.getElementById('riderDoorstepPickupChart');
+        if (riderDoorstepPickupCtx) {
+            new Chart(riderDoorstepPickupCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: <?php echo json_encode(array_keys($chartData['riderAnalysis']['doorstep_pickup_feeling'])); ?>,
+                    datasets: [{
+                        data: <?php echo json_encode(array_values($chartData['riderAnalysis']['doorstep_pickup_feeling'])); ?>,
+                        backgroundColor: [colors.primary, colors.warning, colors.danger, colors.secondary],
+                        borderColor: '#fff',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { position: 'bottom', labels: { font: { family: "'Inter', sans-serif" }, padding: 20 } }
+                    }
+                }
+            });
+        }
         <?php endif; ?>
         
         // Rider Delivery Errands (CRITICAL!)
         <?php if (!empty($chartData['riderAnalysis']['delivery_errands_feeling'])): ?>
-        createDoughnutChart('riderDeliveryErrandsChart',
-            <?php echo json_encode(array_keys($chartData['riderAnalysis']['delivery_errands_feeling'])); ?>,
-            <?php echo json_encode(array_values($chartData['riderAnalysis']['delivery_errands_feeling'])); ?>,
-            [colors.primary, colors.warning, colors.danger, colors.secondary]
-        );
+        const riderDeliveryErrandsCtx = document.getElementById('riderDeliveryErrandsChart');
+        if (riderDeliveryErrandsCtx) {
+            new Chart(riderDeliveryErrandsCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: <?php echo json_encode(array_keys($chartData['riderAnalysis']['delivery_errands_feeling'])); ?>,
+                    datasets: [{
+                        data: <?php echo json_encode(array_values($chartData['riderAnalysis']['delivery_errands_feeling'])); ?>,
+                        backgroundColor: [colors.primary, colors.warning, colors.danger, colors.secondary],
+                        borderColor: '#fff',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { position: 'bottom', labels: { font: { family: "'Inter', sans-serif" }, padding: 20 } }
+                    }
+                }
+            });
+        }
         <?php endif; ?>
         
         // Rider Group
         <?php if (!empty($chartData['riderAnalysis']['rider_group'])): ?>
-        createDoughnutChart('riderGroupChart',
-            <?php echo json_encode(array_keys($chartData['riderAnalysis']['rider_group'])); ?>,
-            <?php echo json_encode(array_values($chartData['riderAnalysis']['rider_group'])); ?>
-        );
+        const riderGroupCtx = document.getElementById('riderGroupChart');
+        if (riderGroupCtx) {
+            new Chart(riderGroupCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: <?php echo json_encode(array_keys($chartData['riderAnalysis']['rider_group'])); ?>,
+                    datasets: [{
+                        data: <?php echo json_encode(array_values($chartData['riderAnalysis']['rider_group'])); ?>,
+                        backgroundColor: [colors.primary, colors.secondary, colors.info, colors.warning, colors.danger],
+                        borderColor: '#fff',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { position: 'bottom', labels: { font: { family: "'Inter', sans-serif" }, padding: 20 } }
+                    }
+                }
+            });
+        }
         <?php endif; ?>
 
         // Rider Safety Chart
@@ -1545,141 +1732,508 @@ $chartDataJson = json_encode($chartData);
         }
         <?php endif; ?>
         
-        // === ADDITIONAL USER CHARTS ===
+        // === USER CHARTS ===
+        
+        // User Frequency Chart
+        <?php if (!empty($chartData['userAnalysis']['usage_frequency'])): ?>
+        const userFrequencyCtx = document.getElementById('userFrequencyChart');
+        if (userFrequencyCtx) {
+            new Chart(userFrequencyCtx, {
+                type: 'bar',
+                data: {
+                    labels: <?php echo json_encode(array_keys($chartData['userAnalysis']['usage_frequency'])); ?>,
+                    datasets: [{
+                        label: 'Users',
+                        data: <?php echo json_encode(array_values($chartData['userAnalysis']['usage_frequency'])); ?>,
+                        backgroundColor: colors.secondary
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        y: { beginAtZero: true, ticks: { stepSize: 1 } }
+                    }
+                }
+            });
+        }
+        <?php endif; ?>
         
         // User Primary Reason
         <?php if (!empty($chartData['userAnalysis']['primary_reason'])): ?>
-        createBarChart('userReasonChart', 
-            <?php echo json_encode(array_keys($chartData['userAnalysis']['primary_reason'])); ?>,
-            <?php echo json_encode(array_values($chartData['userAnalysis']['primary_reason'])); ?>,
-            'Users', true
-        );
+        const userReasonCtx = document.getElementById('userReasonChart');
+        if (userReasonCtx) {
+            new Chart(userReasonCtx, {
+                type: 'bar',
+                data: {
+                    labels: <?php echo json_encode(array_keys($chartData['userAnalysis']['primary_reason'])); ?>,
+                    datasets: [{
+                        label: 'Users',
+                        data: <?php echo json_encode(array_values($chartData['userAnalysis']['primary_reason'])); ?>,
+                        backgroundColor: colors.secondary
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    indexAxis: 'y',
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        x: { beginAtZero: true, ticks: { stepSize: 1 } }
+                    }
+                }
+            });
+        }
         <?php endif; ?>
         
         // User Usage Time
         <?php if (!empty($chartData['userAnalysis']['usage_time'])): ?>
-        createBarChart('userTimeChart', 
-            <?php echo json_encode(array_keys($chartData['userAnalysis']['usage_time'])); ?>,
-            <?php echo json_encode(array_values($chartData['userAnalysis']['usage_time'])); ?>
-        );
+        const userTimeCtx = document.getElementById('userTimeChart');
+        if (userTimeCtx) {
+            new Chart(userTimeCtx, {
+                type: 'bar',
+                data: {
+                    labels: <?php echo json_encode(array_keys($chartData['userAnalysis']['usage_time'])); ?>,
+                    datasets: [{
+                        label: 'Users',
+                        data: <?php echo json_encode(array_values($chartData['userAnalysis']['usage_time'])); ?>,
+                        backgroundColor: colors.secondary
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        y: { beginAtZero: true, ticks: { stepSize: 1 } }
+                    }
+                }
+            });
+        }
         <?php endif; ?>
         
         // User Ride Location
         <?php if (!empty($chartData['userAnalysis']['ride_location'])): ?>
-        createBarChart('userLocationChart', 
-            <?php echo json_encode(array_keys($chartData['userAnalysis']['ride_location'])); ?>,
-            <?php echo json_encode(array_values($chartData['userAnalysis']['ride_location'])); ?>,
-            'Users', true
-        );
+        const userLocationCtx = document.getElementById('userLocationChart');
+        if (userLocationCtx) {
+            new Chart(userLocationCtx, {
+                type: 'bar',
+                data: {
+                    labels: <?php echo json_encode(array_keys($chartData['userAnalysis']['ride_location'])); ?>,
+                    datasets: [{
+                        label: 'Users',
+                        data: <?php echo json_encode(array_values($chartData['userAnalysis']['ride_location'])); ?>,
+                        backgroundColor: colors.secondary
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    indexAxis: 'y',
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        x: { beginAtZero: true, ticks: { stepSize: 1 } }
+                    }
+                }
+            });
+        }
         <?php endif; ?>
         
         // User Rider Consistency
         <?php if (!empty($chartData['userAnalysis']['rider_consistency'])): ?>
-        createDoughnutChart('userConsistencyChart',
-            <?php echo json_encode(array_keys($chartData['userAnalysis']['rider_consistency'])); ?>,
-            <?php echo json_encode(array_values($chartData['userAnalysis']['rider_consistency'])); ?>
-        );
+        const userConsistencyCtx = document.getElementById('userConsistencyChart');
+        if (userConsistencyCtx) {
+            new Chart(userConsistencyCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: <?php echo json_encode(array_keys($chartData['userAnalysis']['rider_consistency'])); ?>,
+                    datasets: [{
+                        data: <?php echo json_encode(array_values($chartData['userAnalysis']['rider_consistency'])); ?>,
+                        backgroundColor: [colors.secondary, colors.primary, colors.info, colors.warning],
+                        borderColor: '#fff',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { position: 'bottom', labels: { font: { family: "'Inter', sans-serif" }, padding: 20 } }
+                    }
+                }
+            });
+        }
         <?php endif; ?>
         
         // User Find Rider
         <?php if (!empty($chartData['userAnalysis']['find_rider'])): ?>
-        createBarChart('userFindRiderChart', 
-            <?php echo json_encode(array_keys($chartData['userAnalysis']['find_rider'])); ?>,
-            <?php echo json_encode(array_values($chartData['userAnalysis']['find_rider'])); ?>,
-            'Users', true
-        );
+        const userFindRiderCtx = document.getElementById('userFindRiderChart');
+        if (userFindRiderCtx) {
+            new Chart(userFindRiderCtx, {
+                type: 'bar',
+                data: {
+                    labels: <?php echo json_encode(array_keys($chartData['userAnalysis']['find_rider'])); ?>,
+                    datasets: [{
+                        label: 'Users',
+                        data: <?php echo json_encode(array_values($chartData['userAnalysis']['find_rider'])); ?>,
+                        backgroundColor: colors.secondary
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    indexAxis: 'y',
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        x: { beginAtZero: true, ticks: { stepSize: 1 } }
+                    }
+                }
+            });
+        }
         <?php endif; ?>
         
         // User Struggled
         <?php if (!empty($chartData['userAnalysis']['struggled_rider'])): ?>
-        createDoughnutChart('userStruggledChart',
-            <?php echo json_encode(array_keys($chartData['userAnalysis']['struggled_rider'])); ?>,
-            <?php echo json_encode(array_values($chartData['userAnalysis']['struggled_rider'])); ?>
-        );
+        const userStruggledCtx = document.getElementById('userStruggledChart');
+        if (userStruggledCtx) {
+            new Chart(userStruggledCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: <?php echo json_encode(array_keys($chartData['userAnalysis']['struggled_rider'])); ?>,
+                    datasets: [{
+                        data: <?php echo json_encode(array_values($chartData['userAnalysis']['struggled_rider'])); ?>,
+                        backgroundColor: [colors.secondary, colors.primary, colors.info, colors.warning],
+                        borderColor: '#fff',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { position: 'bottom', labels: { font: { family: "'Inter', sans-serif" }, padding: 20 } }
+                    }
+                }
+            });
+        }
         <?php endif; ?>
         
         // User Difficulty Cause
         <?php if (!empty($chartData['userAnalysis']['difficulty_cause'])): ?>
-        createBarChart('userDifficultyCauseChart', 
-            <?php echo json_encode(array_keys($chartData['userAnalysis']['difficulty_cause'])); ?>,
-            <?php echo json_encode(array_values($chartData['userAnalysis']['difficulty_cause'])); ?>,
-            'Users', true
-        );
+        const userDifficultyCauseCtx = document.getElementById('userDifficultyCauseChart');
+        if (userDifficultyCauseCtx) {
+            new Chart(userDifficultyCauseCtx, {
+                type: 'bar',
+                data: {
+                    labels: <?php echo json_encode(array_keys($chartData['userAnalysis']['difficulty_cause'])); ?>,
+                    datasets: [{
+                        label: 'Users',
+                        data: <?php echo json_encode(array_values($chartData['userAnalysis']['difficulty_cause'])); ?>,
+                        backgroundColor: colors.secondary
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    indexAxis: 'y',
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        x: { beginAtZero: true, ticks: { stepSize: 1 } }
+                    }
+                }
+            });
+        }
         <?php endif; ?>
         
         // User Fare Agreement
         <?php if (!empty($chartData['userAnalysis']['fare_agreement'])): ?>
-        createDoughnutChart('userFareChart',
-            <?php echo json_encode(array_keys($chartData['userAnalysis']['fare_agreement'])); ?>,
-            <?php echo json_encode(array_values($chartData['userAnalysis']['fare_agreement'])); ?>
-        );
+        const userFareCtx = document.getElementById('userFareChart');
+        if (userFareCtx) {
+            new Chart(userFareCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: <?php echo json_encode(array_keys($chartData['userAnalysis']['fare_agreement'])); ?>,
+                    datasets: [{
+                        data: <?php echo json_encode(array_values($chartData['userAnalysis']['fare_agreement'])); ?>,
+                        backgroundColor: [colors.secondary, colors.primary, colors.info, colors.warning],
+                        borderColor: '#fff',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { position: 'bottom', labels: { font: { family: "'Inter', sans-serif" }, padding: 20 } }
+                    }
+                }
+            });
+        }
         <?php endif; ?>
         
         // User Pricing Disagreements
         <?php if (!empty($chartData['userAnalysis']['pricing_disagreements'])): ?>
-        createBarChart('userPricingDisagreementChart', 
-            <?php echo json_encode(array_keys($chartData['userAnalysis']['pricing_disagreements'])); ?>,
-            <?php echo json_encode(array_values($chartData['userAnalysis']['pricing_disagreements'])); ?>
-        );
+        const userPricingDisagreementCtx = document.getElementById('userPricingDisagreementChart');
+        if (userPricingDisagreementCtx) {
+            new Chart(userPricingDisagreementCtx, {
+                type: 'bar',
+                data: {
+                    labels: <?php echo json_encode(array_keys($chartData['userAnalysis']['pricing_disagreements'])); ?>,
+                    datasets: [{
+                        label: 'Users',
+                        data: <?php echo json_encode(array_values($chartData['userAnalysis']['pricing_disagreements'])); ?>,
+                        backgroundColor: colors.secondary
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        y: { beginAtZero: true, ticks: { stepSize: 1 } }
+                    }
+                }
+            });
+        }
         <?php endif; ?>
         
         // User Payment Method
         <?php if (!empty($chartData['userAnalysis']['payment_method'])): ?>
-        createDoughnutChart('userPaymentChart',
-            <?php echo json_encode(array_keys($chartData['userAnalysis']['payment_method'])); ?>,
-            <?php echo json_encode(array_values($chartData['userAnalysis']['payment_method'])); ?>
-        );
+        const userPaymentCtx = document.getElementById('userPaymentChart');
+        if (userPaymentCtx) {
+            new Chart(userPaymentCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: <?php echo json_encode(array_keys($chartData['userAnalysis']['payment_method'])); ?>,
+                    datasets: [{
+                        data: <?php echo json_encode(array_values($chartData['userAnalysis']['payment_method'])); ?>,
+                        backgroundColor: [colors.secondary, colors.primary, colors.info, colors.warning],
+                        borderColor: '#fff',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { position: 'bottom', labels: { font: { family: "'Inter', sans-serif" }, padding: 20 } }
+                    }
+                }
+            });
+        }
+        <?php endif; ?>
+        
+        // User Safety Feeling
+        <?php if (!empty($chartData['userAnalysis']['safety_feeling'])): ?>
+        const userSafetyCtx = document.getElementById('userSafetyChart');
+        if (userSafetyCtx) {
+            new Chart(userSafetyCtx, {
+                type: 'bar',
+                data: {
+                    labels: <?php echo json_encode(array_keys($chartData['userAnalysis']['safety_feeling'])); ?>,
+                    datasets: [{
+                        label: 'Users',
+                        data: <?php echo json_encode(array_values($chartData['userAnalysis']['safety_feeling'])); ?>,
+                        backgroundColor: colors.secondary
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        y: { beginAtZero: true, ticks: { stepSize: 1 } }
+                    }
+                }
+            });
+        }
         <?php endif; ?>
         
         // User Safety Concerns
         <?php if (!empty($chartData['userAnalysis']['safety_concerns'])): ?>
-        createBarChart('userSafetyConcernsChart', 
-            <?php echo json_encode(array_keys($chartData['userAnalysis']['safety_concerns'])); ?>,
-            <?php echo json_encode(array_values($chartData['userAnalysis']['safety_concerns'])); ?>,
-            'Users', true
-        );
+        const userSafetyConcernsCtx = document.getElementById('userSafetyConcernsChart');
+        if (userSafetyConcernsCtx) {
+            new Chart(userSafetyConcernsCtx, {
+                type: 'bar',
+                data: {
+                    labels: <?php echo json_encode(array_keys($chartData['userAnalysis']['safety_concerns'])); ?>,
+                    datasets: [{
+                        label: 'Users',
+                        data: <?php echo json_encode(array_values($chartData['userAnalysis']['safety_concerns'])); ?>,
+                        backgroundColor: colors.secondary
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    indexAxis: 'y',
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        x: { beginAtZero: true, ticks: { stepSize: 1 } }
+                    }
+                }
+            });
+        }
         <?php endif; ?>
         
         // User Help Confidence
         <?php if (!empty($chartData['userAnalysis']['help_confidence'])): ?>
-        createBarChart('userHelpConfidenceChart', 
-            <?php echo json_encode(array_keys($chartData['userAnalysis']['help_confidence'])); ?>,
-            <?php echo json_encode(array_values($chartData['userAnalysis']['help_confidence'])); ?>
-        );
+        const userHelpConfidenceCtx = document.getElementById('userHelpConfidenceChart');
+        if (userHelpConfidenceCtx) {
+            new Chart(userHelpConfidenceCtx, {
+                type: 'bar',
+                data: {
+                    labels: <?php echo json_encode(array_keys($chartData['userAnalysis']['help_confidence'])); ?>,
+                    datasets: [{
+                        label: 'Users',
+                        data: <?php echo json_encode(array_values($chartData['userAnalysis']['help_confidence'])); ?>,
+                        backgroundColor: colors.secondary
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        y: { beginAtZero: true, ticks: { stepSize: 1 } }
+                    }
+                }
+            });
+        }
         <?php endif; ?>
         
         // User Reliability
         <?php if (!empty($chartData['userAnalysis']['reliability'])): ?>
-        createBarChart('userReliabilityChart', 
-            <?php echo json_encode(array_keys($chartData['userAnalysis']['reliability'])); ?>,
-            <?php echo json_encode(array_values($chartData['userAnalysis']['reliability'])); ?>
-        );
+        const userReliabilityCtx = document.getElementById('userReliabilityChart');
+        if (userReliabilityCtx) {
+            new Chart(userReliabilityCtx, {
+                type: 'bar',
+                data: {
+                    labels: <?php echo json_encode(array_keys($chartData['userAnalysis']['reliability'])); ?>,
+                    datasets: [{
+                        label: 'Users',
+                        data: <?php echo json_encode(array_values($chartData['userAnalysis']['reliability'])); ?>,
+                        backgroundColor: colors.secondary
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        y: { beginAtZero: true, ticks: { stepSize: 1 } }
+                    }
+                }
+            });
+        }
         <?php endif; ?>
         
         // User Experiences
         <?php if (!empty($chartData['userAnalysis']['experiences'])): ?>
-        createBarChart('userExperiencesChart', 
-            <?php echo json_encode(array_keys($chartData['userAnalysis']['experiences'])); ?>,
-            <?php echo json_encode(array_values($chartData['userAnalysis']['experiences'])); ?>,
-            'Users', true
-        );
+        const userExperiencesCtx = document.getElementById('userExperiencesChart');
+        if (userExperiencesCtx) {
+            new Chart(userExperiencesCtx, {
+                type: 'bar',
+                data: {
+                    labels: <?php echo json_encode(array_keys($chartData['userAnalysis']['experiences'])); ?>,
+                    datasets: [{
+                        label: 'Users',
+                        data: <?php echo json_encode(array_values($chartData['userAnalysis']['experiences'])); ?>,
+                        backgroundColor: colors.secondary
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    indexAxis: 'y',
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        x: { beginAtZero: true, ticks: { stepSize: 1 } }
+                    }
+                }
+            });
+        }
+        <?php endif; ?>
+        
+        // User Would Switch (CRITICAL!)
+        <?php if (!empty($chartData['userAnalysis']['would_switch'])): ?>
+        const userSwitchCtx = document.getElementById('userSwitchChart');
+        if (userSwitchCtx) {
+            new Chart(userSwitchCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: <?php echo json_encode(array_keys($chartData['userAnalysis']['would_switch'])); ?>,
+                    datasets: [{
+                        data: <?php echo json_encode(array_values($chartData['userAnalysis']['would_switch'])); ?>,
+                        backgroundColor: [colors.secondary, colors.warning, colors.light],
+                        borderColor: '#fff',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { position: 'bottom', labels: { font: { family: "'Inter', sans-serif" }, padding: 20 } }
+                    }
+                }
+            });
+        }
         <?php endif; ?>
         
         // User Age Range
         <?php if (!empty($chartData['userAnalysis']['age_range'])): ?>
-        createBarChart('userAgeChart', 
-            <?php echo json_encode(array_keys($chartData['userAnalysis']['age_range'])); ?>,
-            <?php echo json_encode(array_values($chartData['userAnalysis']['age_range'])); ?>
-        );
+        const userAgeCtx = document.getElementById('userAgeChart');
+        if (userAgeCtx) {
+            new Chart(userAgeCtx, {
+                type: 'bar',
+                data: {
+                    labels: <?php echo json_encode(array_keys($chartData['userAnalysis']['age_range'])); ?>,
+                    datasets: [{
+                        label: 'Users',
+                        data: <?php echo json_encode(array_values($chartData['userAnalysis']['age_range'])); ?>,
+                        backgroundColor: colors.secondary
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        y: { beginAtZero: true, ticks: { stepSize: 1 } }
+                    }
+                }
+            });
+        }
         <?php endif; ?>
         
         // User Phone Type
         <?php if (!empty($chartData['userAnalysis']['phone_type'])): ?>
-        createDoughnutChart('userPhoneTypeChart',
-            <?php echo json_encode(array_keys($chartData['userAnalysis']['phone_type'])); ?>,
-            <?php echo json_encode(array_values($chartData['userAnalysis']['phone_type'])); ?>
-        );
+        const userPhoneTypeCtx = document.getElementById('userPhoneTypeChart');
+        if (userPhoneTypeCtx) {
+            new Chart(userPhoneTypeCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: <?php echo json_encode(array_keys($chartData['userAnalysis']['phone_type'])); ?>,
+                    datasets: [{
+                        data: <?php echo json_encode(array_values($chartData['userAnalysis']['phone_type'])); ?>,
+                        backgroundColor: [colors.secondary, colors.primary, colors.info],
+                        borderColor: '#fff',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { position: 'bottom', labels: { font: { family: "'Inter', sans-serif" }, padding: 20 } }
+                    }
+                }
+            });
+        }
         <?php endif; ?>
+        
         </script>
 </body>
 </html>
