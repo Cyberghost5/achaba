@@ -145,8 +145,7 @@
                     seamless service designed for Bauchi and beyond.
                 </p>
                 <div class="d-flex gap-3 flex-wrap justify-content-center">
-                    <a href="#features" class="btn btn-primary btn-lg px-4">Explore Features</a>
-                    <a href="./#waitlist" class="btn btn-outline-primary btn-lg px-4">Join Waitlist</a>
+                    <a href="apps/rider.apk" class="btn btn-primary btn-lg px-4">Download App</a>
                 </div>
             </div>
         </div>
@@ -211,7 +210,7 @@
                                 </div>
                                 <div>
                                     <h5 class="fw-bold">Download the App</h5>
-                                    <p class="text-muted">Get the Achaba app from Play Store or App Store and sign up with your phone number.</p>
+                                    <p class="text-muted">Click the button above to download the rider's app.</p>
                                 </div>
                             </div>
                         </div>
