@@ -6,10 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     
     <!-- Primary Meta Tags -->
-    <title>Demo with Achaba - Join Nigeria's Leading Motorcycle Mobility Platform</title>
-    <meta name="title" content="Demo with Achaba - Join Nigeria's Leading Motorcycle Mobility Platform">
-    <meta name="description" content="Demo with Achaba to transform mobility in Bauchi and beyond. Opportunities for riders, investors, businesses, and strategic partners.">
-    <meta name="keywords" content="achaba partnership, rider partnership, investor opportunity, business integration, Bauchi mobility, Nigerian transport partnership">
+    <title>Achaba Demo App - Experience the Future of Mobility</title>
+    <meta name="title" content="Achaba Demo App - Experience the Future of Mobility">
+    <meta name="description" content="Try the Achaba demo app and experience the future of motorcycle mobility in Bauchi. Fast, reliable, and convenient transportation at your fingertips.">
+    <meta name="keywords" content="demo app, achaba app, motorcycle mobility, Bauchi transport, rider app, quick pickup service">
     <meta name="author" content="Achaba">
     <meta name="robots" content="index, follow">
     <meta name="language" content="English">
@@ -21,15 +21,15 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://achaba.ng/demo">
-    <meta property="og:title" content="Demo with Achaba - Join Nigeria's Leading Motorcycle Mobility Platform">
-    <meta property="og:description" content="Demo with Achaba to transform mobility in Bauchi and beyond. Opportunities for riders, investors, businesses, and strategic partners.">
+    <meta property="og:title" content="Achaba Demo App - Experience the Future of Mobility">
+    <meta property="og:description" content="Try the Achaba demo app and experience the future of motorcycle mobility in Bauchi.">
     <meta property="og:image" content="https://achaba.ng/assets/images/og-image.png">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://achaba.ng/demo">
-    <meta property="twitter:title" content="Demo with Achaba">
-    <meta property="twitter:description" content="Demo with Achaba to transform mobility in Bauchi and beyond.">
+    <meta property="twitter:title" content="Achaba Demo App">
+    <meta property="twitter:description" content="Experience fast, reliable motorcycle mobility with the Achaba demo app.">
     
     <!-- Favicon -->
     <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png">
@@ -139,15 +139,204 @@
     <section class="partner-hero-section py-5 mt-5">
         <div class="container">
             <div class="text-center">
-                <h1 class="display-4 mb-4">Download our demo app</h1>
+                <h1 class="display-4 mb-4">Experience Achaba Demo</h1>
                 <p class="lead text-muted mx-auto" style="max-width: 700px;">
-                    Join us in transforming mobility in Bauchi. Whether you're a rider, investor,<br>
-                    or business partner, we want to hear from you.
+                    Discover the future of mobility with our demo app. Fast pickups, trusted riders, and<br>
+                    seamless service designed for Bauchi and beyond.
                 </p>
-                <div class="d-flex gap-3 flex-wrap">
-                    <a href="#" class="btn btn-primary btn-lg px-4">Rider</a>
-                    <a href="#" class="btn btn-outline-primary btn-lg px-4">Driver</a>
+                <div class="d-flex gap-3 flex-wrap justify-content-center">
+                    <a href="#features" class="btn btn-primary btn-lg px-4">Explore Features</a>
+                    <a href="./#waitlist" class="btn btn-outline-primary btn-lg px-4">Join Waitlist</a>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Features Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5 fw-bold" id="features">Why Try Our Demo App?</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="card border-0 shadow-sm h-100 text-center p-4">
+                        <div class="mb-3">
+                            <i class="fas fa-bolt text-primary" style="font-size: 2.5rem;"></i>
+                        </div>
+                        <h5 class="card-title fw-bold">Lightning Fast</h5>
+                        <p class="card-text text-muted">Book a rider in seconds and get picked up within minutes.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card border-0 shadow-sm h-100 text-center p-4">
+                        <div class="mb-3">
+                            <i class="fas fa-user-check text-primary" style="font-size: 2.5rem;"></i>
+                        </div>
+                        <h5 class="card-title fw-bold">Verified Riders</h5>
+                        <p class="card-text text-muted">All our riders are thoroughly verified for your safety and peace of mind.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card border-0 shadow-sm h-100 text-center p-4">
+                        <div class="mb-3">
+                            <i class="fas fa-map-marker-alt text-primary" style="font-size: 2.5rem;"></i>
+                        </div>
+                        <h5 class="card-title fw-bold">Real-Time Tracking</h5>
+                        <p class="card-text text-muted">Track your rider's location in real-time with live GPS updates.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card border-0 shadow-sm h-100 text-center p-4">
+                        <div class="mb-3">
+                            <i class="fas fa-wallet text-primary" style="font-size: 2.5rem;"></i>
+                        </div>
+                        <h5 class="card-title fw-bold">Affordable Rates</h5>
+                        <p class="card-text text-muted">Competitive, transparent pricing with no hidden charges.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 fw-bold">How the Demo Works</h2>
+            <div class="row align-items-center g-4">
+                <div class="col-md-6">
+                    <div class="row g-4">
+                        <div class="col-12">
+                            <div class="d-flex">
+                                <div class="me-3">
+                                    <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center" style="width: 50px; height: 50px; font-weight: bold;">1</div>
+                                </div>
+                                <div>
+                                    <h5 class="fw-bold">Download the App</h5>
+                                    <p class="text-muted">Get the Achaba app from Play Store or App Store and sign up with your phone number.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="d-flex">
+                                <div class="me-3">
+                                    <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center" style="width: 50px; height: 50px; font-weight: bold;">2</div>
+                                </div>
+                                <div>
+                                    <h5 class="fw-bold">Enter Your Destination</h5>
+                                    <p class="text-muted">Set your pickup and drop-off locations using our intuitive map interface.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="d-flex">
+                                <div class="me-3">
+                                    <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center" style="width: 50px; height: 50px; font-weight: bold;">3</div>
+                                </div>
+                                <div>
+                                    <h5 class="fw-bold">Get Matched with a Rider</h5>
+                                    <p class="text-muted">We instantly match you with a nearby verified rider and show their profile.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="d-flex">
+                                <div class="me-3">
+                                    <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center" style="width: 50px; height: 50px; font-weight: bold;">4</div>
+                                </div>
+                                <div>
+                                    <h5 class="fw-bold">Enjoy Your Ride</h5>
+                                    <p class="text-muted">Track your rider in real-time and communicate directly through the app.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="bg-light rounded-lg p-5 text-center" style="min-height: 400px; display: flex; align-items: center; justify-content: center;">
+                        <div>
+                            <i class="fas fa-mobile-alt text-primary" style="font-size: 5rem; opacity: 0.3;"></i>
+                            <p class="text-muted mt-3" style="font-size: 0.95rem;">Demo app interface preview coming soon</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Highlight Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5 fw-bold">Demo App Features</h2>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="d-flex mb-3">
+                        <div class="me-3">
+                            <i class="fas fa-shield-alt text-primary" style="font-size: 1.5rem;"></i>
+                        </div>
+                        <div>
+                            <h6 class="fw-bold">Safety First</h6>
+                            <p class="text-muted small">Emergency contact features and ride history for maximum security.</p>
+                        </div>
+                    </div>
+                    <div class="d-flex mb-3">
+                        <div class="me-3">
+                            <i class="fas fa-comments text-primary" style="font-size: 1.5rem;"></i>
+                        </div>
+                        <div>
+                            <h6 class="fw-bold">Direct Communication</h6>
+                            <p class="text-muted small">Chat directly with your rider and stay updated with notifications.</p>
+                        </div>
+                    </div>
+                    <div class="d-flex mb-3">
+                        <div class="me-3">
+                            <i class="fas fa-star text-primary" style="font-size: 1.5rem;"></i>
+                        </div>
+                        <div>
+                            <h6 class="fw-bold">Ratings & Reviews</h6>
+                            <p class="text-muted small">Rate your experience and help other users find the best riders.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex mb-3">
+                        <div class="me-3">
+                            <i class="fas fa-receipt text-primary" style="font-size: 1.5rem;"></i>
+                        </div>
+                        <div>
+                            <h6 class="fw-bold">Digital Receipts</h6>
+                            <p class="text-muted small">Automatic receipts for every trip with detailed breakdown of charges.</p>
+                        </div>
+                    </div>
+                    <div class="d-flex mb-3">
+                        <div class="me-3">
+                            <i class="fas fa-history text-primary" style="font-size: 1.5rem;"></i>
+                        </div>
+                        <div>
+                            <h6 class="fw-bold">Trip History</h6>
+                            <p class="text-muted small">Access all your past trips and favorite destinations with one tap.</p>
+                        </div>
+                    </div>
+                    <div class="d-flex mb-3">
+                        <div class="me-3">
+                            <i class="fas fa-credit-card text-primary" style="font-size: 1.5rem;"></i>
+                        </div>
+                        <div>
+                            <h6 class="fw-bold">Multiple Payment Options</h6>
+                            <p class="text-muted small">Pay with cash, card, or mobile wallet for maximum convenience.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-5 bg-primary text-white text-center">
+        <div class="container">
+            <h2 class="fw-bold mb-3">Ready to Experience Achaba?</h2>
+            <p class="lead mb-4">Join thousands of users enjoying fast, reliable, and affordable mobility.</p>
+            <div class="d-flex gap-3 flex-wrap justify-content-center">
+                <a href="./#waitlist" class="btn btn-light btn-lg px-4">Join the Waitlist</a>
+                <a href="how-it-works" class="btn btn-outline-light btn-lg px-4">Learn More</a>
             </div>
         </div>
     </section>
