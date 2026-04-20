@@ -336,7 +336,6 @@
             <p class="lead mb-4">Join thousands of users enjoying fast, reliable, and affordable mobility.</p>
             <div class="d-flex gap-3 flex-wrap justify-content-center">
                 <a href="./#waitlist" class="btn btn-light btn-lg px-4">Join the Waitlist</a>
-                <a href="how-it-works" class="btn btn-outline-light btn-lg px-4">Learn More</a>
             </div>
         </div>
     </section>
